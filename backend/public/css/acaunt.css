@@ -16,17 +16,19 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      width: 100%;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 34px;
       font-weight: bold;
       letter-spacing: 23px;
     }
 
     .search-bar input {
       padding: 8px;
-      width: 1000px;
+      width: 1400px;
+      height: 45px;
       border: none;
       border-radius: 5px;
     }
@@ -34,20 +36,20 @@
     .icons {
       display: flex;
       gap: 30px;
-      font-size: 30px;
+      font-size: 40px;
       cursor: pointer;
     }
 
     .icons img {
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
     }
 
     .navbar {
       background-color: black;
       display: flex;
       justify-content: center;
-      gap: 5px;
+      gap: 20px;
       padding: 10px 0;
     }
 
@@ -57,18 +59,21 @@
       border: none;
       padding: 10px 20px;
       font-weight: bold;
+      font-size: 17px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background-color 0.3s;
     }
 
     .navbar button:hover {
       background-color: #444;
     }
 
-    .product-grid {
+    
+
+    /* .product-grid {
       display: flex;
       justify-content: center;
-      gap: 120px;
+      gap: 160px;
       padding: 30px 20px;
       flex-wrap: wrap;
     }
@@ -79,18 +84,20 @@
     }
 
     .product img {
-      width: 90px;
-      height: 187px;
+      width: 112px;
+      height: 220px;
     }
 
     .product-name {
       font-weight: bold;
       margin: 10px 0 5px;
+      font-size: 22px;
     }
 
     .price {
       color: #000;
       font-weight: bold;
+      font-size: 18px;
     }
 
     .brand-icons {
@@ -100,11 +107,11 @@
     }
 
     .brand-icons img {
-      width: 140px;
-      height: 140px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       border: 2px solid #000;
-      gap: 120px;
+      gap: 80px;
     }
 
     .tovabbi {
@@ -115,13 +122,15 @@
       padding: 10px 20px;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background-color 0.3s;
       
     }
     .fasz{
   background-color: black;
+  font-size: 30px;
       display: flex;
       justify-content: center;
+      height: 50px;
       margin-left: 45%;
       margin-right: 45%;
       margin-bottom: 15px;
@@ -129,6 +138,7 @@
 
     .tovabbi:hover {
         background-color: #444;
+        width: 100%;
     }
 
     .product-grid a {
@@ -138,4 +148,4 @@
 
     .product-name:hover {
         text-decoration: underline;
-    }
+    } */

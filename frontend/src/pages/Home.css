@@ -1,0 +1,149 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: white;
+    }
+
+    header {
+      background-color: black;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 34px;
+      font-weight: bold;
+      letter-spacing: 23px;
+    }
+
+    .search-bar input {
+      padding: 8px;
+      width: 1400px;
+      height: 45px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .icons {
+      display: flex;
+      gap: 30px;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    .icons img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .navbar {
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+
+    .navbar button {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-size: 17px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .navbar button:hover {
+      background-color: #444;
+    }
+
+    .product-grid {
+      display: flex;
+      justify-content: center;
+      gap: 160px;
+      padding: 30px 20px;
+      flex-wrap: wrap;
+    }
+
+    .product {
+      text-align: center;
+      width: 150px;
+    }
+
+    .product img {
+      width: 112px;
+      height: 220px;
+    }
+
+    .product-name {
+      font-weight: bold;
+      margin: 10px 0 5px;
+      font-size: 22px;
+    }
+
+    .price {
+      color: #000;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .brand-icons {
+        display: flex;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .brand-icons img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 2px solid #000;
+      gap: 80px;
+    }
+
+    .tovabbi {
+       
+    background-color: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      
+    }
+    .fasz{
+  background-color: black;
+  font-size: 30px;
+      display: flex;
+      justify-content: center;
+      height: 50px;
+      margin-left: 45%;
+      margin-right: 45%;
+      margin-bottom: 15px;
+    }
+
+    .tovabbi:hover {
+        background-color: #444;
+        width: 100%;
+    }
+
+    .product-grid a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .product-name:hover {
+        text-decoration: underline;
+    }
