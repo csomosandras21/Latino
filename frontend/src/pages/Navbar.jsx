@@ -8,13 +8,13 @@ const Navbar = () => {
   return (
     <div>
         <header>
-    <div className="logo">LATINO</div>
+    <Link to='/'> <div className="logo">LATINO</div></Link>
     <div className="search-bar">
       <input type="text" placeholder="Keresés..." />
     </div>
     <div className="icons" style={{backgroundColor: 'black'}}>
       <a href=""> <img src={bag} alt="" /> </a>
-      <a href="http://localhost:3500/acaunts"> <img src={account} alt="" /> </a>
+      <Link to='/accaunt'> <img src={account} alt="" /> </Link>
       <a href=""> <img src={favorite} alt="" /> </a>
       <a href=""> <img src={menu} alt=""   /> </a>
     </div>
@@ -23,16 +23,16 @@ const Navbar = () => {
   <nav className="navbar">
     <Link to='/diors'>DIOR</Link> 
     <Link to='/valentinos' >VALENTINO</Link>
-    <Link to='/' >JEAN PAUL</Link>
-    <Link to='/diors' >BOSS</Link>
-    <Link to='/diors' >VERSACCE</Link>
-    <Link to='/diors' >YSL SAINt LAURENT</Link>
-    <Link to='/diors' >CREED</Link>
-    <Link to='/diors' >DOLCE & GABBANE</Link>
-    <Link to='/diors' >GUCCI</Link>
-    <Link to='/diors' >BURBBERY</Link>
-    <Link to='/diors' >ARMANI</Link>
-    <Link to='/diors' >LATTAFA</Link>
+    <Link to='/jpgs' >JEAN PAUL</Link>
+    <Link to='/bosses' >BOSS</Link>
+    <Link to='/versacces' >VERSACE</Link>
+    <Link to='/ysl' >YSL SAINT LAURENT</Link>
+    <Link to='/creeds' >CREED</Link>
+    <Link to='/dgs' >DOLCE & GABBANA</Link>
+    <Link to='/guccis' >GUCCI</Link>
+    <Link to='/burberrys' >BURBBERY</Link>
+    <Link to='/armanis' >ARMANI</Link>
+    <Link to='/lattafas' >LATTAFA</Link>
   </nav>
   </div>
   )
