@@ -26,7 +26,7 @@
 
 
 .login-form label {
-  display: block;
+ 
   margin-bottom: 5px;
   font-weight: bold;
 }
@@ -53,9 +53,21 @@
   transition: background-color 0.3s;
   border: 2px solid white;
   color:rgb(0, 0, 0);
+  margin-top: 10px;
+  align-content: center;
+  margin-bottom: 10px;
 }
 
-.login-form button:hover {
-  background-color: #000000;
-  color: white;
+
+.ha{
+  text-align: center;
+  font-weight: 500;
 }
+.ha :hover{
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+
+

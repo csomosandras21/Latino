@@ -34,7 +34,7 @@ function App() {
                 <Route path='/jpgs' element={<Jpgs />} />                                   
                 <Route path='/bosses' element={<Bosses />} />                  
                 <Route path='/versacces' element={<Versacces />} />                  
-                <Route path='/ysl' element={<Ysl />} />                  
+                <Route path='/ysls' element={<Ysl />} />                  
                 <Route path='/creeds' element={<Creeds />} />                  
                 <Route path='/dgs' element={<Dgs  />} />                  
                 <Route path='/guccis' element={<Guccis  />} />                  

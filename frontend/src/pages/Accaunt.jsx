@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './Accaunt.css';
+import vibility_off from '../../public/images/visibility_off.png';
+import vibility_on from '../../public/images/visibility_on.png';
+
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -26,7 +29,7 @@ const Login = () => {
 
         <label htmlFor="password">Jelszó:</label>
         <input
-          type="password"
+          type={showPassword ? "text" : "password"}
           id="password"
           value={password}
           onChange={(be) => setPassword(be.target.value)}
@@ -37,12 +40,19 @@ const Login = () => {
         type="button"
         onClick={() => setShowPassword((prev) => !prev)}
       >
-        {showPassword ? "Elrejt" : "Mutat"}
+         {showPassword ? <img src={vibility_on} alt="visible" /> : <img src={vibility_off} />}
       </button>
 
         <button type="submit">Belépés</button>
-        <a href="/register">Ha még nem regisztrált</a>
+   
+
+    
+    <div>
+        <a className='ha' href="/register"><p>Ha még nem regisztrált</p></a>
+    </div>
+       
       </form>
+
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Ysl from "./Ysl";
+import Ysl from "./Ysl"
 
 
 const Ysls = () => {
@@ -8,15 +8,17 @@ const Ysls = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/ysl');
+            const response = await fetch('http://localhost:3500/ysls-frontend');
             const bejovoAdatok = await response.json();
-            const adatok = bejovoAdatok.adatok;
+            console.log(bejovoAdatok);
+
+            const adatok = bejovoAdatok.ysl;
 
             if (response.ok)
             {
                 console.log(adatok);
                 for (let i = 0; i < adatok.length; i++) {
-                    tomb.push(<Valentino key={i} ysl={adatok[i]} />);
+                    tomb.push(<Ysl key={i} ysl={adatok[i]} />);
                 }
         
                 setYslsItems(tomb);
@@ -30,9 +32,8 @@ const Ysls = () => {
     }, []);
 
     return (
-        <div>
-            <h1>YSL</h1>
-            {/* <div className="main-kontener">{diorItems}</div>; */}
+       <div>
+            <div className="main-kontener">{YslItmes}</div>;
         </div>
     );
 }

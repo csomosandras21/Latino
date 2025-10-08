@@ -2,10 +2,15 @@ require('dotenv').config();
 
 const path = require('node:path');
 const express = require('express');
+const cors = require('cors');
 const app = express();
+
+const userRoutes = require('./routes/userRoutesBackend.js');
+app.use('/user', userRoutes);
 
 app.use(express.static(path.resolve(__dirname ,'public')));
 app.set('view engine', 'ejs');
+app.use(cors());
 
 const PORT = process.env.PORT || 3500;
 
@@ -42,5 +47,9 @@ app.get('/acaunt',( req , res )=>{
         return res.render('server-error.ejs');
     }
 })
+
+app.use('/diors-frontend', require('./routes/diorsRoutesFrontend.js'));
+
+app.use('/ysls-frontend', require('./routes/yslsRoutesFrontend.js'));
 
 // app.use('/users-backend', require('./routes/userRoutesBackend.js'));

@@ -8,9 +8,11 @@ const Diors = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/diors');
+            const response = await fetch('http://localhost:3500/diors-frontend');
             const bejovoAdatok = await response.json();
-            const adatok = bejovoAdatok.adatok;
+            console.log(bejovoAdatok);
+            
+            const adatok = bejovoAdatok.diors;
 
             if (response.ok)
             {
@@ -31,8 +33,7 @@ const Diors = () => {
 
     return (
         <div>
-            <h1>Diors</h1>
-            {/* <div className="main-kontener">{diorItems}</div>; */}
+            <div className="main-kontener">{diorItems}</div>;
         </div>
     );
 }

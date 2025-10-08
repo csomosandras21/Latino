@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import vibility_off from '../../public/images/visibility_off.png';
+import vibility_on from '../../public/images/visibility_on.png';
 
 const Register = () => {
     const [email, setEmail] = useState('');
@@ -55,10 +57,10 @@ const Register = () => {
         type="button"
         onClick={() => setShowPassword((prev) => !prev)}
       >
-        {showPassword ? "Elrejt" : "Mutat"}
+        {showPassword ? <img src={vibility_on} alt="visible" /> : <img src={vibility_off} />}
       </button>
 
-        <button type="submit">Regisztráció</button>
+        <button type="text-box">Regisztráció</button>
       </form>
     </div>
   )
