@@ -11,7 +11,8 @@ const bossSchema = new mongoose.Schema(
             required: true
         },
         ar: {
-            type: Number
+            type: Number,
+             require: true
         },
         kepek: [{
             type: String  
@@ -21,6 +22,6 @@ const bossSchema = new mongoose.Schema(
 });
     
 
-const BossModel = mongoose.model('Boss', bossSchema);
+const BossModel = mongoose.model('boss', bossSchema);
 
 module.exports = BossModel;

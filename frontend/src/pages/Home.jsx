@@ -205,9 +205,6 @@ const Home = () => {
     </div>
     </a>
   </section> */}
-<div className="fasz">  
-    <button className="tovabbi">További lehetőségek...</button>
-    </div>
     </>
   )
 }

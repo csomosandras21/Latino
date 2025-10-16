@@ -11,7 +11,8 @@ const versSchema = new mongoose.Schema(
             required: true
         },
         ar: {
-            type: Number
+             type: Number,
+             require: true
         },
         kepek: [{
             type: String  
@@ -21,6 +22,6 @@ const versSchema = new mongoose.Schema(
 });
     
 
-const VersModel = mongoose.model('Vers', versSchema);
+const VersModel = mongoose.model('versacce', versSchema);
 
 module.exports = VersModel;

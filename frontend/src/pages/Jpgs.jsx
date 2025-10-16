@@ -1,25 +1,27 @@
 import { useState, useEffect } from "react";
-import JeanPaul from "./Jpg";
+import JeanPaul from "./Jpg"
 
 
 const JeanPauls = () => {
-    let [jeanItems, setJpgsItems] = useState([]);
+    let [jeanItems, setJeanItems] = useState([]);
     let tomb = [];
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/jpgs');
+            const response = await fetch('http://localhost:3500/jpgs-frontend');
             const bejovoAdatok = await response.json();
-            const adatok = bejovoAdatok.adatok;
+            console.log(bejovoAdatok);
+
+              const adatok = bejovoAdatok.jpgs;
 
             if (response.ok)
             {
                 console.log(adatok);
                 for (let i = 0; i < adatok.length; i++) {
-                    tomb.push(<Jeans key={i} jean={adatok[i]} />);
+                    tomb.push(<JeanPaul key={i} jean={adatok[i]} />);
                 }
         
-                setJpgsItems(tomb);
+                setJeanItems(tomb);
             } 
             else console.log(adatok.msg);
 
@@ -32,7 +34,7 @@ const JeanPauls = () => {
     return (
         <div>
             <h1>Jean Pauls</h1>
-            {/* <div className="main-kontener">{diorItems}</div>; */}
+             <div className="main-kontener">{jeanItems}</div>; 
         </div>
     );
 }

@@ -26,7 +26,7 @@ const Navbar = () => {
     <Link to='/jpgs' >JEAN PAUL</Link>
     <Link to='/bosses' >BOSS</Link>
     <Link to='/versacces' >VERSACE</Link>
-    <Link to='/ysl' >YSL SAINT LAURENT</Link>
+    <Link to='/ysls' >YSL SAINT LAURENT</Link>
     <Link to='/creeds' >CREED</Link>
     <Link to='/dgs' >DOLCE & GABBANA</Link>
     <Link to='/guccis' >GUCCI</Link>

@@ -3,7 +3,7 @@ import Ysl from "./Ysl"
 
 
 const Ysls = () => {
-    let [YslItmes, setYslsItems] = useState([]);
+    let [yslItmes, setYslsItems] = useState([]);
     let tomb = [];
 
     useEffect(() => {
@@ -12,16 +12,16 @@ const Ysls = () => {
             const bejovoAdatok = await response.json();
             console.log(bejovoAdatok);
 
-            const adatok = bejovoAdatok.ysl;
+            const adatok = bejovoAdatok.ysls;
 
             if (response.ok)
             {
-                console.log(adatok);
                 for (let i = 0; i < adatok.length; i++) {
                     tomb.push(<Ysl key={i} ysl={adatok[i]} />);
                 }
-        
+                console.log(tomb);
                 setYslsItems(tomb);
+                console.log(adatok);
             } 
             else console.log(adatok.msg);
 
@@ -33,7 +33,7 @@ const Ysls = () => {
 
     return (
        <div>
-            <div className="main-kontener">{YslItmes}</div>;
+            <div className="main-kontener">{yslItmes}</div>;
         </div>
     );
 }

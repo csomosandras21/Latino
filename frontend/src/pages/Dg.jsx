@@ -2,21 +2,22 @@ import { useEffect, useState } from 'react';
 
 const Dolce = ({ dol }) => {
 
-    let [dolceItems, setDolcesItems] = useState([]);
-         let tomb =[]
-            useEffect(()=>{
-         for (let i = 0; i < dol.kep.length; i++) {
-                    tomb.push(<img src = {dol.kep[i]}/>);
+    // let [diorItems, setDiorsItems] = useState([]);
+    //      let tomb =[]
+    //         useEffect(()=>{
+    //      for (let i = 0; i < dio.kep.length; i++) {
+    //                 tomb.push(<img src = {dio.kep[i]}/>);
 
-                }
-                setDolcesItems(tomb);
-                }, [])
+    //             }
+    //             setDiorsItems(tomb);
+    //             }, [])
 
     return (
     <div className="tartalom-kontener">
-        <h1>{dol.cim}</h1>
-        <p>{dol.tartalom}</p>
-        <div className="parfum-kep-kontener"> {dolceItems}</div>
+        <h1>{dol.nev}</h1>
+        <p>{dol.fajta}</p>
+        <p>{dol.ar}FT</p>
+        <img src={dol.kepek} alt="" />
     </div>
     );
 };

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const bossSchema = new mongoose.Schema(
+const creedSchema = new mongoose.Schema(
     {
         nev:{
             type: String,
@@ -11,7 +11,8 @@ const bossSchema = new mongoose.Schema(
             required: true
         },
         ar: {
-            type: Number
+             type: Number,
+             require: true
         },
         kepek: [{
             type: String  
@@ -21,6 +22,6 @@ const bossSchema = new mongoose.Schema(
 });
     
 
-const CreedModel = mongoose.model('Creed', creedSchema);
+const CreedModel = mongoose.model('creed', creedSchema);
 
 module.exports = CreedModel;

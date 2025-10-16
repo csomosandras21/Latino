@@ -8,7 +8,6 @@ import Valentinos from './pages/Valentinos';
 import Jpgs from './pages/Jpgs';
 import Bosses from './pages/Bosses';
 import Versacces from './pages/Versacces';
-import Ysl from './pages/Ysls'
 import Creeds from './pages/Creeds';
 import Dgs from './pages/Dgs';
 import Guccis from './pages/Guccis';
@@ -16,6 +15,7 @@ import Burberrys from './pages/Burberrys';
 import Armani from './pages/Armanis';
 import Lattafas from './pages/Lattafas';
 import Register from './pages/Register';
+import Ysls from './pages/Ysls';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -34,7 +34,7 @@ function App() {
                 <Route path='/jpgs' element={<Jpgs />} />                                   
                 <Route path='/bosses' element={<Bosses />} />                  
                 <Route path='/versacces' element={<Versacces />} />                  
-                <Route path='/ysls' element={<Ysl />} />                  
+                <Route path='/ysls' element={<Ysls />} />                  
                 <Route path='/creeds' element={<Creeds />} />                  
                 <Route path='/dgs' element={<Dgs  />} />                  
                 <Route path='/guccis' element={<Guccis  />} />                  

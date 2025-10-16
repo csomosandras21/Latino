@@ -8,15 +8,17 @@ const Versacces = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/versacces');
+            const response = await fetch('http://localhost:3500/versacces-frontend');
             const bejovoAdatok = await response.json();
-            const adatok = bejovoAdatok.adatok;
+            console.log(bejovoAdatok);
+            
+            const adatok = bejovoAdatok.versacces;
 
             if (response.ok)
             {
                 console.log(adatok);
                 for (let i = 0; i < adatok.length; i++) {
-                    tomb.push(<Versacce key={i} ver={adatok[i]} />);
+                    tomb.push(<Versacce key={i} vers={adatok[i]} />);
                 }
         
                 setVersaccesItems(tomb);
@@ -31,8 +33,7 @@ const Versacces = () => {
 
     return (
         <div>
-            <h1>Versacces</h1>
-            {/* <div className="main-kontener">{diorItems}</div>; */}
+            <div className="main-kontener">{versacceItems}</div>;
         </div>
     );
 }

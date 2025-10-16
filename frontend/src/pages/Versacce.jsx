@@ -1,24 +1,26 @@
 import { useEffect, useState } from 'react';
 
-const Versacce = ({ ver }) => {
+const Versacce = ({ vers }) => {
 
-    let [versacceItems, setVersaccesItems] = useState([]);
-         let tomb =[]
-            useEffect(()=>{
-         for (let i = 0; i < ver.kep.length; i++) {
-                    tomb.push(<img src = {ver.kep[i]}/>);
+    // let [valentinoItems, setValentinosItems] = useState([]);
+    //      let tomb =[]
+    //         useEffect(()=>{
+    //      for (let i = 0; i < val.kep.length; i++) {
+    //                 tomb.push(<img src = {val.kep[i]}/>);
 
-                }
-                setVersaccesItems(tomb);
-                }, [])
+    //             }
+    //             setValentinosItems(tomb);
+    //             }, [])
 
     return (
     <div className="tartalom-kontener">
-        <h1>{ver.cim}</h1>
-        <p>{ver.tartalom}</p>
-        <div className="parfum-kep-kontener"> {versacceItems}</div>
+        <h1>{vers.nev}</h1>
+        <p>{vers.fajta}</p>
+        <p>{vers.ar}FT</p>
+        <img src={vers.kepek} alt="" />
     </div>
     );
 };
 
 export default Versacce;
+

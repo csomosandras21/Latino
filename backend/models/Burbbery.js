@@ -11,7 +11,8 @@ const burbberySchema = new mongoose.Schema(
             required: true
         },
         ar: {
-            type: Number
+            type: Number,
+             require: true
         },
         kepek: [{
             type: String  
@@ -21,6 +22,6 @@ const burbberySchema = new mongoose.Schema(
 });
     
 
-const BurbberyModel = mongoose.model('Burbbery', burbberySchema);
+const BurbberyModel = mongoose.model('burbbery', burbberySchema);
 
 module.exports = BurbberyModel;

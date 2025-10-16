@@ -2,21 +2,23 @@ import { useEffect, useState } from 'react';
 
 const Armani = ({ armani }) => {
 
-    let [ArmaniItems, setArmanisItems] = useState([]);
-         let tomb =[]
-            useEffect(()=>{
-         for (let i = 0; i < armani.kep.length; i++) {
-                    tomb.push(<img src = {armani.kep[i]}/>);
+    // let [ylsItems, setYslsItems] = useState([]);
+    //      let tomb =[]
+    //         useEffect(()=>{
+    //      for (let i = 0; i < ysl.kep.length; i++) {
+    //                 tomb.push(<img src = {ysl.kep[i]}/>);
 
-                }
-                setArmanisItems(tomb);
-                }, [])
+    //             }
+    //             setVersaccesItems(tomb);
+    //             }, [])
 
     return (
     <div className="tartalom-kontener">
-        <h1>{armani.cim}</h1>
-        <p>{armani.tartalom}</p>
-        <div className="parfum-kep-kontener"> {armaniItems}</div>
+        <h1>{armani.nev}</h1>
+        <p>{armani.fajta}</p>
+       <p>{armani.ar}FT</p>
+       <img src={armani.kepek} alt="" />
+
     </div>
     );
 };

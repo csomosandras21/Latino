@@ -8,15 +8,17 @@ const Creeds = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/creeds');
+            const response = await fetch('http://localhost:3500/creeds-frontend');
             const bejovoAdatok = await response.json();
-            const adatok = bejovoAdatok.adatok;
+            console.log(bejovoAdatok);
+            
+            const adatok = bejovoAdatok.creeds;
 
             if (response.ok)
             {
                 console.log(adatok);
                 for (let i = 0; i < adatok.length; i++) {
-                    tomb.push(<Creed key={i} cre={adatok[i]} />);
+                    tomb.push(<Creed key={i} creed={adatok[i]} />);
                 }
         
                 setCreedsItems(tomb);
@@ -31,8 +33,7 @@ const Creeds = () => {
 
     return (
         <div>
-            <h1>Creeds</h1>
-            {/* <div className="main-kontener">{diorItems}</div>; */}
+            <div className="main-kontener">{creedItems}</div>;
         </div>
     );
 }

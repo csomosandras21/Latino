@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './Parfumok.css'
 
 const Ysl = ({ ysl }) => {
 
@@ -13,10 +14,13 @@ const Ysl = ({ ysl }) => {
     //             }, [])
 
     return (
-    <div className="tartalom-kontener">
-        <h1>{ysl.nev}</h1>
-        <p>{ysl.fajta}</p>
-       <img src={ysl.kepek} alt="" />
+    <div className=".grid-container">   
+       <div className="tartalom-kontener">
+            <h1>{ysl.nev}</h1>
+              <p>{ysl.fajta}</p>
+              <p>{ysl.ar}FT</p>
+               <img src={ysl.kepek} alt="" />
+       </div>
     </div>
     );
 };

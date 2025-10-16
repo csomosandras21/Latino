@@ -8,9 +8,11 @@ const Guccis = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/guccis');
+            const response = await fetch('http://localhost:3500/guccis-frontend');
             const bejovoAdatok = await response.json();
-            const adatok = bejovoAdatok.adatok;
+            console.log(bejovoAdatok);
+
+            const adatok = bejovoAdatok.guccis;
 
             if (response.ok)
             {
@@ -19,7 +21,7 @@ const Guccis = () => {
                     tomb.push(<Gucci key={i} gu={adatok[i]} />);
                 }
         
-                setsItems(tomb);
+                setGuccisItems(tomb);
             } 
             else console.log(adatok.msg);
 
@@ -32,7 +34,7 @@ const Guccis = () => {
     return (
         <div>
             <h1>Guccis</h1>
-            {/* <div className="main-kontener">{diorItems}</div>; */}
+            <div className="main-kontener">{gucciItems}</div>;
         </div>
     );
 }

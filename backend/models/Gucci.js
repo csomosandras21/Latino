@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const gocciSchema = new mongoose.Schema(
+const gucciSchema = new mongoose.Schema(
     {
         nev:{
             type: String,
@@ -11,7 +11,8 @@ const gocciSchema = new mongoose.Schema(
             required: true
         },
         ar: {
-            type: Number
+           type: Number,
+             require: true
         },
         kepek: [{
             type: String  
@@ -21,6 +22,6 @@ const gocciSchema = new mongoose.Schema(
 });
     
 
-const GocciModel = mongoose.model('Gocci', gocciSchema);
+const GucciModel = mongoose.model('gucci', gucciSchema);
 
-module.exports = GocciModel;
+module.exports = GucciModel;

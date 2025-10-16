@@ -1,25 +1,27 @@
 import { useState, useEffect } from "react";
-import Boss from "./Armani";
+import Armani from "./Armani";
 
 
 const Armanis = () => {
-    let [ArmaniItems, setArmanisItems] = useState([]);
+    let [armaniItmes, setArmanisItems] = useState([]);
     let tomb = [];
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/armanis');
+            const response = await fetch('http://localhost:3500/armanis-frontend');
             const bejovoAdatok = await response.json();
-            const adatok = bejovoAdatok.adatok;
+            console.log(bejovoAdatok);
+
+            const adatok = bejovoAdatok.armanis;
 
             if (response.ok)
             {
-                console.log(adatok);
                 for (let i = 0; i < adatok.length; i++) {
-                    tomb.push(<Boss key={i} armani={adatok[i]} />);
+                    tomb.push(<Armani key={i} armani={adatok[i]} />);
                 }
-        
+                console.log(tomb);
                 setArmanisItems(tomb);
+                console.log(adatok);
             } 
             else console.log(adatok.msg);
 
@@ -30,9 +32,8 @@ const Armanis = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Armani</h1>
-            {/* <div className="main-kontener">{diorItems}</div>; */}
+       <div>
+            <div className="main-kontener">{armaniItmes}</div>;
         </div>
     );
 }

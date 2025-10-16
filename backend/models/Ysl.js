@@ -11,7 +11,8 @@ const yslSchema = new mongoose.Schema(
             required: true
         },
         ar: {
-            type: Number
+            type: Number,
+             require: true
         },
         kepek: [{
             type: String  
@@ -21,6 +22,6 @@ const yslSchema = new mongoose.Schema(
 });
     
 
-const 'YslModel = mongoose.model('Ysl', yslSchema);
+const YslModel = mongoose.model('Ysl', yslSchema);
 
 module.exports = YslModel;

@@ -8,9 +8,11 @@ const Dolces = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/dolces');
+            const response = await fetch('http://localhost:3500/dolces-frontend');
             const bejovoAdatok = await response.json();
-            const adatok = bejovoAdatok.adatok;
+            console.log(bejovoAdatok);
+
+            const adatok = bejovoAdatok.dgs;
 
             if (response.ok)
             {
@@ -32,7 +34,7 @@ const Dolces = () => {
     return (
         <div>
             <h1>Dolces</h1>
-            {/* <div className="main-kontener">{diorItems}</div>; */}
+             <div className="main-kontener">{dolceItems}</div>; 
         </div>
     );
 }

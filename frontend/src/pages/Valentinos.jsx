@@ -3,14 +3,16 @@ import Valentino from "./Valentino";
 
 
 const Valentinos = () => {
-    let [ValentinoItmes, setValentinosItems] = useState([]);
+    let [valentinoItems, setVAlentinosItems] = useState([]);
     let tomb = [];
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/valentinos');
+            const response = await fetch('http://localhost:3500/valentinos-frontend');
             const bejovoAdatok = await response.json();
-            const adatok = bejovoAdatok.adatok;
+            console.log(bejovoAdatok);
+            
+            const adatok = bejovoAdatok.valentinos;
 
             if (response.ok)
             {
@@ -19,7 +21,7 @@ const Valentinos = () => {
                     tomb.push(<Valentino key={i} val={adatok[i]} />);
                 }
         
-                setValentinosItems(tomb);
+                setVAlentinosItems(tomb);
             } 
             else console.log(adatok.msg);
 
@@ -31,8 +33,7 @@ const Valentinos = () => {
 
     return (
         <div>
-            <h1>Valentinos</h1>
-            {/* <div className="main-kontener">{diorItems}</div>; */}
+            <div className="main-kontener">{valentinoItems}</div>;
         </div>
     );
 }

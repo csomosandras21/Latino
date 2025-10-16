@@ -8,9 +8,11 @@ const Burberrys = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/burberrys');
+            const response = await fetch('http://localhost:3500/burberrys-frontend');
             const bejovoAdatok = await response.json();
-            const adatok = bejovoAdatok.adatok;
+            console.log(bejovoAdatok);
+
+            const adatok = bejovoAdatok.buberrys;
 
             if (response.ok)
             {
@@ -32,7 +34,7 @@ const Burberrys = () => {
     return (
         <div>
             <h1>Burberrys</h1>
-            {/* <div className="main-kontener">{diorItems}</div>; */}
+            <div className="main-kontener">{burberryItems}</div>;
         </div>
     );
 }

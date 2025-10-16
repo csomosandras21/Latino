@@ -11,7 +11,8 @@ const diorSchema = new mongoose.Schema(
             required: true
         },
         ar: {
-            type: Number
+            type: Number,
+            require: true
         },
         kepek: [{
             type: String  
@@ -21,6 +22,6 @@ const diorSchema = new mongoose.Schema(
 });
     
 
-const DiorModel = mongoose.model('Dior', diorSchema);
+const DiorModel = mongoose.model('dior', diorSchema);
 
 module.exports = DiorModel;

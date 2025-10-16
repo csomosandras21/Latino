@@ -11,7 +11,8 @@ const lattafaSchema = new mongoose.Schema(
             required: true
         },
         ar: {
-            type: Number
+             type: Number,
+             require: true
         },
         kepek: [{
             type: String  
@@ -21,6 +22,6 @@ const lattafaSchema = new mongoose.Schema(
 });
     
 
-const LattafaModel = mongoose.model('Lattafa', lattafaSchema);
+const LattafaModel = mongoose.model('lattafa', lattafaSchema);
 
 module.exports = LattafaModel;

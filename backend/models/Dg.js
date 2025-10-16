@@ -11,7 +11,8 @@ const dgSchema = new mongoose.Schema(
             required: true
         },
         ar: {
-            type: Number
+            type: Number,
+             require: true
         },
         kepek: [{
             type: String  
@@ -21,6 +22,6 @@ const dgSchema = new mongoose.Schema(
 });
     
 
-const DgModel = mongoose.model('Dg', dgSchema);
+const DgModel = mongoose.model('dg', dgSchema);
 
 module.exports = DgModel;

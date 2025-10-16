@@ -1,22 +1,23 @@
 import { useEffect, useState } from 'react';
 
-const Creed = ({ cre }) => {
+const Creed = ({ creed }) => {
 
-    let [creedItems, setCreedsItems] = useState([]);
-         let tomb =[]
-            useEffect(()=>{
-         for (let i = 0; i < cre.kep.length; i++) {
-                    tomb.push(<img src = {cre.kep[i]}/>);
+    // let [diorItems, setDiorsItems] = useState([]);
+    //      let tomb =[]
+    //         useEffect(()=>{
+    //      for (let i = 0; i < dio.kep.length; i++) {
+    //                 tomb.push(<img src = {dio.kep[i]}/>);
 
-                }
-                setCreedsItems(tomb);
-                }, [])
+    //             }
+    //             setDiorsItems(tomb);
+    //             }, [])
 
     return (
     <div className="tartalom-kontener">
-        <h1>{cre.cim}</h1>
-        <p>{cre.tartalom}</p>
-        <div className="parfum-kep-kontener"> {creedItems}</div>
+        <h1>{creed.nev}</h1>
+        <p>{creed.fajta}</p>
+        <p>{creed.ar}FT</p>
+        <img src={creed.kepek} alt="" />
     </div>
     );
 };

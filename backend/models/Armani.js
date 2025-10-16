@@ -11,7 +11,8 @@ const armaniSchema = new mongoose.Schema(
             required: true
         },
         ar: {
-            type: Number
+            type: Number,
+             require: true
         },
         kepek: [{
             type: String  
@@ -21,6 +22,6 @@ const armaniSchema = new mongoose.Schema(
 });
     
 
-const ArmaniModel = mongoose.model('Armani', armaniSchema);
+const ArmaniModel = mongoose.model('armani', armaniSchema);
 
 module.exports = ArmaniModel;

@@ -11,7 +11,8 @@ const vallSchema = new mongoose.Schema(
             required: true
         },
         ar: {
-            type: Number
+           type: Number,
+             require: true
         },
         kepek: [{
             type: String  
@@ -21,6 +22,6 @@ const vallSchema = new mongoose.Schema(
 });
     
 
-const VallModel = mongoose.model('Vall', vallSchema);
+const VallModel = mongoose.model('valentino', vallSchema);
 
 module.exports = VallModel;

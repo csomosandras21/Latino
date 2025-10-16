@@ -8,9 +8,11 @@ const Lattafas = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/lattafas');
+            const response = await fetch('http://localhost:3500/lattafas-frontend');
             const bejovoAdatok = await response.json();
-            const adatok = bejovoAdatok.adatok;
+            console.log(bejovoAdatok);
+            
+            const adatok = bejovoAdatok.lattafas;
 
             if (response.ok)
             {
@@ -32,7 +34,7 @@ const Lattafas = () => {
     return (
         <div>
             <h1>Lattafas</h1>
-            {/* <div className="main-kontener">{diorItems}</div>; */}
+             <div className="main-kontener">{LattafaItems}</div>;
         </div>
     );
 }

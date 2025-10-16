@@ -11,7 +11,8 @@ const jpgSchema = new mongoose.Schema(
             required: true
         },
         ar: {
-            type: Number
+            type: Number,
+             require: true
         },
         kepek: [{
             type: String  
@@ -21,6 +22,6 @@ const jpgSchema = new mongoose.Schema(
 });
     
 
-const JpgModel = mongoose.model('Jpg', jpgSchema);
+const JpgModel = mongoose.model('jpg', jpgSchema);
 
 module.exports = JpgModel;
