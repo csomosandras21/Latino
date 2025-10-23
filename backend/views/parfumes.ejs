@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/parfumes.css"
+        />
+        <title>Parfümök backend</title>
+    </head>
+    <body>
+        <%- include('nav.ejs') %>
+        <div id="parfumes-kontener">
+            <h1>Parfümök</h1>
+            <p><a href="/api/new-parfume">Új parfüm felvétele</a></p>
+            <div id="tarto">
+                <div id="szurok">
+                    <div class="szuro">
+                        <h4>Márkák:</h4>
+                        <div id="zsanerek">
+                            <div class="zsaner">
+                                <input
+                                    checked
+                                    type="checkbox"
+                                    id="zsaner-mind"
+                                />
+                                <label for="zsaner-mind">Minden márka</label>
+                            </div>
+                            <div id="belso-zsanerek">
+                                <% markak.forEach(elem => { %>
+                                <div class="zsaner">
+                                    <input
+                                        type="checkbox"
+                                        id="<%= elem %>"
+                                    />
+                                    <label for="<%= elem %>"><%= elem %></label>
+                                </div>
+                                <% }) %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="szuro">
+                        <h4>Kedvezmények:</h4>
+                        <div id="kedvezmenyek">
+                            <div class="kedvezmeny">
+                                <input
+                                    checked
+                                    type="checkbox"
+                                    id="kedvezmeny-mind"
+                                />
+                                <label for="kedvezmeny-mind"
+                                    >Minden kedvezmény</label
+                                >
+                            </div>
+                            <div id="belso-kedvezmenyek">
+                                <% kedvezmenyek.forEach(elem => { %>
+                                <div class="kedvezmeny">
+                                    <input
+                                        type="checkbox"
+                                        id="kedvezmeny<%= elem %>"
+                                    />
+                                    <label for="kedvezmeny<%= elem %>"
+                                        ><%= elem %>%</label
+                                    >
+                                </div>
+                                <% }) %>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="szures()">Szűrés</button>
+                </div>
+                <div id="konyvek">
+                    <% parfumes.forEach(elem => { %>
+                    <div class="konyv">
+                        <table>
+                            <tr>
+                                <td>Márka:</td>
+                                <td><%= elem.marka %></td>
+                            </tr>
+                            <tr>
+                                <td>Név:</td>
+                                <td><%= elem.nev %></td>
+                            </tr>
+                            <tr>
+                                <td>Fajta:</td>
+                                <td><%= elem.fajta %></td>
+                            </tr>
+                            <tr>
+                                <td>Ár:</td>
+                                <td><%= elem.ar %> Ft</td>
+                            </tr>
+                            <tr>
+                                <td>Kedvezmény:</td>
+                                <td><%= elem.kedvezmeny %>%</td>
+                            </tr>
+                            <tr>
+                                <td>Kép:</td>
+                                <td>
+                                    <img src="<%= elem.kep %>" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a
+                                        class="modosit"
+                                        href="/api/parfumes-backend/<%= elem._id %>"
+                                    >
+                                        Módosítás
+                                    </a>
+                                </td>
+                                <td>
+                                    <button
+                                        class="torol"
+                                        onclick="torles('<%= elem._id%>')"
+                                    >
+                                        Törlés
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+        <script src="/js/parfume-kezel.js"></script>
+        <script src="/js/szures.js"></script>
+    </body>
+</html>

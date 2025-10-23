@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/new-parfume.css"
+        />
+        <title>Új parfüm felvétele</title>
+    </head>
+    <body>
+        <%- include('nav.ejs') %>
+        <div id="new-parfume-kontener">
+            <h1>Új parfüm felvétele</h1>
+            <form>
+                <table>
+                    <tr>
+                        <td>Márka:</td>
+                        <td>
+                            <select id="marka">
+                                <% for( let i = 0; i < markak.length; i++ ) { %>
+                                <option value="<%= markak[i] %>">
+                                    <%= markak[i] %>
+                                </option>
+                                <% } %>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Név:</td>
+                        <td>
+                            <input
+                                type="text"
+                                id="nev"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fajta:</td>
+                        <td>
+                            <input
+                                type="text"
+                                id="fajta"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ár:</td>
+                        <td>
+                            <input
+                                type="number"
+                                id="ar"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kedvezmény:</td>
+                        <td>
+                            <select id="kedvezmeny">
+                                <% for( let i = 0; i < kedvezmenyek.length; i++
+                                ) { %>
+                                <option value="<%= kedvezmenyek[i] %>">
+                                    <%= kedvezmenyek[i] %>
+                                </option>
+                                <% } %>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kép:</td>
+                        <td>
+                            <input
+                                type="text"
+                                id="kep"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button onclick="letrehoz(event)">Létrehoz</button>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <script src="/js/letrehoz.js"></script>
+    </body>
+</html>

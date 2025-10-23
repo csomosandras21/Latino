@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/parfume.css"
+        />
+        <title>Egy parfüm módosítása</title>
+    </head>
+    <body>
+        <%- include('nav.ejs') %>
+        <div id="parfume-kontener">
+            <h1>Egy parfüm módosítása</h1>
+            <form>
+                <table>
+                    <tr>
+                        <td>Márka:</td>
+                        <td>
+                            <select id="marka">
+                                <% for( let i = 0; i < markak.length; i++ ) { %>
+                                <% if (parfume.marka === markak[i]) { %>
+                                <option
+                                    value="<%= markak[i] %>"
+                                    selected
+                                >
+                                    <%= markak[i] %>
+                                </option>
+                                <% } else { %>
+                                <option value="<%= markak[i] %>">
+                                    <%= markak[i] %>
+                                </option>
+                                <% } %> <% } %>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Név:</td>
+                        <td>
+                            <input
+                                type="text"
+                                id="nev"
+                                value="<%= parfume.nev %>"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fajta:</td>
+                        <td>
+                            <input
+                                type="text"
+                                id="fajta"
+                                value="<%= parfume.fajta %>"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ár:</td>
+                        <td>
+                            <input
+                                type="number"
+                                id="ar"
+                                value="<%= parfume.ar %>"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kedvezmény:</td>
+                        <td>
+                            <select id="kedvezmeny">
+                                <% for( let i = 0; i < kedvezmenyek.length; i++
+                                ) { %> <% if (parfume.kedvezmeny ===
+                                kedvezmenyek[i]) { %>
+                                <option
+                                    value="<%= kedvezmenyek[i] %>"
+                                    selected
+                                >
+                                    <%= kedvezmenyek[i] %>
+                                </option>
+                                <% } else { %>
+                                <option value="<%= kedvezmenyek[i] %>">
+                                    <%= kedvezmenyek[i] %>
+                                </option>
+                                <% } %> <% } %>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Kép:</td>
+                        <td>
+                            <input
+                                type="text"
+                                id="kep"
+                                value="<%= parfume.kep %>"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button
+                                onclick="modosit(event, '<%= parfume._id %>')"
+                            >
+                                Módosít
+                            </button>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <script src="/js/parfume-modosit.js"></script>
+    </body>
+</html>
