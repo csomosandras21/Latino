@@ -1,4 +1,17 @@
-let markak = ['Armani', 'Boss', 'Burberry', 'Creed', 'Dior', 'Gucci', 'Valentino', 'Jean Paul', 'Versace', 'YSL Saint Laurent', 'Dolce & Gabbana', 'Lattafa'];
+let markak = [
+    'Armani',
+    'Boss',
+    'Burberry',
+    'Creed',
+    'Dior',
+    'Gucci',
+    'Valentino',
+    'Jean Paul',
+    'Versace',
+    'YSL Saint Laurent',
+    'Dolce & Gabbana',
+    'Lattafa',
+];
 let kedvezmenyek = [0, 10, 20, 30];
 let belsoZsanerek = document.querySelector('#belso-zsanerek');
 let belsoKedvezmenyek = document.querySelector('#belso-kedvezmenyek');
@@ -22,16 +35,20 @@ if (!zsanerMind.checked) {
 
 function szures() {
     let szuresek = [];
+
     if (zsanerMind.checked) {
         szuresek.push(markak);
     } else {
         let tomb = [];
         for (let i = 0; i < markak.length; i++) {
-            let zsaner = document.querySelector(`#${markak[i]}`);
+            console.log(markak[i].replaceAll(' ', '_').replaceAll('&', 'a'));
+            let zsaner = document.querySelector(
+                `#${markak[i].replaceAll(' ', '_').replaceAll('&', 'a')}`
+            );
+            console.log(zsaner);
             if (zsaner.checked) tomb.push(markak[i]);
         }
-        console.log(tomb);
-        
+
         szuresek.push(tomb);
     }
 
@@ -49,6 +66,7 @@ function szures() {
     }
 
     if (zsanerMind.checked && kedvezmenyMind.checked) szuresek = [];
+    console.log('Szűrések: ' + szuresek);
 
     const kuld = JSON.stringify({ szuresek });
 
