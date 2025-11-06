@@ -1,4 +1,4 @@
-let markak = ['Armani', 'Boss', 'Burberry', 'Creed', 'Dior', 'Gucci'];
+let markak = ['Armani', 'Boss', 'Burberry', 'Creed', 'Dior', 'Gucci', 'Valentino', 'Jean Paul', 'Versace', 'YSL Saint Laurent', 'Dolce & Gabbana', 'Lattafa'];
 let kedvezmenyek = [0, 10, 20, 30];
 let belsoZsanerek = document.querySelector('#belso-zsanerek');
 let belsoKedvezmenyek = document.querySelector('#belso-kedvezmenyek');
@@ -30,6 +30,8 @@ function szures() {
             let zsaner = document.querySelector(`#${markak[i]}`);
             if (zsaner.checked) tomb.push(markak[i]);
         }
+        console.log(tomb);
+        
         szuresek.push(tomb);
     }
 
