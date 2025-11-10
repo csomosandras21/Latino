@@ -18,7 +18,7 @@ const JeanPaul = ({ jean }) => {
         <h1>{jean.nev}</h1>
         <p>{jean.fajta}</p>
         <p>{jean.ar}FT</p>
-        <img src={jean.kepek} alt="" />
+        <img src={jean.kep} alt="" />
     </div>
     );
 };

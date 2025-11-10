@@ -8,17 +8,20 @@ const JeanPauls = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/jpgs-frontend');
+            const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
-            console.log(bejovoAdatok);
 
-              const adatok = bejovoAdatok.jpgs;
-
+            
+            const adatok = bejovoAdatok.parfumes;
+             const jpgs = adatok.filter(elem => elem.marka === 'Jean Paul')
+            console.log(jpgs);
+            
+            
             if (response.ok)
             {
                 console.log(adatok);
-                for (let i = 0; i < adatok.length; i++) {
-                    tomb.push(<JeanPaul key={i} jean={adatok[i]} />);
+                for (let i = 0; i < jpgs.length; i++) {
+                    tomb.push(<JeanPaul key={i} jean={jpgs[i]} />);
                 }
         
                 setJeanItems(tomb);

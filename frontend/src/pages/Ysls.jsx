@@ -8,22 +8,23 @@ const Ysls = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/ysls-frontend');
+            const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
-            console.log(bejovoAdatok);
-
-            const adatok = bejovoAdatok.ysls;
+            
+            const adatok = bejovoAdatok.parfumes;
+            const ysls = adatok.filter(elem => elem.marka === 'YSL Saint Laurent')
+            console.log(ysls);
 
             if (response.ok)
             {
-                for (let i = 0; i < adatok.length; i++) {
-                    tomb.push(<Ysl key={i} ysl={adatok[i]} />);
-                }
-                console.log(tomb);
-                setYslsItems(tomb);
                 console.log(adatok);
+                for (let i = 0; i < ysls.length; i++) {
+                    tomb.push(<Ysl key={i} ysl={ysls[i]} />);
+                }
+                setYslsItems(tomb);
+              
             } 
-            else console.log(adatok.msg);
+            else console.log(ysls.msg);
 
         }
 

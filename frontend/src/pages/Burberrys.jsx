@@ -8,22 +8,23 @@ const Burberrys = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/burberrys-frontend');
+            const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
-            console.log(bejovoAdatok);
-
-            const adatok = bejovoAdatok.buberrys;
-
+            
+            const adatok = bejovoAdatok.parfumes;
+            const burberries = adatok.filter(elem => elem.marka === 'Burberry')
+            console.log(burberries);
+            
             if (response.ok)
-            {
+                {
                 console.log(adatok);
-                for (let i = 0; i < adatok.length; i++) {
-                    tomb.push(<Burberry key={i} bur={adatok[i]} />);
+                for (let i = 0; i < burberries.length; i++) {
+                    tomb.push(<Burberry key={i} bur={burberries[i]} />);
                 }
         
                 setBurberrysItems(tomb);
             } 
-            else console.log(adatok.msg);
+            else console.log(burberries.msg);
 
         }
 

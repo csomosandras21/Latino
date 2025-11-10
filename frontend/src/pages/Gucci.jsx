@@ -17,7 +17,7 @@ const Gucci = ({ gu }) => {
         <h1>{gu.nev}</h1>
         <p>{gu.fajta}</p>
         <p>{gu.ar}FT</p>
-        <img src={gu.kepek} alt="" />
+        <img src={gu.kep} alt="" />
     </div>
     );
 };

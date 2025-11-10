@@ -19,7 +19,7 @@ const Ysl = ({ ysl }) => {
             <h1>{ysl.nev}</h1>
               <p>{ysl.fajta}</p>
               <p>{ysl.ar}FT</p>
-               <img src={ysl.kepek} alt="" />
+               <img src={ysl.kep} alt="" />
        </div>
     </div>
     );

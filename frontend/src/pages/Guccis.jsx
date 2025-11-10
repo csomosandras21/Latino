@@ -8,22 +8,23 @@ const Guccis = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/guccis-frontend');
+            const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
-            console.log(bejovoAdatok);
 
-            const adatok = bejovoAdatok.guccis;
+            const adatok = bejovoAdatok.parfumes;
+            const guccies = adatok.filter(elem => elem.marka === 'Gucci')
+            console.log(guccies);
 
             if (response.ok)
             {
                 console.log(adatok);
-                for (let i = 0; i < adatok.length; i++) {
-                    tomb.push(<Gucci key={i} gu={adatok[i]} />);
+                for (let i = 0; i < guccies.length; i++) {
+                    tomb.push(<Gucci key={i} gu={guccies[i]} />);
                 }
         
                 setGuccisItems(tomb);
             } 
-            else console.log(adatok.msg);
+            else console.log(guccies.msg);
 
         }
 

@@ -8,22 +8,23 @@ const Versacces = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/versacces-frontend');
+            const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
-            console.log(bejovoAdatok);
             
-            const adatok = bejovoAdatok.versacces;
+            const adatok = bejovoAdatok.parfumes;
+            const versacces = adatok.filter(elem => elem.marka === 'Versace')
+            console.log(versacces);
 
             if (response.ok)
             {
                 console.log(adatok);
-                for (let i = 0; i < adatok.length; i++) {
-                    tomb.push(<Versacce key={i} vers={adatok[i]} />);
+                for (let i = 0; i < versacces.length; i++) {
+                    tomb.push(<Versacce key={i} vers={versacces[i]} />);
                 }
         
                 setVersaccesItems(tomb);
             } 
-            else console.log(adatok.msg);
+            else console.log(versacces.msg);
 
         }
 

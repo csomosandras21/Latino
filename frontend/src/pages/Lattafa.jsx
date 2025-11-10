@@ -17,7 +17,7 @@ const Lattafa = ({ lat }) => {
         <h1>{lat.nev}</h1>
         <p>{lat.fajta}</p>
         <p>{lat.ar}FT</p>
-        <img src={lat.kepek} alt="" />
+        <img src={lat.kep} alt="" />
     </div>
     );
 };

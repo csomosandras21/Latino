@@ -17,7 +17,7 @@ const Creed = ({ creed }) => {
         <h1>{creed.nev}</h1>
         <p>{creed.fajta}</p>
         <p>{creed.ar}FT</p>
-        <img src={creed.kepek} alt="" />
+        <img src={creed.kep} alt="" />
     </div>
     );
 };

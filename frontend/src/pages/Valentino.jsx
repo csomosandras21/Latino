@@ -17,7 +17,7 @@ const Valentino = ({ val }) => {
         <h1>{val.nev}</h1>
         <p>{val.fajta}</p>
         <p>{val.ar}FT</p>
-        <img src={val.kepek} alt="" />
+        <img src={val.kep} alt="" />
     </div>
     );
 };

@@ -8,22 +8,23 @@ const Valentinos = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/valentinos-frontend');
+            const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
-            console.log(bejovoAdatok);
             
-            const adatok = bejovoAdatok.valentinos;
+            const adatok = bejovoAdatok.parfumes;
+            console.log(bejovoAdatok);
+            const valentinos = adatok.filter(elem => elem.marka === 'Valentino')
 
             if (response.ok)
             {
                 console.log(adatok);
-                for (let i = 0; i < adatok.length; i++) {
-                    tomb.push(<Valentino key={i} val={adatok[i]} />);
+                for (let i = 0; i < valentinos.length; i++) {
+                    tomb.push(<Valentino key={i} val={valentinos[i]} />);
                 }
         
                 setVAlentinosItems(tomb);
             } 
-            else console.log(adatok.msg);
+            else console.log(diors.msg);
 
         }
 
