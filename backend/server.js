@@ -3,6 +3,7 @@ require('dotenv').config();
 const path = require('node:path');
 const express = require('express');
 const cors = require('cors');
+const bcrypt = require('bcrypt');
 const app = express();
 
 const userRoutes = require('./routes/userRoutesBackend.js');
@@ -50,6 +51,14 @@ app.get('/acaunt', (req, res) => {
 app.use('/api/parfumes-backend', require('./routes/parfumesRoutesBackend.js'));
 app.use('/api/new-parfume', require('./routes/newParfumeRoutesBackend.js'));
 app.use('/api/szures-parfume', require('./routes/szuresParfumesBackend'));
+
+
+app.use('/api/users-backend', require('./routes/userRoutesBackend.js'));
+app.use('/api/new-user', require('./routes/newUserRoutesBackend.js'));
+
+
+
+
 
 // Később törlendő!
 app.use('/diors-frontend', require('./routes/diorsRoutesFrontend.js'));

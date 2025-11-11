@@ -43,7 +43,8 @@ const Login = () => {
          {showPassword ? <img src={vibility_on} alt="visible" /> : <img src={vibility_off} />}
       </button>
 
-        <button type="submit">Belépés</button>
+      <a href="/"><button type="submit"> Belépés</button></a>
+        
    
 
     

@@ -1,26 +1,71 @@
 <!DOCTYPE html>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/users.css">
-    <title>Felhasználók</title>
-</head>
-<body>
-    <%- include('nav.ejs') %>
-    <div id="users-kontener">
-        <h1>Felhasználók</h1>
-        <ul>
-            <% usersBackend.forEach(elem => { %>
-                <li>
-                    <div class="user-kontener">
-                        <h1>Név: <%= elem.nev %></h1>
-                        <p>Státusz: <%= elem.statusz %></p>
-                        <a href="/users-backend/<%= elem.id %>">Adatok módosítása</a>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/parfumes.css"
+        />
+        <title>User backend</title>
+    </head>
+    <body>
+        <%- include('nav.ejs') %>
+        <div id="user-kontener">
+            <h1>Felhasználok</h1>
+            <div id="tarto">
+                <div id="szurok">
+                    <div class="szuro">
+                        <h4>Felhasználok:</h4>
+                        
+                    
+                    <button onclick="szures()">Szűrés</button>
+                </div>
+                <div id="konyvek">
+                    <% users.forEach(elem => { %>
+                    <div class="konyv">
+                        <table>
+                            
+                            <tr>
+                                <td>Név:</td>
+                                <td><%= elem.nev %></td>
+                            </tr>
+                            <tr>
+                                <td>Email:</td>
+                                <td><%= elem.email %></td>
+                            </tr>
+                            <tr>
+                                <td>Jelszo:</td>
+                                <td><%= elem.jelszo %></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a
+                                        class="modosit"
+                                        href="/api/parfumes-backend/<%= elem._id %>"
+                                    >
+                                        Módosítás
+                                    </a>
+                                </td>
+                                <td>
+                                    <button
+                                        class="torol"
+                                        onclick="torles('<%= elem._id%>')"
+                                    >
+                                        Törlés
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
-                </li>
-            <% }) %>
-        </ul>
-    </div>
-</body>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+        <script src="/js/user-kezel"></script>
+        <script src="/js/szures.js"></script>
+    </body>
 </html>

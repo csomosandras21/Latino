@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <link
+            rel="stylesheet"
+            href="/css/parfume.css"
+        />
+        <title>Egy Felhasználó MOdositása</title>
+    </head>
+    <body>
+        <%- include('nav.ejs') %>
+        <div id="user-kontener">
+            <h1>Egy Felhasználó MOdositása</h1>
+            <form>
+                <table>
+                    <tr>
+                        
+                    </tr>
+                    <tr>
+                        <td>Név:</td>
+                        <td>
+                            <input
+                                type="text"
+                                id="nev"
+                                value="<%= user.nev %>"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>
+                            <input
+                                type="text"
+                                id="email"
+                                value="<%= user.email %>"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jelszo:</td>
+                        <td>
+                            <input
+                                type="text"
+                                id="jelszo"
+                                value="<%= user.jelszo %>"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                        <td>Kép:</td>
+                        <td>
+                            <input
+                                type="text"
+                                id="kep"
+                                value="<%= user.kep %>"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button
+                                onclick="modosit(event, '<%= user._id %>')"
+                            >
+                                Módosít
+                            </button>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <script src="/js/user-modosit.js"></script>
+    </body>
+</html>

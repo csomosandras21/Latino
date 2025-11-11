@@ -2,9 +2,9 @@ const User = require('../models/User.js');
 
 exports.getAllUsersBackend = async (req, res) => {
     try {
-        const usersBackend = await User.find();
+        const users = await User.find();
         res.statusCode = 200;
-        return res.render('users.ejs', { usersBackend });
+        return res.render('users.ejs', { users });
     } catch (error) {
         return res.render('404.ejs');
     }

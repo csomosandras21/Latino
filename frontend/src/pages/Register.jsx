@@ -1,13 +1,28 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import vibility_off from '../../public/images/visibility_off.png';
 import vibility_on from '../../public/images/visibility_on.png';
 
-const Register = () => {
+const Register  = () => {
     const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
       const [password, setPassword] = useState('');
       const [repeatPassword, setRepeatPassword] = useState('');
       const [showPassword, setShowPassword] = useState(false);
     
+      const letrehoz = async () => {
+        console.log({username, email, password });
+        
+          const response = await fetch('http://localhost:3500/api/new-user', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            nev: username,
+            email,
+            jelszo: password,
+        })})};
+
       const handleSubmit = (be) => {
         be.preventDefault();
 
@@ -19,13 +34,24 @@ const Register = () => {
           window.alert('Nem elegendő hosszúságú jelszó!');
           return
         }
-        console.log('Bejelentkezés:', { email, password, repeatPassword, showPassword });
-      };
+
+        letrehoz();
+      }
 
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
         <h2>Regisztráció</h2>
+        
+        <label htmlFor="username">Felhasználó név:</label>
+        <input
+         type="text"
+          id="username"
+          value={username}
+          onChange={(be) => setUsername(be.target.value)}
+          required
+        />
+
         <label htmlFor="email">Email:</label>
         <input
           type="email"
@@ -34,6 +60,8 @@ const Register = () => {
           onChange={(be) => setEmail(be.target.value)}
           required
         />
+
+        
 
         <label htmlFor="password">Jelszó:</label>
         <input
