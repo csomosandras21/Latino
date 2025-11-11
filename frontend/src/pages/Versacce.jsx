@@ -17,7 +17,7 @@ const Versacce = ({ vers }) => {
         <h1>{vers.nev}</h1>
         <p>{vers.fajta}</p>
         <p>{vers.ar}FT</p>
-        <img src={vers.kepek} alt="" />
+        <img src={vers.kep} alt="" />
     </div>
     );
 };

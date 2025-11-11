@@ -8,17 +8,20 @@ const Creeds = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/creeds-frontend');
+            const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
-            console.log(bejovoAdatok);
-            
-            const adatok = bejovoAdatok.creeds;
+
+            const adatok = bejovoAdatok.parfumes;
+            const creeds = adatok.filter(elem => elem.marka === 'Creed')
+            console.log(creeds);
+
+
 
             if (response.ok)
             {
                 console.log(adatok);
-                for (let i = 0; i < adatok.length; i++) {
-                    tomb.push(<Creed key={i} creed={adatok[i]} />);
+                for (let i = 0; i < creeds.length; i++) {
+                    tomb.push(<Creed key={i} creed={creeds[i]} />);
                 }
         
                 setCreedsItems(tomb);

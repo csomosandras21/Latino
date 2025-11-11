@@ -8,22 +8,23 @@ const Lattafas = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/lattafas-frontend');
+            const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
-            console.log(bejovoAdatok);
             
-            const adatok = bejovoAdatok.lattafas;
+            const adatok = bejovoAdatok.parfumes;
+            const lattafas = adatok.filter(elem => elem.marka === 'Lattafa')
+            console.log(lattafas);
 
             if (response.ok)
             {
                 console.log(adatok);
-                for (let i = 0; i < adatok.length; i++) {
-                    tomb.push(<Lattafa key={i} lat={adatok[i]} />);
+                for (let i = 0; i < lattafas.length; i++) {
+                    tomb.push(<Lattafa key={i} lat={lattafas[i]} />);
                 }
         
                 setLattafasItems(tomb);
             } 
-            else console.log(adatok.msg);
+            else console.log(lattafas.msg);
 
         }
 

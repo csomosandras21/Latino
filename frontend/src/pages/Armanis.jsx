@@ -8,22 +8,25 @@ const Armanis = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/armanis-frontend');
+            const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
-            console.log(bejovoAdatok);
 
-            const adatok = bejovoAdatok.armanis;
+            const adatok = bejovoAdatok.parfumes;
+            const armanis = adatok.filter(elem => elem.marka === 'Armani')
+            console.log(armanis);
+            
+
+
 
             if (response.ok)
             {
-                for (let i = 0; i < adatok.length; i++) {
-                    tomb.push(<Armani key={i} armani={adatok[i]} />);
-                }
-                console.log(tomb);
-                setArmanisItems(tomb);
                 console.log(adatok);
+                for (let i = 0; i < armanis.length; i++) {
+                    tomb.push(<Armani key={i} armani={armanis[i]} />);
+                }
+                setArmanisItems(tomb);
             } 
-            else console.log(adatok.msg);
+            else console.log(armanis.msg);
 
         }
 

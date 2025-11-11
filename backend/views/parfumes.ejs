@@ -35,9 +35,12 @@
                                 <div class="zsaner">
                                     <input
                                         type="checkbox"
-                                        id="<%= elem %>"
+                                        id="<%= elem.replaceAll(' ', '_').replaceAll('&', 'a') %>"
                                     />
-                                    <label for="<%= elem %>"><%= elem %></label>
+                                    <label
+                                        for="<%= elem.replaceAll(' ', '_').replaceAll('&', 'a') %>"
+                                        ><%= elem %></label
+                                    >
                                 </div>
                                 <% }) %>
                             </div>

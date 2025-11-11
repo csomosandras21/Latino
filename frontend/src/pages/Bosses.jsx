@@ -8,22 +8,24 @@ const Bosses = () => {
 
     useEffect(() => {
         const szerverrolBetolt = async () => {
-            const response = await fetch('http://localhost:3500/bosses-frontend');
+            const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
-            console.log(bejovoAdatok);
 
-            const adatok = bejovoAdatok.bosses;
+            const adatok = bejovoAdatok.parfumes;
+            const bosses = adatok.filter(elem => elem.marka === 'Boss')
+            console.log(bosses);
 
             if (response.ok)
             {
-                for (let i = 0; i < adatok.length; i++) {
-                    tomb.push(<Boss key={i} boss={adatok[i]} />);
-                }
-                console.log(tomb);
-                setBossesItems(tomb);
                 console.log(adatok);
+                for (let i = 0; i < bosses.length; i++) {
+                    tomb.push(<Boss key={i} boss={bosses[i]} />);
+                }
+
+                setBossesItems(tomb);
+
             } 
-            else console.log(adatok.msg);
+            else console.log(bosses.msg);
 
         }
 

@@ -17,7 +17,7 @@ const Dolce = ({ dol }) => {
         <h1>{dol.nev}</h1>
         <p>{dol.fajta}</p>
         <p>{dol.ar}FT</p>
-        <img src={dol.kepek} alt="" />
+        <img src={dol.kep} alt="" />
     </div>
     );
 };

@@ -17,7 +17,7 @@ const Burberry = ({ bur }) => {
         <h1>{bur.nev}</h1>
         <p>{bur.fajta}</p>
         <p>{bur.ar}FT</p>
-        <img src={bur.kepek} alt="" />
+        <img src={bur.kep} alt="" />
     </div>
     );
 };

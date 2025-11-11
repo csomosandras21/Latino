@@ -17,7 +17,7 @@ const Dior = ({ dio }) => {
         <h1>{dio.nev}</h1>
         <p>{dio.fajta}</p>
         <p>{dio.ar}FT</p>
-        <img src={dio.kepek} alt="" />
+        <img src={dio.kep} alt="" />
     </div>
     );
 };

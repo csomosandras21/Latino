@@ -49,6 +49,7 @@ app.get('/acaunt', (req, res) => {
 });
 
 app.use('/api/parfumes-backend', require('./routes/parfumesRoutesBackend.js'));
+app.use('/api/parfumes-frontend', require('./routes/parfumesRoutesFrontend.js'));
 app.use('/api/new-parfume', require('./routes/newParfumeRoutesBackend.js'));
 app.use('/api/szures-parfume', require('./routes/szuresParfumesBackend'));
 

@@ -17,7 +17,7 @@ const Armani = ({ armani }) => {
         <h1>{armani.nev}</h1>
         <p>{armani.fajta}</p>
        <p>{armani.ar}FT</p>
-       <img src={armani.kepek} alt="" />
+       <img src={armani.kep} alt="" />
 
     </div>
     );
