@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const bcrypt = require('bcrypt');
 
 exports.getNewUserBackend = (req, res) => {
     try {
@@ -12,17 +13,20 @@ exports.getNewUserBackend = (req, res) => {
 
 exports.postNewUserBackend = async (req, res) => {
     try {
-        const {  nev, email, jelszo } = req.body;
+        const { nev, email, jelszo } = req.body;
         console.log({ nev, email, jelszo });
+
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(jelszo, salt);
 
         const newUser = new User({
             nev,
             email,
-            jelszo
+            jelszo: hashedPassword,
         });
         console.log(newUser);
-        
-        // await newUser.save();
+
+        await newUser.save();
 
         res.statusCode = 201;
         return res.json({ msg: 'Sikeres feltöltés!' });
