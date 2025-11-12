@@ -1,5 +1,7 @@
 async function torles(id) {
-    const response = await fetch(`/api/user-backend/${id}`, {
+    console.log(id);
+    
+    const response = await fetch(`/api/users-backend/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -8,6 +10,6 @@ async function torles(id) {
 
     if (response.ok) {
         window.alert('Sikeres felhasználó törlés!');
-        window.location.href = '/api/user-backend';
+        window.location.href = '/api/users-backend';
     }
 }

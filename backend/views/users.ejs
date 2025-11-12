@@ -17,13 +17,7 @@
         <div id="user-kontener">
             <h1>Felhasználok</h1>
             <div id="tarto">
-                <div id="szurok">
-                    <div class="szuro">
-                        <h4>Felhasználok:</h4>
-                        
-                    
-                    <button onclick="szures()">Szűrés</button>
-                </div>
+                <h4>Felhasználok:</h4>
                 <div id="konyvek">
                     <% users.forEach(elem => { %>
                     <div class="konyv">
@@ -45,7 +39,7 @@
                                 <td>
                                     <a
                                         class="modosit"
-                                        href="/api/parfumes-backend/<%= elem._id %>"
+                                        href="/api/users-backend/<%= elem._id %>"
                                     >
                                         Módosítás
                                     </a>
@@ -65,7 +59,6 @@
                 </div>
             </div>
         </div>
-        <script src="/js/user-kezel"></script>
-        <script src="/js/szures.js"></script>
+        <script src="/js/user-kezel.js"></script>
     </body>
 </html>

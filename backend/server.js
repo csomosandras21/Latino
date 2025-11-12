@@ -6,8 +6,8 @@ const cors = require('cors');
 const bcrypt = require('bcrypt');
 const app = express();
 
-const userRoutes = require('./routes/userRoutesBackend.js');
-app.use('/user', userRoutes);
+// const userRoutes = require('./routes/userRoutesBackend.js');
+// app.use('/user', userRoutes);
 
 app.use(express.static(path.resolve(__dirname, 'public')));
 app.set('view engine', 'ejs');
