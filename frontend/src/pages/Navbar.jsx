@@ -1,10 +1,24 @@
 import bag from '../../public/images/shopping_bag_24dp_FFF_FILL0_wght400_GRAD0_opsz24.png'
 import account from '../../public/images/account_circle_24dp_FFF_FILL0_wght400_GRAD0_opsz24.png'
 import favorite from '../../public/images/favorite_24dp_FFF_FILL0_wght400_GRAD0_opsz24.png'
-import menu from '../../public/images/menu_24dp_FFF_FILL0_wght400_GRAD0_opsz24.png'
+import logout from '../../public/images/logout.png'
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 const Navbar = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    const leker = localStorage.getItem('isLoggedIn');
+    setIsLoggedIn(leker);
+    console.log(leker);
+    
+  }, []);
+
+  function kilep() {
+    setIsLoggedIn(false);
+    localStorage.setItem('isLoggedIn', false);
+  }
+
   return (
     <div>
         <header>
@@ -12,12 +26,16 @@ const Navbar = () => {
     <div className="search-bar">
       <input type="text" placeholder="Keresés..." />
     </div>
+    {isLoggedIn ?  <>
     <div className="icons" style={{backgroundColor: 'black'}}>
       <a href=""> <img src={bag} alt="" /> </a>
       <Link to='/accaunt'> <img src={account} alt="" /> </Link>
       <a href=""> <img src={favorite} alt="" /> </a>
-      <a href=""> <img src={menu} alt=""   /> </a>
+      <Link to='/logout'> <img src={logout} alt="" onClick={kilep}/> </Link>
     </div>
+    </> : <>
+      <Link to='/accaunt'> <img src={account} alt="" /> </Link>
+    </>}
   </header>
 
   <nav className="navbar">

@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'; 
 import { useState, useEffect } from 'react';
 import vibility_off from '../../public/images/visibility_off.png';
 import vibility_on from '../../public/images/visibility_on.png';
@@ -28,7 +29,7 @@ const Register = () => {
 
         if (response.ok) {
             window.alert(valasz.msg);
-            // window.location.href = '/login';
+            window.location.href = '/accaunt';
         } else {
             window.alert(valasz.msg);
         }
