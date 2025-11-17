@@ -36,7 +36,7 @@ const JeanPauls = () => {
 
     return (
         <div>
-            <h1>Jean Pauls</h1>
+            {/* <h1>Jean Pauls</h1> */}
              <div className="main-kontener">{jeanItems}</div>; 
         </div>
     );

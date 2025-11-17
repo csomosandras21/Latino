@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Dior from "./Dior";
-
+import './Parfumok.css';
 
 const Diors = () => {
     let [diorItems, setDiorsItems] = useState([]);
