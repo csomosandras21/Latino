@@ -17,6 +17,7 @@ const Navbar = () => {
   function kilep() {
     setIsLoggedIn(false);
     localStorage.setItem('isLoggedIn', false);
+    window.location.href = '/home';
   }
 
   return (

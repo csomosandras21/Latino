@@ -48,14 +48,14 @@ const Home = () => {
             <div className="main-kontener">
                 {items.map(elem => {
                     return (
-                        <>
-                        <div className='tartalom-kontener'>
+                        
+                        <div className='tartalom-kontener' key={elem._id}>
                         <h1>{elem.marka}</h1>
                         <p>{elem.fajta}</p>
                         <p>{elem.ar}FT</p>
                         <img src={elem.kep} alt="" />
                         </div>
-                        </>
+                        
                     );
                 })}
             </div>;
