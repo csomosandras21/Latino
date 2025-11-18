@@ -1,0 +1,12 @@
+* {
+    padding: 5px;
+}
+
+button {
+    background-color: rgb(48, 190, 48);
+    color: white;
+}
+
+form {
+    border: 3px solid black;
+}

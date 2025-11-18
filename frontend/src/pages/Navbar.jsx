@@ -7,16 +7,21 @@ import { useEffect, useState } from 'react'
 
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
   useEffect(() => {
     const leker = localStorage.getItem('isLoggedIn');
-    setIsLoggedIn(leker);
-    console.log(leker);
+    const user = JSON.parse(localStorage.getItem('user'));
+    setIsLoggedIn(leker === '1');
+    if (user) setIsAdmin(user.admin);
+        else setIsAdmin(false);
     
   }, []);
 
   function kilep() {
     setIsLoggedIn(false);
-    localStorage.setItem('isLoggedIn', false);
+    localStorage.setItem('isLoggedIn', 0);
+    localStorage.removeItem('user');
     window.location.href = '/home';
   }
 
@@ -37,6 +42,14 @@ const Navbar = () => {
     </> : <>
       <Link to='/accaunt'> <img src={account} alt="" /> </Link>
     </>}
+    {isAdmin ?
+                <div className="backend-nav">
+                    <Link to="http://localhost:3500/api">Szerver</Link>
+                </div>
+                
+                :
+                <div className="backend-nav"></div>
+            }
   </header>
 
   <nav className="navbar">

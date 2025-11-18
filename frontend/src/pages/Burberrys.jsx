@@ -34,7 +34,6 @@ const Burberrys = () => {
 
     return (
         <div>
-            <h1>Burberrys</h1>
             <div className="main-kontener">{burberryItems}</div>;
         </div>
     );

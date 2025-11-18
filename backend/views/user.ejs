@@ -8,14 +8,14 @@
         />
         <link
             rel="stylesheet"
-            href="/css/parfume.css"
+            href="/css/user.css"
         />
-        <title>Egy Felhasználó MOdositása</title>
+        <title>Egy Felhasználó Módositása</title>
     </head>
     <body>
         <%- include('nav.ejs') %>
         <div id="user-kontener">
-            <h1>Egy Felhasználó MOdositása</h1>
+            <h1>Egy Felhasználó Módositása</h1>
             <form>
                 <table>
                     <tr>
@@ -41,7 +41,7 @@
                             />
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>Jelszo:</td>
                         <td>
                             <input
@@ -50,10 +50,10 @@
                                 value="<%= user.jelszo %>"
                             />
                         </td>
-                    </tr>
-                    <tr>
-                    </tr>
-                    <tr>
+                    </tr> -->
+                    
+                    
+                    <!-- <tr>
                         <td>Kép:</td>
                         <td>
                             <input
@@ -62,11 +62,27 @@
                                 value="<%= user.kep %>"
                             />
                         </td>
-                    </tr>
+                    </tr> -->
+
+                    <tr>
+                            <td>Admin:</td>
+                            <td>
+                                <label for="admin_igen">Igen</label>
+                                <input type="radio" id="admin_igen"
+                                name="admin_<%= user.email%>" value="true" <% if
+                                (user.admin === true) { %> checked <% } %> />
+
+                                <label for="admin_nem">Nem</label>
+                                <input type="radio" id="admin_nem"
+                                name="admin_<%= user.email%>" value="false" <%
+                                if (user.admin === false) { %> checked <%} %> />
+                            </td>
+                        </tr>
+                    
                     <tr>
                         <td>
                             <button
-                                onclick="modosit(event, '<%= user._id %>')"
+                                onclick="modosit(event, '<%= user._id %>', '<%= user.nev %>', '<%= user.email %>', 'admin_<%= user.email%>')"
                             >
                                 Módosít
                             </button>

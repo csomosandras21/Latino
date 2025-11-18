@@ -34,7 +34,7 @@ const Guccis = () => {
 
     return (
         <div>
-            <h1>Guccis</h1>
+           
             <div className="main-kontener">{gucciItems}</div>;
         </div>
     );

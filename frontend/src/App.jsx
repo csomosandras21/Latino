@@ -41,7 +41,7 @@ function App() {
                 <Route path='/guccis' element={<Guccis  />} />                  
                 <Route path='/burberrys' element={<Burberrys  />} />                  
                 <Route path='/armanis' element={<Armani />} />                  
-                <Route path='/lattafas' element={<Lattafas />} />                  
+                <Route path='/lattafas' element={<Lattafas />} />                                   
               </Routes>
         </BrowserRouter>
     </>

@@ -50,7 +50,7 @@ const Home = () => {
                     return (
                         
                         <div className='tartalom-kontener' key={elem._id}>
-                        <h1>{elem.marka}</h1>
+                        <h1>{elem.nev}</h1>
                         <p>{elem.fajta}</p>
                         <p>{elem.ar}FT</p>
                         <img src={elem.kep} alt="" />

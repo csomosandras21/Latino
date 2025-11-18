@@ -14,7 +14,7 @@ const router = express.Router();
     router.get('/', getAllUsersBackend);
     router.get('/:id', getOneUserBackend);
     router.post('/',  postUserBackend);
-    router.put('/modosit/:id', updateOneUserBackend);
+    router.put('/:id', updateOneUserBackend);
     router.delete('/:id', deleteOneUserBackend,);
 
     module.exports = router;

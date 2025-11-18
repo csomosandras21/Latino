@@ -1,26 +1,30 @@
-async function modosit(event, id) {
+async function modosit(event, id, nev, email, admi) {
     event.preventDefault();
-    const nev = document.querySelector('#nev').value;
-    const email = document.querySelector('#email').value;
-    const jelszo = document.querySelector('#jelszo').value;
-    const kep = document.querySelector('#kep').value;
-
-    const response = await fetch(`/api/user-backend/${id}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            nev,
-            email,
-            jelszo,
-            kep,
-        }),
-    });
-
-    if (response.ok) {
-        const resp = await response.json();
-        window.alert(resp.msg);
-        window.location.href = '/api/user-backend';
+    try {
+        const adminok = document.getElementsByName(admi);
+            let admin = '';
+            if (adminok[0].checked) admin = adminok[0].value;
+            else admin = adminok[1].value;
+        console.log(id, nev, email, admin);
+    
+        const response = await fetch(`/api/users-backend/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                nev,
+                email,
+                admin,
+            }),
+        });
+    
+        if (response.ok) {
+            const resp = await response.json();
+            window.alert(resp.msg);
+            window.location.href = '/api/users-backend';
+        }
+    } catch (error) {
+        console.log(error.message);
     }
 }

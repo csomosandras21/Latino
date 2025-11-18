@@ -36,6 +36,20 @@
                                 <td><%= elem.jelszo %></td>
                             </tr>
                             <tr>
+                            <td>Admin:</td>
+                            <td>
+                                <label for="admin_igen">Igen</label>
+                                <input type="radio" id="admin_igen"
+                                name="admin_<%= elem.email%>" value="true" <% if
+                                (elem.admin === true) { %> checked <% } %> />
+
+                                <label for="admin_nem">Nem</label>
+                                <input type="radio" id="admin_nem"
+                                name="admin_<%= elem.email%>" value="false" <%
+                                if (elem.admin === false) { %> checked <%} %> />
+                            </td>
+                        </tr>
+                            <tr>
                                 <td>
                                     <a
                                         class="modosit"

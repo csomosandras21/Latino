@@ -24,7 +24,8 @@ const Login = () => {
         // sikeres válasz
         const data = await response.json();
         if (data.success) {
-          localStorage.setItem('isLoggedIn', true);
+          localStorage.setItem('isLoggedIn', 1);          
+          localStorage.setItem('user', JSON.stringify(data.existingUser));          
           window.location.href = '/home';
         } else {
           setError('Helytelen email vagy jelszó!');

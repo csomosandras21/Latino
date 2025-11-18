@@ -34,7 +34,7 @@ const Lattafas = () => {
 
     return (
         <div>
-            <h1>Lattafas</h1>
+           
              <div className="main-kontener">{LattafaItems}</div>;
         </div>
     );

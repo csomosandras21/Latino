@@ -25,7 +25,7 @@ exports.postNewUserLoginBackend = async (req, res) => {
         }
 
         // Minden ok → sikeres belépés
-        return res.status(200).json({ success: true, msg: 'Sikeres belépés!' });
+        return res.status(200).json({ success: true, msg: 'Sikeres belépés!',  existingUser});
 
     } catch (error) {
         console.error(error);

@@ -36,7 +36,7 @@ const Dolces = () => {
 
     return (
         <div>
-            <h1>Dolces</h1>
+            
              <div className="main-kontener">{dolceItems}</div>; 
         </div>
     );
