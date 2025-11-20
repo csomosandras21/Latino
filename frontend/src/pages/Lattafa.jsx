@@ -2,18 +2,12 @@ import { useEffect, useState } from 'react';
 
 const Lattafa = ({ lat }) => {
 
-    // let [lattafaItems, setLattafasItems] = useState([]);
-    //      let tomb =[]
-    //         useEffect(()=>{
-    //      for (let i = 0; i < lat.kep.length; i++) {
-    //                 tomb.push(<img src = {lat.kep[i]}/>);
-
-    //             }
-    //             setLattafasItems(tomb);
-    //             }, [])
+    const atdob = (id) => {
+        window.location.href = `/egyedilattafa/${id}`;
+    }
 
     return (
-    <div className="tartalom-kontener">
+    <div className="tartalom-kontener" key={lat._id} onClick={() => atdob(lat._id)}>
         <h1>{lat.nev}</h1>
         <p>{lat.fajta}</p>
         <p>{lat.ar}FT</p>

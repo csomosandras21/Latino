@@ -1,23 +1,19 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Boss = ({ boss }) => {
 
-    // let [ylsItems, setYslsItems] = useState([]);
-    //      let tomb =[]
-    //         useEffect(()=>{
-    //      for (let i = 0; i < ysl.kep.length; i++) {
-    //                 tomb.push(<img src = {ysl.kep[i]}/>);
-
-    //             }
-    //             setVersaccesItems(tomb);
-    //             }, [])
+    const atdob = (id) => {
+        window.location.href = `/egyediboss/${id}`;
+    }
 
     return (
-    <div className="tartalom-kontener">
+    <div className="tartalom-kontener" key={boss._id} onClick={() => atdob(boss._id)}>
         <h1>{boss.nev}</h1>
         <p>{boss.fajta}</p>
        <p>{boss.ar}FT</p>
        <img src={boss.kep} alt="" />
+
 
     </div>
     );

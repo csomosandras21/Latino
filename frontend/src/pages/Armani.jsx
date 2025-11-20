@@ -2,18 +2,13 @@ import { useEffect, useState } from 'react';
 
 const Armani = ({ armani }) => {
 
-    // let [ylsItems, setYslsItems] = useState([]);
-    //      let tomb =[]
-    //         useEffect(()=>{
-    //      for (let i = 0; i < ysl.kep.length; i++) {
-    //                 tomb.push(<img src = {ysl.kep[i]}/>);
-
-    //             }
-    //             setVersaccesItems(tomb);
-    //             }, [])
-
+const atdob = (id) => {
+        window.location.href = `/egyediarmani/${id}`;
+        
+    }
     return (
-    <div className="tartalom-kontener">
+    <div className="tartalom-kontener"onClick={() => atdob(armani._id)} >
+    
         <h1>{armani.nev}</h1>
         <p>{armani.fajta}</p>
        <p>{armani.ar}FT</p>

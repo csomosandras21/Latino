@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Lattafa from "./Lattafa";
 
 
 const Lattafas = () => {
     let [LattafaItems, setLattafasItems] = useState([]);
     let tomb = [];
+    const previousLattafaItems = useRef([]);
 
     useEffect(() => {
+        previousLattafaItems.current = LattafaItems;
         const szerverrolBetolt = async () => {
             const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
@@ -30,7 +32,7 @@ const Lattafas = () => {
 
         szerverrolBetolt();
         
-    }, []);
+    }, [LattafaItems]);
 
     return (
         <div>

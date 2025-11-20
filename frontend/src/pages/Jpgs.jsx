@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import JeanPaul from "./Jpg"
 
 
 const JeanPauls = () => {
     let [jeanItems, setJeanItems] = useState([]);
     let tomb = [];
+    const previousJeanItems = useRef([]);
 
     useEffect(() => {
+        previousJeanItems.current = jeanItems;
         const szerverrolBetolt = async () => {
             const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
@@ -32,7 +34,7 @@ const JeanPauls = () => {
 
         szerverrolBetolt();
         
-    }, []);
+    }, [jeanItems]);
 
     return (
         <div>

@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Dior from "./Dior";
 import './Parfumok.css';
 
 const Diors = () => {
     let [diorItems, setDiorsItems] = useState([]);
     let tomb = [];
+    const previousDiorItems = useRef([]);
 
     useEffect(() => {
+        previousDiorItems.current = diorItems;
         const szerverrolBetolt = async () => {
             const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
@@ -19,7 +21,7 @@ const Diors = () => {
             {
                 console.log(adatok);
                 for (let i = 0; i < diors.length; i++) {
-                    tomb.push(<Dior key={i} dio={diors[i]} />);
+                    tomb.push(<Dior key={diors[i]._id} dio={diors[i]} />);
                 }
         
                 setDiorsItems(tomb);
@@ -31,7 +33,7 @@ const Diors = () => {
 
         szerverrolBetolt();
         
-    }, []);
+    }, [diorItems]);
 
     return (
         <div>

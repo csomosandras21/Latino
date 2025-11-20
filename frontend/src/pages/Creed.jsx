@@ -2,18 +2,12 @@ import { useEffect, useState } from 'react';
 
 const Creed = ({ creed }) => {
 
-    // let [diorItems, setDiorsItems] = useState([]);
-    //      let tomb =[]
-    //         useEffect(()=>{
-    //      for (let i = 0; i < dio.kep.length; i++) {
-    //                 tomb.push(<img src = {dio.kep[i]}/>);
-
-    //             }
-    //             setDiorsItems(tomb);
-    //             }, [])
-
+   
+const atdob = (id) => {
+        window.location.href = `/egyedicreed/${id}`;
+    }
     return (
-    <div className="tartalom-kontener">
+    <div className="tartalom-kontener" key={creed._id} onClick={() => atdob(creed._id)}>
         <h1>{creed.nev}</h1>
         <p>{creed.fajta}</p>
         <p>{creed.ar}FT</p>

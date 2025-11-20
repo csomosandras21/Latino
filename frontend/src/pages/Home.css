@@ -11,7 +11,7 @@
 
     header {
       background-color: black;
-      color: white;
+      color: rgb(255, 255, 255);
       padding: 15px 20px;
       display: flex;
       align-items: center;
@@ -26,7 +26,13 @@
     .logo {
       font-size: 34px;
       font-weight: bold;
-      letter-spacing: 23px;
+      letter-spacing: 23px; 
+      /* background: linear-gradient(to right,
+      red blue lightblue blue red);
+     -webkit-background-clip:text ;
+     background-clip:text ;
+     -webkit-text-fill-color: transparent; */
+     
     }
 
     .search-bar input {

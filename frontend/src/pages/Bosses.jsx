@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Boss from "./Boss";
 
 
 const Bosses = () => {
     let [bossItmes, setBossesItems] = useState([]);
     let tomb = [];
+    const previousBossItems = useRef([]);
 
     useEffect(() => {
+        previousBossItems.current = bossItmes;
         const szerverrolBetolt = async () => {
             const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
@@ -31,7 +33,7 @@ const Bosses = () => {
 
         szerverrolBetolt();
         
-    }, []);
+    }, [bossItmes]);;
 
     return (
        <div>

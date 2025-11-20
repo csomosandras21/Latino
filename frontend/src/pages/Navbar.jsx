@@ -2,6 +2,7 @@ import bag from '../../public/images/shopping_bag_24dp_FFF_FILL0_wght400_GRAD0_o
 import account from '../../public/images/account_circle_24dp_FFF_FILL0_wght400_GRAD0_opsz24.png'
 import favorite from '../../public/images/favorite_24dp_FFF_FILL0_wght400_GRAD0_opsz24.png'
 import logout from '../../public/images/logout.png'
+import server from '../../public/images/server.png'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
@@ -44,7 +45,7 @@ const Navbar = () => {
     </>}
     {isAdmin ?
                 <div className="backend-nav">
-                    <Link to="http://localhost:3500/api">Szerver</Link>
+                    <Link to="http://localhost:3500/api"> <img src={server} alt="" /> </Link>
                 </div>
                 
                 :

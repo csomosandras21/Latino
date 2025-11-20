@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Dolce from "./Dg";
 
 
 const Dolces = () => {
     let [dolceItems, setDolcesItems] = useState([]);
     let tomb = [];
+const previousDolceItems = useRef([]);
 
     useEffect(() => {
+        previousDolceItems.current = dolceItems;
         const szerverrolBetolt = async () => {
             const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
@@ -32,7 +34,7 @@ const Dolces = () => {
 
         szerverrolBetolt();
         
-    }, []);
+    }, [dolceItems]);
 
     return (
         <div>

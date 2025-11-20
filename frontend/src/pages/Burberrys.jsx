@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Burberry from "./Burberry";
 
 
 const Burberrys = () => {
     let [burberryItems, setBurberrysItems] = useState([]);
     let tomb = [];
+    const previousBurberryItems = useRef([]);
 
     useEffect(() => {
+       previousBurberryItems.current = burberryItems;
         const szerverrolBetolt = async () => {
             const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
@@ -30,7 +32,7 @@ const Burberrys = () => {
 
         szerverrolBetolt();
         
-    }, []);
+    }, [burberryItems]);
 
     return (
         <div>

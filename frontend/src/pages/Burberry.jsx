@@ -2,18 +2,12 @@ import { useEffect, useState } from 'react';
 
 const Burberry = ({ bur }) => {
 
-    // let [burberryItems, setBurberrysItems] = useState([]);
-    //      let tomb =[]
-    //         useEffect(()=>{
-    //      for (let i = 0; i < bur.kep.length; i++) {
-    //                 tomb.push(<img src = {bur.kep[i]}/>);
-
-    //             }
-    //             setBurberrysItems(tomb);
-    //             }, [])
+    const atdob = (id) => {
+        window.location.href = `/egyediburberry/${id}`;
+    }
 
     return (
-    <div className="tartalom-kontener">
+    <div className="tartalom-kontener" key={bur._id} onClick={() => atdob(bur._id)}>
         <h1>{bur.nev}</h1>
         <p>{bur.fajta}</p>
         <p>{bur.ar}FT</p>

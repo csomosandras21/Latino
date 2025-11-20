@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Creed from "./Creed";
 
 
 const Creeds = () => {
     let [creedItems, setCreedsItems] = useState([]);
     let tomb = [];
+    const previousCreedItems = useRef([]);
 
     useEffect(() => {
+        previousCreedItems.current = creedItems;
         const szerverrolBetolt = async () => {
             const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
@@ -32,7 +34,7 @@ const Creeds = () => {
 
         szerverrolBetolt();
         
-    }, []);
+    }, [creedItems]);
 
     return (
         <div>

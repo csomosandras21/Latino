@@ -2,18 +2,12 @@ import { useEffect, useState } from 'react';
 
 const Gucci = ({ gu }) => {
 
-    // let [diorItems, setDiorsItems] = useState([]);
-    //      let tomb =[]
-    //         useEffect(()=>{
-    //      for (let i = 0; i < dio.kep.length; i++) {
-    //                 tomb.push(<img src = {dio.kep[i]}/>);
 
-    //             }
-    //             setDiorsItems(tomb);
-    //             }, [])
-
+    const atdob = (id) => {
+         window.location.href = `/egyedigucci/${id}`;
+    }
     return (
-    <div className="tartalom-kontener">
+    <div className="tartalom-kontener" key={gu._id} onClick={() => atdob(gu._id)}>
         <h1>{gu.nev}</h1>
         <p>{gu.fajta}</p>
         <p>{gu.ar}FT</p>

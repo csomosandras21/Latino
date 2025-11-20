@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Versacce from "./Versacce";
 
 
 const Versacces = () => {
     let [versacceItems, setVersaccesItems] = useState([]);
     let tomb = [];
+    const previousVersacceItems = useRef([]);
 
     useEffect(() => {
+        previousVersacceItems.current = versacceItems;
         const szerverrolBetolt = async () => {
             const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
@@ -30,7 +32,7 @@ const Versacces = () => {
 
         szerverrolBetolt();
         
-    }, []);
+    }, [versacceItems]);
 
     return (
         <div>

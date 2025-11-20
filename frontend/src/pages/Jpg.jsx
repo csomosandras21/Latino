@@ -2,19 +2,12 @@ import { useEffect, useState } from 'react';
 
 const JeanPaul = ({ jean }) => {
 
-    // let [jeanItems, setJpgsItems] = useState([]);
-    //      let tomb =[]
-    //         useEffect(()=>{
-    //      for (let i = 0; i < jean.kep.length; i++) {
-    //                 tomb.push(<img src = {jean.kep[i]}/>);
-
-    //             }
-    //             setJpgsItems(tomb);
-    //             }, [])
-
+const atdob = (id) => {
+        window.location.href = `/egyedijpg/${id}`;
+    }
 
     return (
-    <div className="tartalom-kontener">
+   <div className="tartalom-kontener" key={jean._id} onClick={() => atdob(jean._id)}>
         <h1>{jean.nev}</h1>
         <p>{jean.fajta}</p>
         <p>{jean.ar}FT</p>

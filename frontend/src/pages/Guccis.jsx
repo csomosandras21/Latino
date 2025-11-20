@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Gucci from "./Gucci";
 
 
 const Guccis = () => {
     let [gucciItems, setGuccisItems] = useState([]);
     let tomb = [];
+    const previousGucciItems = useRef([]);
 
     useEffect(() => {
+        previousGucciItems.current = gucciItems;
         const szerverrolBetolt = async () => {
             const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
@@ -30,7 +32,7 @@ const Guccis = () => {
 
         szerverrolBetolt();
         
-    }, []);
+    }, [gucciItems]);
 
     return (
         <div>

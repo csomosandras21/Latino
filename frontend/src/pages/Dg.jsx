@@ -2,18 +2,11 @@ import { useEffect, useState } from 'react';
 
 const Dolce = ({ dol }) => {
 
-    // let [diorItems, setDiorsItems] = useState([]);
-    //      let tomb =[]
-    //         useEffect(()=>{
-    //      for (let i = 0; i < dio.kep.length; i++) {
-    //                 tomb.push(<img src = {dio.kep[i]}/>);
-
-    //             }
-    //             setDiorsItems(tomb);
-    //             }, [])
-
+const atdob = (id) => {
+        window.location.href = `/egyedidg/${id}`;
+    }
     return (
-    <div className="tartalom-kontener">
+    <div className="tartalom-kontener" key={dol._id} onClick={() => atdob(dol._id)}>
         <h1>{dol.nev}</h1>
         <p>{dol.fajta}</p>
         <p>{dol.ar}FT</p>

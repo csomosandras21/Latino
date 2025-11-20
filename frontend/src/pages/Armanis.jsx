@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Armani from "./Armani";
 
 
 const Armanis = () => {
     let [armaniItmes, setArmanisItems] = useState([]);
     let tomb = [];
+    const previousArmaniItems = useRef([]);
 
     useEffect(() => {
+        previousArmaniItems.current = armaniItmes;
         const szerverrolBetolt = async () => {
             const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
@@ -32,7 +34,7 @@ const Armanis = () => {
 
         szerverrolBetolt();
         
-    }, []);
+    }, [armaniItmes]);
 
     return (
        <div>

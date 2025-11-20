@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Valentino from "./Valentino";
 
 
 const Valentinos = () => {
     let [valentinoItems, setVAlentinosItems] = useState([]);
     let tomb = [];
+    const previousValentinoItems = useRef([]);
 
     useEffect(() => {
+        previousValentinoItems.current = valentinoItems;
         const szerverrolBetolt = async () => {
             const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
@@ -30,7 +32,7 @@ const Valentinos = () => {
 
         szerverrolBetolt();
         
-    }, []);
+    }, [valentinoItems]);
 
     return (
         <div>

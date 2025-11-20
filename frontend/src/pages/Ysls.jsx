@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Ysl from "./Ysl"
 
 
 const Ysls = () => {
     let [yslItmes, setYslsItems] = useState([]);
     let tomb = [];
+    const previousYslItems = useRef([]);
 
     useEffect(() => {
+        previousYslItems.current = yslItmes;
         const szerverrolBetolt = async () => {
             const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
@@ -30,7 +32,7 @@ const Ysls = () => {
 
         szerverrolBetolt();
         
-    }, []);
+    }, [yslItmes]);
 
     return (
        <div>

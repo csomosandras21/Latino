@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
-const EgyediDior = (id) => {
+const EgyediBurberry = (id) => {
   const params = useParams();
   console.log(params.id);
-  let [diorItem, setDiorItem] = useState([]);
+  let [burberryItem, setBurberryItem] = useState([]);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -12,10 +12,10 @@ const EgyediDior = (id) => {
               const bejovoAdatok = await response.json();
               
               const adatok = bejovoAdatok.parfumes;
-              const diorse = adatok.filter(elem => elem.marka === 'Dior')
-              console.log(diorse);
+              const burberrys = adatok.filter(elem => elem.marka === 'Burberry')
+              console.log(burberrys);
   
-              const itemD = diorse.filter(elem => elem._id === params.id);
+              const itemD = burberrys.filter(elem => elem._id === params.id);
   
               if (response.ok)
               {
@@ -24,7 +24,7 @@ const EgyediDior = (id) => {
                   //     tomb.push(<Dior key={i} dio={adatok[i]} />);
                   // }
           
-                  setDiorItem(itemD[0]);
+                  setBurberryItem(itemD[0]);
                   
               } 
               else console.log(adatok.msg);
@@ -37,10 +37,10 @@ const EgyediDior = (id) => {
   
   return (
     <div className="tartalom-kontener">
-            <h1>{diorItem.nev}</h1>
-            <p>{diorItem.fajta}</p>
-            <p>{diorItem.ar}FT</p>
-            <img src={diorItem.kep} alt="" />
+            <h1>{burberryItem.nev}</h1>
+            <p>{burberryItem.fajta}</p>
+            <p>{burberryItem.ar}FT</p>
+            <img src={burberryItem.kep} alt="" />
         
         
     </div>
@@ -48,4 +48,4 @@ const EgyediDior = (id) => {
   )
 }
 
-export default EgyediDior
+export default EgyediBurberry
