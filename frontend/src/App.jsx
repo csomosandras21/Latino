@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Accaunt from './pages/Accaunt'
 import Diors from './pages/Diors'
 import Navbar from './pages/Navbar';
+import Footer from './components/Footer';
 import Valentinos from './pages/Valentinos';
 import Jpgs from './pages/Jpgs';
 import Bosses from './pages/Bosses';
@@ -26,7 +27,6 @@ import EgyediDg from './components/EgyediDg';
 import EgyediLattafa from './components/EgyediLattafa';
 import EgyediJpg from './components/EgyediJpg';
 import EgyediValentino from './components/EgyediValentino';
-import EgyediVers from './components/EgyediVersacce';
 import EgyediVersacce from './components/EgyediVersacce';
 import EgyediYsl from './components/EgyediYsl';
 
@@ -66,8 +66,9 @@ function App() {
                 <Route path='/armanis' element={<Armani />} />
                 <Route path='/egyediarmani/:id' element={<EgyediArmani />} />                      
                 <Route path='/lattafas' element={<Lattafas />} />    
-                <Route path='/egyedilattafa/:id' element={<EgyediLattafa />} />                                
+                <Route path='/egyedilattafa/:id' element={<EgyediLattafa />} /> 
               </Routes>
+            <Footer />                               
         </BrowserRouter>
     </>
 

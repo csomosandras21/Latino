@@ -1,0 +1,142 @@
+/* Google FONT importálása */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+/* DIOR cím a lap tetején */
+.cim {
+  text-align: center;
+  font-size: 48px;
+  letter-spacing: 6px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  color: #000;
+  font-family: "Playfair Display", serif;
+}
+
+/* FŐ KONTÉNER — középre rendezve */
+.termek-kontener {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px; /* Notino-ban kisebb hézag */
+  max-width: 100%;
+  margin-left:95px ;
+  padding: 10px;
+  flex-wrap: wrap; /* mobilbarát */
+}
+
+/* BAL oldali kép */
+.termek-kep {
+  flex: 500px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 70px 340px; 
+  border-radius: 8px;
+}
+
+.termek-kep img {
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* JOBB oldali adatok */
+.termek-adatok {
+  flex: 1 1 350px;
+  font-family: "Playfair Display", serif;
+  float: right;
+}
+
+.termek-adatok h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #000;
+}
+
+.ar {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-top: 130px;
+    padding-right: 110px;
+}
+
+
+.fajta {
+    padding-top: 1px;
+}
+
+.nev {
+    padding-bottom:  auto;
+}
+
+.fajta:hover {
+    text-decoration: underline;
+}
+
+.nev:hover {
+    text-decoration: underline;
+}
+
+.termek-adatok p {
+
+  color: #555;
+  line-height: 1.6;
+}
+
+.termek-ar{
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 15px;
+  color: #000;
+}
+
+/* Vásárlás gomb */
+.vasarlas-gomb {
+  margin-top: 25px;
+  padding: 14px 20px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0s;
+  width: 300px;
+  margin-left: 55px;
+  
+}
+
+.darab {
+    font-size: 16px;
+    width: 65px;
+    height: 45px;
+    border-radius: 4px;
+    text-align: center;
+    border: 3   px solid black;
+}
+
+.vasarlas-gomb:hover {
+  background: white;
+  color: black;
+  border: #000 solid 2px;
+}
+
+/* Mobilra optimalizálás */
+@media (max-width: 768px) {
+  .termek-kontener {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .termek-adatok, .termek-kep {
+    width: 100%;
+  }
+
+  .termek-ar {
+    font-size: 24px;
+  }
+}

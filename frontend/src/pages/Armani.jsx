@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+
+
 const Armani = ({ armani }) => {
 
 const atdob = (id) => {
