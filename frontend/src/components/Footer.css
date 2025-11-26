@@ -1,0 +1,25 @@
+.labjegyzet {
+    background-color: black;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+.labjegyzet h1 {
+    padding-top: 10px;
+    color: white;
+    text-align: center;
+}
+
+.labjegyzet a {
+    padding-top: 10px;
+    color: white;
+    text-align: center;
+}
+
+.kerdesek h2 {
+    color: white;
+}
+
+.cimek {
+       transition: none;
+}

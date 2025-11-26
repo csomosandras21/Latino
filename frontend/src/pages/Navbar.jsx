@@ -53,7 +53,7 @@ const Navbar = () => {
             }
   </header>
 
-  <nav className="navbar">
+  <nav className='navbar'> 
     <Link to='/diors'>DIOR</Link> 
     <Link to='/valentinos' >VALENTINO</Link>
     <Link to='/jpgs' >JEAN PAUL</Link>

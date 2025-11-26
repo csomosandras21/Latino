@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import './Egyedi.css';
 
 const EgyediCreed = (id) => {
   const params = useParams();
@@ -36,16 +37,46 @@ const EgyediCreed = (id) => {
       }, []);
   
   return (
-    <div className="tartalom-kontener">
-            <h1>{creedItem.nev}</h1>
-            <p>{creedItem.fajta}</p>
-            <p>{creedItem.ar}FT</p>
-            <img src={creedItem.kep} alt="" />
+     <div className="oldal">
+
+    <h1 className="cim">CREED</h1>
+
+    <div className="termek-kontener">
+
+      {/* BAL - KÉP */}
+      <div className="termek-kep">
+        <img src={creedItem.kep} alt={creedItem.nev} />
+      </div>
+
+      {/* JOBB - SZÖVEG + GOMB */}
+      <div className="termek-adatok">
+        <div className='nev'>
+        <h2 className="termek-nev">{creedItem.nev}</h2>
+
+        </div>
+
+        <div className='fajta'>
+          <p className="termek-fajta">{creedItem.fajta}</p>
+        </div>
         
-        
+        <div className='ar'>
+        <p>100ml</p>
+        <p className="termek-ar">{creedItem.ar} FT</p>
+        </div>
+
+      <div className='gombok'>
+    <select className='darab'>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+        <button className="vasarlas-gomb">Kosárba</button>
+      </div>
+      </div>
+
     </div>
-    
-  )
+  </div>
+)
 }
 
 export default EgyediCreed

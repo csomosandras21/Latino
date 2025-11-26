@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import './Egyedi.css';
 
 const EgyediValentino = (id) => {
   const params = useParams();
@@ -36,16 +37,46 @@ const EgyediValentino = (id) => {
       }, []);
   
   return (
-    <div className="tartalom-kontener">
-            <h1>{valentinoItem.nev}</h1>
-            <p>{valentinoItem.fajta}</p>
-            <p>{valentinoItem.ar}FT</p>
-            <img src={valentinoItem.kep} alt="" />
+     <div className="oldal">
+
+    <h1 className="cim">VALENTINO</h1>
+
+    <div className="termek-kontener">
+
+      {/* BAL - KÉP */}
+      <div className="termek-kep">
+        <img src={valentinoItem.kep} alt={valentinoItem.nev} />
+      </div>
+
+      {/* JOBB - SZÖVEG + GOMB */}
+      <div className="termek-adatok">
+        <div className='nev'>
+        <h2 className="termek-nev">{valentinoItem.nev}</h2>
+
+        </div>
+
+        <div className='fajta'>
+          <p className="termek-fajta">{valentinoItem.fajta}</p>
+        </div>
         
-        
+        <div className='ar'>
+        <p>100ml</p>
+        <p className="termek-ar">{valentinoItem.ar} FT</p>
+        </div>
+
+      <div className='gombok'>
+    <select className='darab'>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+        <button className="vasarlas-gomb">Kosárba</button>
+      </div>
+      </div>
+
     </div>
-    
-  )
+  </div>
+)
 }
 
 export default EgyediValentino
