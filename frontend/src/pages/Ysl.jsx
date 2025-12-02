@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './Ysl.css'
+import './Parfumok.css'
 
 
 const Ysl = ({ ysl }) => {
@@ -9,7 +9,7 @@ const Ysl = ({ ysl }) => {
     }
 
     return (
-       <div className="Ysl-tartalom-kontener" key={ysl._id} onClick={() => atdob(ysl._id)}>
+       <div className="tartalom-kontener" key={ysl._id} onClick={() => atdob(ysl._id)}>
             <h1>{ysl.nev}</h1>
               <p>{ysl.fajta}</p>
               <p>{ysl.ar}FT</p>

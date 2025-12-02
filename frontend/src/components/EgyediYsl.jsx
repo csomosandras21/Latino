@@ -36,7 +36,7 @@ const EgyediYsl = (id) => {
           
       }, []);
   
-  rreturn (
+  return (
      <div className="oldal">
 
     <h1 className="cim">YSL</h1>
