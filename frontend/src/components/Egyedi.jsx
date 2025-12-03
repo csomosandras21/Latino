@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
 
-const EgyediYsl = (id) => {
+const Egyedi= (id) => {
   const params = useParams();
   console.log(params.id);
-  let [yslItem, setYslItem] = useState([]);
+  let [item, setItem] = useState([]);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -13,10 +13,8 @@ const EgyediYsl = (id) => {
               const bejovoAdatok = await response.json();
               
               const adatok = bejovoAdatok.parfumes;
-              const ysls = adatok.filter(elem => elem.marka === 'YSL Saint Laurent')
-              console.log(ysls);
   
-              const itemD = ysls.filter(elem => elem._id === params.id);
+              const itemD = adatok.filter(elem => elem._id === params.id);
   
               if (response.ok)
               {
@@ -25,7 +23,7 @@ const EgyediYsl = (id) => {
                   //     tomb.push(<Dior key={i} dio={adatok[i]} />);
                   // }
           
-                  setYslItem(itemD[0]);
+                  setItem(itemD[0]);
                   
               } 
               else console.log(adatok.msg);
@@ -37,31 +35,31 @@ const EgyediYsl = (id) => {
       }, []);
   
   return (
-     <div className="oldal">
+  <div className="oldal">
 
-    <h1 className="cim">YSL</h1>
+    <h1 className="cim">DIOR</h1>
 
     <div className="termek-kontener">
 
       {/* BAL - KÉP */}
       <div className="termek-kep">
-        <img src={yslItem.kep} alt={yslItem.nev} />
+        <img src={item.kep} alt={item.nev} />
       </div>
 
       {/* JOBB - SZÖVEG + GOMB */}
       <div className="termek-adatok">
         <div className='nev'>
-        <h2 className="termek-nev">{yslItem.nev}</h2>
+        <h2 className="termek-nev">{item.nev}</h2>
 
         </div>
 
         <div className='fajta'>
-          <p className="termek-fajta">{yslItem.fajta}</p>
+          <p className="termek-fajta">{item.fajta}</p>
         </div>
         
         <div className='ar'>
         <p>100ml</p>
-        <p className="termek-ar">{yslItem.ar} FT</p>
+        <p className="termek-ar">{item.ar} FT</p>
         </div>
 
       <div className='gombok'>
@@ -77,6 +75,8 @@ const EgyediYsl = (id) => {
     </div>
   </div>
 )
+
+
 }
 
-export default EgyediYsl
+export default Egyedi

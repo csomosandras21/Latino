@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import "./Jpg.css"
 
 const JeanPaul = ({ jean }) => {
 
@@ -7,7 +8,7 @@ const atdob = (id) => {
     }
 
     return (
-   <div className="tartalom-kontener" key={jean._id} onClick={() => atdob(jean._id)}>
+   <div className="jpg-tartalom-kontener" key={jean._id} onClick={() => atdob(jean._id)}>
         <h1>{jean.nev}</h1>
         <p>{jean.fajta}</p>
         <p>{jean.ar}FT</p>

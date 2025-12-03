@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import "./Armani.css"
 
 
 
@@ -9,7 +10,7 @@ const atdob = (id) => {
         
     }
     return (
-    <div className="tartalom-kontener"onClick={() => atdob(armani._id)} >
+    <div className="armani-tartalom-kontener"onClick={() => atdob(armani._id)} >
     
         <h1>{armani.nev}</h1>
         <p>{armani.fajta}</p>

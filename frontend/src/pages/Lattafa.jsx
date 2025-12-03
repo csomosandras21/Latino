@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import "./Lattafa.css"
 
 const Lattafa = ({ lat }) => {
 
@@ -7,7 +8,7 @@ const Lattafa = ({ lat }) => {
     }
 
     return (
-    <div className="tartalom-kontener" key={lat._id} onClick={() => atdob(lat._id)}>
+    <div className="lattafa-tartalom-kontener" key={lat._id} onClick={() => atdob(lat._id)}>
         <h1>{lat.nev}</h1>
         <p>{lat.fajta}</p>
         <p>{lat.ar}FT</p>

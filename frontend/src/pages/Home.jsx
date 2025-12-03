@@ -2,7 +2,7 @@ import lat1 from '../../public/images/Latino_01.png'
 import lat2 from '../../public/images/Latino.png'
 import lat3 from '../../public/images/Beige Simple Perfume Logo.png'
 import './Home.css'
-// import './Parfumok.css'
+import './Parfums.css'
 
 import { useEffect, useState } from 'react'
 
@@ -43,13 +43,16 @@ const Home = () => {
         
     }, []);
 
+    const atdob = (id) => {
+        window.location.href = `/egyedi/${id}`;
+    }
+
     return (
         <div>
             <div className="main-kontener">
                 {items.map(elem => {
                     return (
-                        
-                        <div className='tartalom-kontener' key={elem._id}>
+                        <div className='tartalom-kontener' key={elem._id} onClick={() => atdob(elem._id)}>
                         <h1>{elem.nev}</h1>
                         <p>{elem.fajta}</p>
                         <p>{elem.ar}FT</p>

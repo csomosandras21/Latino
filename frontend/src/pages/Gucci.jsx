@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import "./Gucci.css"
 
 const Gucci = ({ gu }) => {
 
@@ -7,7 +8,7 @@ const Gucci = ({ gu }) => {
          window.location.href = `/egyedigucci/${id}`;
     }
     return (
-    <div className="tartalom-kontener" key={gu._id} onClick={() => atdob(gu._id)}>
+    <div className="gucci-tartalom-kontener" key={gu._id} onClick={() => atdob(gu._id)}>
         <h1>{gu.nev}</h1>
         <p>{gu.fajta}</p>
         <p>{gu.ar}FT</p>

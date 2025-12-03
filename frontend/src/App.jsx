@@ -18,6 +18,7 @@ import Lattafas from './pages/Lattafas';
 import Register from './pages/Register';
 import Ysls from './pages/Ysls';
 import EgyediDior from './components/EgyediDior';
+import Egyedi from './components/Egyedi'
 import EgyediBoss from './components/EgyediBoss';
 import EgyediArmani from './components/EgyediArmani';
 import EgyediBurberry from './components/EgyediBurberry';
@@ -54,7 +55,8 @@ function App() {
                 <Route path='/versacces' element={<Versacces />} /> 
                 <Route path='/egyediversacce/:id' element={<EgyediVersacce />} />                  
                 <Route path='/ysls' element={<Ysls />} />      
-                <Route path='/egyediysl/:id' element={<EgyediYsl />} />              
+                <Route path='/egyediysl/:id' element={<EgyediYsl />} />     
+                <Route path='/egyedi/:id' element={<Egyedi />} />         
                 <Route path='/creeds' element={<Creeds />} />
                 <Route path='/egyedicreed/:id' element={<EgyediCreed />} />                      
                 <Route path='/dgs' element={<Dgs  />} />
