@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <div>
         <header>
-    <Link to='/'> <div className="logo">LATINO</div></Link>
+    <div className="logo"><Link to='/'> LATINO</Link></div>
     <div className="search-bar">
       <input type="text" placeholder="Keresés..." />
     </div>

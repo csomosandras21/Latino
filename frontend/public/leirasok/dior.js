@@ -1,6 +1,7 @@
 let diorAdatok = [
     {
         nev: 'DIOR Sauvage',
+        fajta: 'Eau De Parfum',
         fej: 'bergamott',
         sziv: 'vanília',
         alap: '',
@@ -9,6 +10,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Sauvage Elixir',
+        fajta: 'parfüm kivonat uraknak',
         fej: 'grapefruit, fahéj, szerecsendió, kardamon',
         sziv: 'levendula, benzopyron, vanília',
         alap: 'borostyán, édesgyökér, haiti vetiver, pacsuli',
@@ -16,6 +18,7 @@ let diorAdatok = [
     },
      {
         nev: 'DIOR Sauvage',
+        fajta: 'Utántölthető parfum',
         fej: 'kalabriai bergamott, mandarin',
         sziv: '	virginiai boróka, szantálfa',
         alap: 'absolut vanília',
@@ -24,6 +27,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Homme',
+        fajta: 'Eau De Toilette',
         fej: 'cédrus',
         sziv: '	pacsuli',
         alap: '	vetiverfű',
@@ -32,6 +36,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Fahrenheit Parfum',
+        fajta: 'parfum uraknak',
         fej: 'szicíliai mandarin',
         sziv: 'bőr, ibolya',
         alap: 'Bourbon vanília',
@@ -40,6 +45,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Homme parfum',
+        fajta: 'parfum uraknak',
         fej: 'nőszirom',
         sziv: 'ámbrás jegy',
         alap: '',
@@ -48,6 +54,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Homme Cologne',
+        fajta: 'eau De Cologne',
         fej: 'kalabriai bergamott',
         sziv: 'grapefruit virága',
         alap: '	fehér pézsma',
@@ -56,6 +63,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Higher Energy',
+        fajta: 'eau De Toilette',
         fej: 'grapefruit',
         sziv: 'fekete bors',
         alap: '	vetiverfű',
@@ -64,6 +72,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Higher',
+        fajta: 'eau De Toilette',
         fej: 'bazsalikom, körte',
         sziv: 'kardamon',
         alap: '	virginiai boróka',
@@ -72,6 +81,7 @@ let diorAdatok = [
     },
     {
         nev: 'DIOR Eau Sauvage',
+        fajta: 'eau De Toilette',
         fej: 'kalabriai bergamott',
         sziv: 'hedione, levendula',
         alap: '	chypre jegyek',

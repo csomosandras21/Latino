@@ -10,16 +10,43 @@
     text-align: center;
 }
 
-.labjegyzet a {
+.kerdesek h3 {
     padding-top: 10px;
     color: white;
-    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+    padding-top: 15px;
+    padding-bottom: 20px;
 }
 
 .kerdesek h2 {
     color: white;
+    font-size: 35px;
+    padding-bottom: 15px;
 }
 
 .cimek {
        transition: none;
 }
+
+.linkek a {
+    display: inline-block;
+    text-decoration: none;
+    justify-content: space-between;
+    color: white;
+    font-size: 18px;
+    padding-left: 68px;
+    padding-bottom: 15px;
+}
+
+.linkek a:hover {
+    font-weight: bolder;
+}
+
+.fontos h3{
+    text-align: left;
+    padding-top: 15px;
+    color: white;
+    font-size: 25px;
+}
+
