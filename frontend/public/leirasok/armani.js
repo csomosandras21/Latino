@@ -1,6 +1,7 @@
 let armaniAdatok = [
     {
         nev: 'Armani Emporio Stronger With You Intensely',
+        fajta: 'Eau De Parfum',
         fej: 'rózsabors, boróka',
         sziv: 'levendula, fahéj, zsálya',
         alap: 'vanília, tonkabab, gesztenyés máz',
@@ -10,6 +11,7 @@ let armaniAdatok = [
     {
         nev: 'Armani Emporio Stronger With You Absolutely',
         fej: 'rum',
+        fajta: 'Eau de Parfum',
         sziv: 'levendula',
         alap: 'cédrusfa, vanília',
         fajtaja: 'orientális, fougere',
@@ -17,6 +19,7 @@ let armaniAdatok = [
     },
     {
         nev: '	Armani Emporio Stronger With You Sandalwood',
+        fajta: 'Eau de Parfum',
         fej: 'kardamon, rózsabors, ibolya levelek, menta',
         sziv: 'zsálya, dinnye, ananász',
         alap: 'vanília, gesztenye, cédrus, borostyán',
@@ -25,6 +28,7 @@ let armaniAdatok = [
     },
     {
         nev: 'Armani Emporio Stronger With You Amber',
+        fajta: 'Eau de Parfum',
         fej: '	levendulaesszencia',
         sziv: 'benzoin, kardamon, fahéj, ámbrás jegy',
         alap: 'absolut vanília, kandírozott gesztenyés jegy',
@@ -33,6 +37,7 @@ let armaniAdatok = [
     },
     {
         nev: 'Armani Acqua di Giò',
+        fajta: 'Eau de Toilet',
         fej: 'narancs, jázmin, citrom, bergamott, limett, keserűnarancs, mandarin virága',
         sziv: 'tengeri tónusok, jázmin, őszibarack, rozmaring, frézia, jácint, ciklámen, ibolya, koriander, szerecsendió, rózsa, rezeda',
         alap: 'fehér pézsma, cédrus, tölgymoha, pacsuli, borostyán',
@@ -41,6 +46,7 @@ let armaniAdatok = [
     },
     {
         nev: 'Armani Acqua di Giò Parfum',
+        fajta: 'Parfum',
         fej: 'tengeri tónusok, zöld mandarin',
         sziv: '	mimóza',
         alap: 'pacsuli, labdanum',
@@ -49,6 +55,7 @@ let armaniAdatok = [
     },
     {
         nev: '	Armani Acqua di Giò Profondo',
+        fajta: 'Eau de Parfum',
         fej: 'tengeri tónusok, bergamott, zöld mandarin',
         sziv: 'rozmaring, levendula, ciprus, masztika',
         alap: 'ásványok, pézsma, pacsuli, borostyán',
@@ -57,6 +64,7 @@ let armaniAdatok = [
     },
     {
         nev: 'Armani Acqua di Giò',
+        fajta: 'Eau de Parfum',
         fej: 'zöld mandarin, tengeri tónusok',
         sziv: 'muskotályzsálya, levendula, gólyaorr',
         alap: 'ásványok, vetiverfű, pacsuli',
@@ -65,6 +73,7 @@ let armaniAdatok = [
     },
     {
         nev: 'Armani Acqua di Giò Pour Homme',
+        fajta: 'Eau de Parfum',
         fej: 'narancs, jázmin, citrom, bergamott, limett, keserűnarancs, mandarin virága',
         sziv: 'fehér pézsma, cédrus, tölgymoha, pacsuli, borostyán',
         alap: 'fehér pézsma, cédrus, tölgymoha, pacsuli, borostyán',

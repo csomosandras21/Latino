@@ -14,6 +14,8 @@ const Versacces = () => {
             const bejovoAdatok = await response.json();
             
             const adatok = bejovoAdatok.parfumes;
+            console.log(adatok);
+            
             const versacces = adatok.filter(elem => elem.marka === 'Versace')
             console.log(versacces);
 

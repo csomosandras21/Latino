@@ -1,6 +1,7 @@
 let versaceAdatok = [
     {
         nev: 'Versace Eros',
+        fajta: 'Eau De Parfum',
         fej: '	menta, citrom',
         sziv: '	zöldalma, gólyaorr',
         alap: '	borostyán, absolut vanília, tonkabab',
@@ -8,7 +9,8 @@ let versaceAdatok = [
         leiras: 'Maszkulin, és igazán magabiztos a Versace Eros parfüm. Szenvedélyes férfiaknak készült, fás, keleties, mégis frissítő illatba burkolja bőrét. Eros a szerelem istene ihlette kompozícióját. '
     },
     {
-        nev: 'Versace Eros. ',
+        nev: 'Versace Eros',
+        fajta: 'Eau De Toilette',
         fej: '	menta, olasz citrom, zöldalma',
         sziv: '	tonkabab, gólyaorr, ambroxan',
         alap: '	vanília, vetiverfű, cédrus, tölgymoha',
@@ -17,6 +19,7 @@ let versaceAdatok = [
     },
     {
         nev: '	Versace Eros Energy',
+        fajta: 'Eau De Parfume',
         fej: '	bergamott, vérnarancs, limett, grapefruit, citrom',
         sziv: '	rózsabors, feketeribizli, fehér ámbra',
         alap: '	citrusos, fás',
@@ -25,6 +28,7 @@ let versaceAdatok = [
     },
     {
         nev: '	Versace Dylan Blue Pour Homme',
+        fajta: 'Eau de Toilet',
         fej: '	vízi tónusok, fügefa levél, kalabriai bergamott, grapefruit',
         sziv: '	ibolya levelek, pacsuli, papirusz, fekete bors, ambroxan',
         alap: 'pézsma, tonkabab, sáfrány, tömjén',
@@ -33,6 +37,7 @@ let versaceAdatok = [
     },
     {
         nev: '	Versace Pour Homme',
+        fajta: 'Eau de Toilet',
         fej: '	bergamott, citrom, keserűnarancs, keserű narancs',
         sziv: '	jácint, gólyaorr, muskotályzsálya, cédrusfa',
         alap: '	borostyán, pézsma, tonkabab, oud',
@@ -41,6 +46,7 @@ let versaceAdatok = [
     },
     {
         nev: 'Versace Eau Fraîche',
+        fajta: 'Eau de Toilet',
         fej: '	citrom, fa, karambola',
         sziv: '	cédrus, tárkony, zsálya',
         alap: '	borostyán, fa, pézsma',
@@ -49,6 +55,7 @@ let versaceAdatok = [
     },
     {
         nev: 'Versace The Dreamer',
+        fajta: 'Eau de Toilet',
         fej: '	boróka, tárkony, üröm',
         sziv: '	nőszirom, liliom, Ien virága',
         alap: '	borostyán, borostyán, dohány virága',
@@ -57,6 +64,7 @@ let versaceAdatok = [
     },
     {
         nev: '	Versace Eros Flame',
+        fajta: 'Eau de Parfum',
         fej: '	Chinotto citrus, fekete bors, mandarin, keserű narancs',
         sziv: '	fás tónusok, rozmaring',
         alap: '	pacsuli, vetiverfű',

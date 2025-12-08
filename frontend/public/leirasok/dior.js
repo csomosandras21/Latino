@@ -80,7 +80,7 @@ let diorAdatok = [
         leiras: 'Ez a meglepő aromás, fás illat a modern városi ember számára készült, aki a jelen pillanatban él, mégis az örök férfiasságot testesíti meg.Hűvös és energikus, körte, citrus és bazsalikom jegyekkel, fűszeres szívjeggyel és pézsmás alapjeggyel.Légies érzetet és sima energiát sugározva a Higher a kortárs, városi illatok pulzusa. A gyümölcsös akkord ragyogása és folyékonysága összeolvad a fűszerek energiájával és rezgéseivel.'
     },
     {
-        nev: 'DIOR Eau Sauvage',
+        nev: 'DIOR Eau Suavage',
         fajta: 'eau De Toilette',
         fej: 'kalabriai bergamott',
         sziv: 'hedione, levendula',

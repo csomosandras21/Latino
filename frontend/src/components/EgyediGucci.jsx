@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
+import gucciAdatok from '../../public/leirasok/gucci.js'
 
 const EgyediGucci = (id) => {
   const params = useParams();
   console.log(params.id);
   let [gucciItem, setGucciItem] = useState([]);
+  let [gucciLeir, setGucciLeir] = useState([]);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -15,17 +17,22 @@ const EgyediGucci = (id) => {
               const adatok = bejovoAdatok.parfumes;
               const guccis = adatok.filter(elem => elem.marka === 'Gucci')
               console.log(guccis);
+              console.log(gucciAdatok);
   
-              const itemD = guccis.filter(elem => elem._id === params.id);
+              const itemG = guccis.filter(elem => elem._id === params.id);
+              console.log(itemG[0]);
+              const leirG = Adatok.filter(elem => elem.nev.toUpperCase() === itemG[0].nev.toUpperCase() && elem.fajta.toUpperCase() === itemG[0].fajta.toUpperCase())
+              console.log(leirG);
   
               if (response.ok)
               {
-                  console.log(itemD[0]);
+                  console.log(itemG[0]);
                   // for (let i = 0; i < adatok.length; i++) {
                   //     tomb.push(<Dior key={i} dio={adatok[i]} />);
                   // }
           
-                  setGucciItem(itemD[0]);
+                  setGucciItem(itemG[0]);
+                  setGucciLeir(leirG[0]);
                   
               } 
               else console.log(adatok.msg);
@@ -73,7 +80,18 @@ const EgyediGucci = (id) => {
         <button className="vasarlas-gomb">Kosárba</button>
       </div>
       </div>
-
+</div>
+    <p className='szag'>Illat leírás:</p>
+      <table>
+        <tbody>
+        <tr><td>Fej</td><td>{gucciLeir.fej}</td></tr>
+        <tr><td>Szív</td><td>{gucciLeir.sziv}</td></tr>
+        <tr><td>Alap</td><td>{gucciLeir.alap}</td></tr>
+        <tr><td>Fajtaja</td><td>{gucciLeir.fajtaja}</td></tr>
+        </tbody>
+        </table>
+        <div className='leirasok'>
+          <p>Leírás {gucciLeir.leiras}</p>
     </div>
   </div>
 )

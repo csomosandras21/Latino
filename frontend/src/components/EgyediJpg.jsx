@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
+import jpgAdatok from '../../public/leirasok/jpg.js';
 
 const EgyediJpg = (id) => {
   const params = useParams();
   console.log(params.id);
   let [jpgItem, setJpgItem] = useState([]);
+  let [jpgLeir, setJpgLeir] = useState([]);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -15,8 +17,12 @@ const EgyediJpg = (id) => {
               const adatok = bejovoAdatok.parfumes;
               const jpgs = adatok.filter(elem => elem.marka === 'Jean Paul')
               console.log(jpgs);
+              console.log(jpgAdatok);
   
               const itemD = jpgs.filter(elem => elem._id === params.id);
+              console.log(itemD[0]);
+              const leirJ = jpgAdatok.filter(elem => elem.nev.toUpperCase() === itemD[0].nev.toUpperCase() && elem.fajta.toUpperCase() === itemD[0].fajta.toUpperCase())
+              console.log(leirJ);
   
               if (response.ok)
               {
@@ -26,6 +32,7 @@ const EgyediJpg = (id) => {
                   // }
           
                   setJpgItem(itemD[0]);
+                   setJpgLeir(leirJ[0])
                   
               } 
               else console.log(adatok.msg);
@@ -75,6 +82,18 @@ const EgyediJpg = (id) => {
       </div>
 
     </div>
+     <p className='szag'>Illat leírás:</p>
+      <table>
+        <tbody>
+        <tr><td>Fej</td><td>{jpgLeir.fej}</td></tr>
+        <tr><td>Szív</td><td>{jpgLeir.sziv}</td></tr>
+        <tr><td>Alap</td><td>{jpgLeir.alap}</td></tr>
+        <tr><td>Fajtaja</td><td>{jpgLeir.fajtaja}</td></tr>
+        </tbody>
+        </table>
+        <div className='leirasok'>
+          <p>Leírás {jpgLeir.leiras}</p>
+        </div>
   </div>
 )
     

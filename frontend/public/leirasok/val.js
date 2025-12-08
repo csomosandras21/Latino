@@ -1,6 +1,7 @@
 let valAdatok = [
     {
-        nev:'Valentino Born In Roma Intense Uomo'
+        nev:'Valentino Born In Roma Intense Uomo',
+        fajta:'Eau de Parfum',
         fej:	'Bourbon vanília',
         sziv:	'levendula',
         alap:	'vetiverfű',
@@ -10,6 +11,7 @@ let valAdatok = [
     },
     {
         nev: 'Valentino Born In Roma Coral Fantasy Uomo',
+        fajta:'	Eau de Toilette',
         fej:	'piros alma, bergamott',
         sziv:	'zsálya, gólyaorr, absolut vanília',
         alap:	'dohánylevelek, pacsuli, absolut vanília',
@@ -19,15 +21,17 @@ let valAdatok = [
     },
     {
         nev: 'Valentino Born In Roma Green Stravaganza Uomo',
-        fej: 'kalabriai bergamott'
-        sziv: 'kávé'
-        alap: 'vetiverfű'
-        fajtaja:'gyumölcsös'
+        fajta:'	Eau de Toilette',
+        fej: 'kalabriai bergamott',
+        sziv: 'kávé',
+        alap: 'vetiverfű',
+        fajtaja:'gyumölcsös',
         leiras:'A Valentino Born In Roma Green Stravaganza Uomo férfi Eau de Toilette a titokzatosság, a luxus és az egzotikum harmóniája, amely felejthetetlen nyomot hagy maga után. Ez az illat minden alkalomra erőt sugároz. Mert a Valentino zöldje merész és túlzó, szenvedélyes és extravagáns. A zöld életet visz minden banalitásba, és lehetővé teszi a kitűnést.'
         
     },
     {
         nev: 'Valentino Born In Roma Uomo Le Rendez-Vous',
+        fajta:'	Eau de Toilette',
         fej:	'piros alma, bergamott',
         sziv:	'kávé',
         alap:	'vetiverfű',
@@ -36,37 +40,41 @@ let valAdatok = [
         
     },
     {
-        nev: 'Valentino Born In Roma Uomo Le Rendez-Vous',
+        nev: 'Valentino Uomo',
+        fajta:'Eau de Toilette',
         fej:	'fűszeres tónusok, szerecsendió',
         sziv:	'virginiai boróka',
-        alap:	'vanília, borostyán'
+        alap:	'vanília, borostyán',
         fajtaja: 'orientális',
         leiras:'Hagyja, hogy a férfi Valentino Born In Roma The Gold Uomo Eau de Toilette Ön helyett is elárulja, hogy olyan férfi jelent meg a színen, aki mindent megkap, amire csak vágyik. A férfias érzékiséggel, vonzerővel és szenvedéllyel teli illat senkit sem hagyhat hidegen a környezetében.'
         
     },
     {
         nev: 'Valentino Born In Roma Extradose Uomo',
+        fajta:'Parfum uraknak',
         fej:	'fűszeres tónusok',
         sziv:	'levendula',
-        alap:	'vanília, borostyán'
+        alap:	'vanília, borostyán',
         fajtaja: 'citrusos, fűszeres',
         leiras:'Miért elégedjünk meg a kevéssel, ha mindent megkaphatunk? A Valentino Born in Roma Extradose Uomo férfi parfüm az eredeti, ikonikus Born in Roma illat magas koncentrációjú interpretációja. Hamisítatlan intenzitással ünnepli a hitelességet és a bátorságot. Az elegancia új perspektíváját mutatja be – nyers és érzéki.'
         
     },
     {
         nev: 'Valentino Born In Roma Uomo',
+        fajta:'Eau de Toilette',
         fej:	'	ibolya levelek, vetiverfű',
         sziv:	'tengeri só, zsálya',
-        alap:	'	fa, gyömbér'
+        alap:	'	fa, gyömbér',
         fajtaja: '	fűszeres, fás',
         leiras:'Mutassa meg a világnak, hogy néz ki a ma embere. A Valentino Born in Roma Uomo férfi eau de toilette a férfias eleganciából merített ihletet, ahogyan azt Róma diktálja. Ezzel az illattal a parfümök nyelvén fejezheti ki a gyökereire való büszkeségét, így személyiségének és értékrendjének ünnepévé válik minden napja.'
         
     },
     {
         nev: 'Valentino Born In Roma The Gold Uomo',
+        fajta:'Eau de Toilette',
         fej:	'fűszeres tónusok, szerecsendió',
         sziv:	'virginiai boróka',
-        alap:	'vanília, borostyány'
+        alap:	'vanília, borostyány',
         fajtaja: 'orientális',
         leiras:'Hagyja, hogy a férfi Valentino Born In Roma The Gold Uomo Eau de Toilette Ön helyett is elárulja, hogy olyan férfi jelent meg a színen, aki mindent megkap, amire csak vágyik. A férfias érzékiséggel, vonzerővel és szenvedéllyel teli illat senkit sem hagyhat hidegen a környezetében.'
         

@@ -1,22 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
+import bossAdatok from '../../public/leirasok/boss.js';
 
 const EgyediBoss = (id) => {
   const params = useParams();
   console.log(params.id);
   let [bossItem, setBossItem] = useState([]);
+  let [bossLeir, setBossLeir] = useState([]);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
               const response = await fetch('http://localhost:3500/api/parfumes-frontend');
               const bejovoAdatok = await response.json();
               
+              
               const adatok = bejovoAdatok.parfumes;
               const bosses = adatok.filter(elem => elem.marka === 'Boss')
               console.log(bosses);
+              console.log(bossAdatok);
   
               const itemD = bosses.filter(elem => elem._id === params.id);
+              console.log(itemD[0]);
+              const leirA = bossAdatok.filter(elem => elem.nev.toUpperCase() === itemD[0].nev.toUpperCase() && elem.fajta.toUpperCase() === itemD[0].fajta.toUpperCase())
+              console.log(leirA);
   
               if (response.ok)
               {
@@ -26,6 +33,7 @@ const EgyediBoss = (id) => {
                   // }
           
                   setBossItem(itemD[0]);
+                  setBossLeir(leirA[0])
                   
               } 
               else console.log(adatok.msg);
@@ -75,6 +83,18 @@ const EgyediBoss = (id) => {
       </div>
 
     </div>
+    <p className='szag'>Illat leírás:</p>
+      <table>
+        <tbody>
+        <tr><td>Fej</td><td>{bossLeir.fej}</td></tr>
+        <tr><td>Szív</td><td>{bossLeir.sziv}</td></tr>
+        <tr><td>Alap</td><td>{bossLeir.alap}</td></tr>
+        <tr><td>Fajtaja</td><td>{bossLeir.fajtaja}</td></tr>
+        </tbody>
+        </table>
+        <div className='leirasok'>
+          <p>Leírás {bossLeir.leiras}</p>
+        </div>
   </div>
 )
 }

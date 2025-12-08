@@ -1,6 +1,7 @@
 let burAdatok = [
 {
         nev: 'Burberry Hero Parfum Intense',
+        fajta: 'parfüm',
         fej: 'fekete bors',
         sziv: 'cédrus',
         alap: 'bőr',
@@ -9,6 +10,7 @@ let burAdatok = [
     },
     {
         nev: 'Burberry Hero',
+        fajta: 'parfüm',
         fej: 'bergamott, citrom, kardamon',
         sziv: 'levendula, fekete bors, boróka, szerecsendió',
         alap: 'cédrusfa',
@@ -17,6 +19,7 @@ let burAdatok = [
     },
     {
         nev: 'Burberry Hero Eau de Parfum',
+        fajta: 'Eau De Parfum',
         fej: 'fenyő, tüske',
         sziv: 'benzoin, tömjén, fekete bors, boróka',
         alap: 'cédrusfa',

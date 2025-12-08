@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
+import yslAdatok from '../../public/leirasok/ysl'
 
 const EgyediYsl = (id) => {
   const params = useParams();
   console.log(params.id);
   let [yslItem, setYslItem] = useState([]);
+  let [yslLeir, setYslLeir] = useState([]);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -15,17 +17,22 @@ const EgyediYsl = (id) => {
               const adatok = bejovoAdatok.parfumes;
               const ysls = adatok.filter(elem => elem.marka === 'YSL Saint Laurent')
               console.log(ysls);
+              console.log(yslAdatok);
   
-              const itemD = ysls.filter(elem => elem._id === params.id);
+              const itemY = ysls.filter(elem => elem._id === params.id);
+              console.log(itemY[0]);
+              const leirY = yslAdatok.filter(elem => elem.nev.toUpperCase() === itemY[0].nev.toUpperCase() && elem.fajta.toUpperCase() === itemY[0].fajta.toUpperCase())
+              console.log(leirY);
   
               if (response.ok)
               {
-                  console.log(itemD[0]);
+                  console.log(itemY[0]);
                   // for (let i = 0; i < adatok.length; i++) {
                   //     tomb.push(<Dior key={i} dio={adatok[i]} />);
                   // }
           
-                  setYslItem(itemD[0]);
+                  setYslItem(itemY[0]);
+                  setYslLeir(leirY[0]);
                   
               } 
               else console.log(adatok.msg);
@@ -73,7 +80,18 @@ const EgyediYsl = (id) => {
         <button className="vasarlas-gomb">Kosárba</button>
       </div>
       </div>
-
+</div>
+    <p className='szag'>Illat leírás:</p>
+      <table>
+        <tbody>
+        <tr><td>Fej</td><td>{yslLeir.fej}</td></tr>
+        <tr><td>Szív</td><td>{yslLeir.sziv}</td></tr>
+        <tr><td>Alap</td><td>{yslLeir.alap}</td></tr>
+        <tr><td>Fajtaja</td><td>{yslLeir.fajtaja}</td></tr>
+        </tbody>
+        </table>
+        <div className='leirasok'>
+          <p>Leírás {yslLeir.leiras}</p>
     </div>
   </div>
 )

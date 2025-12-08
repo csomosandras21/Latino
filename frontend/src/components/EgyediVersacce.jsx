@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
+import versAdatok from '../../public/leirasok/versace.js'
 
 const EgyediVersacce = (id) => {
   const params = useParams();
   console.log(params.id);
   let [versItem, setVersItem] = useState([]);
+  let [versLeir, setVersLeir] = useState([]);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -15,17 +17,22 @@ const EgyediVersacce = (id) => {
               const adatok = bejovoAdatok.parfumes;
               const versacces = adatok.filter(elem => elem.marka === 'Versace')
               console.log(versacces);
+              console.log(versAdatok);
   
-              const itemD = versacces.filter(elem => elem._id === params.id);
+              const itemV = versacces.filter(elem => elem._id === params.id);
+              console.log(itemV[0]);
+              const leirV = versAdatok.filter(elem => elem.nev.toUpperCase() === itemV[0].nev.toUpperCase() && elem.fajta.toUpperCase() === itemV[0].fajta.toUpperCase())
+              console.log(leirV);
   
               if (response.ok)
               {
-                  console.log(itemD[0]);
+                  console.log(itemV[0]);
                   // for (let i = 0; i < adatok.length; i++) {
                   //     tomb.push(<Dior key={i} dio={adatok[i]} />);
                   // }
           
-                  setVersItem(itemD[0]);
+                  setVersItem(itemV[0]);
+                   setVersLeir(leirV[0])
                   
               } 
               else console.log(adatok.msg);
@@ -73,6 +80,18 @@ const EgyediVersacce = (id) => {
         <button className="vasarlas-gomb">Kosárba</button>
       </div>
       </div>
+      <p className='szag'>Illat leírás:</p>
+      <table>
+        <tbody>
+        <tr><td>Fej</td><td>{versLeir.fej}</td></tr>
+        <tr><td>Szív</td><td>{versLeir.sziv}</td></tr>
+        <tr><td>Alap</td><td>{versLeir.alap}</td></tr>
+        <tr><td>Fajtaja</td><td>{versLeir.fajtaja}</td></tr>
+        </tbody>
+        </table>
+        <div className='leirasok'>
+          <p>Leírás {versLeir.leiras}</p>
+        </div>
 
     </div>
   </div>

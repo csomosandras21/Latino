@@ -1,6 +1,7 @@
 let creedAdatok = [
 {
         nev: 'Creed Aventus',
+        fajta: 'Eau de Parfum',
         fej: 'bergamott, feketeribizli, alma, citrom, rózsabors',
         sziv: '	jázmin, pacsuli, ananász',
         alap: '	pézsma, ambroxan, nyír, cédrusfa, tölgymoha',
@@ -9,6 +10,7 @@ let creedAdatok = [
     },
     {
         nev: 'Creed Original Vetiver',
+        fajta: 'Eau de Parfum',
         fej: 'gyömbér, zöld tónusok, olasz citrom',
         sziv: 'virágos tónusok, haiti vetiver, ciprus',
         alap: 'fehér pézsma, cédrusfa',
@@ -17,6 +19,7 @@ let creedAdatok = [
     },
     {
         nev: 'Creed Absolu Aventus',
+        fajta: 'Eau de Parfum',
         fej: 'grapefruit, bergamott, gyömbér, citrom, feketeribizli',
         sziv: 'kardamon, fahéj, pacsuli, ananász, rózsabors',
         alap: '	tejszínes akkord, ambroxan, kaszmerán, haiti vetiver, labdanum, pézsma, tölgymoha',
@@ -25,6 +28,7 @@ let creedAdatok = [
     },
     {
         nev: 'Creed Bois Du Portugal',
+        fajta: 'Eau de Parfum',
         fej: 'bergamott, citrom, limett, mandarin, bazsalikom',
         sziv: 'levendula, szegfűbors, szegfűszeg, szerecsendió, koriander',
         alap: 'szantálfa, tölgymoha, pacsuli, bőr',
@@ -33,6 +37,7 @@ let creedAdatok = [
     },
     {
         nev: 'Creed Original Santal',
+        fajta: 'Eau de Parfum',
         fej: 'koriander, bergamott, gyömbér, borókabogyó, rozmaring, mandarin',
         sziv: 'egyiptomi geránium, levendula, narancsfa virág, szantálfa',
         alap: 'tonkabab, cédrusfa, pézsma, tölgymoha, pacsuli',
@@ -41,6 +46,7 @@ let creedAdatok = [
     },
     {
         nev: 'Creed Oud Zarian',
+        fajta: 'Eau de Parfum',
         fej: 'bergamott, tömjén, gyömbér, fűszer',
         sziv: '	rózsa',
         alap: 'édesgyökér, mirha, oud, pacsuli, szantálfa, tonkabab',
@@ -49,6 +55,7 @@ let creedAdatok = [
     },
     {
         nev: 'Creed Silver Mountain Water',
+        fajta: 'Eau de Parfum',
         fej: 'bergamott, feketeribizli, galbanum, narancs',
         sziv: 'levegő tónusai, tea',
         alap: '	pézsma, szantálfa',
@@ -57,6 +64,7 @@ let creedAdatok = [
     },
     {
         nev: 'Creed Silver Royal Oud',
+        fajta: 'Eau de Parfum',
         fej: 'rózsabors, bergamott, limett, galbanum',
         sziv: 'angelikafű, kardamon, cédrusfa, szegfűszeg',
         alap: 'pézsma, ambroxan, tömjén, guajakfa, oud',
@@ -65,6 +73,7 @@ let creedAdatok = [
     },
     {
         nev: 'Creed Virgin Island Water',
+        fajta: 'Eau de Parfum',
         fej: 'bergamott, limett, trópusi gyümölcs',
         sziv: 'jázmin, kókusztej, fehér virágok',
         alap: 'tonkabab, fehér pézsma, pacsuli',

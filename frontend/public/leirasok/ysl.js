@@ -1,6 +1,7 @@
 let yslAdatok = [
 {
         nev: 'Yves Saint Laurent Y',
+        fajta: 'Eau de Parfum',
         fej: 'bergamott, alma, gyömbér, elemi, aldehidek',
         sziv: 'boróka, zsálya, levendula, gólyaorr',
         alap: 'vetiverfű, tömjén, tonkabab, borostyán',
@@ -9,6 +10,7 @@ let yslAdatok = [
     },
     {
         nev: 'Yves Saint Laurent MYSLF',
+        fajta: 'Eau de Parfum',
         fej: 'kalabriai bergamott',
         sziv: 'narancsfa virág',
         alap: 'pacsuli',
@@ -17,6 +19,7 @@ let yslAdatok = [
     },
     {
         nev: 'Yves Saint Laurent Y Le Parfum 2025',
+        fajta: 'Eau de Parfum',
         fej: 'gyömbér, bergamott',
         sziv: 'fenyő, fenyő',
         alap: 'borostyán, pacsuli',
@@ -25,6 +28,7 @@ let yslAdatok = [
     },
     {
         nev: 'Yves Saint Laurent La Nuit deLHomme',
+        fajta: 'Eau de Toilette',
         fej: 'kardamon, tonkabab',
         sziv: 'bergamott, virginiai boróka, levendula',
         alap: 'benzopyron, vetiverfű, szantálfa',
@@ -33,6 +37,7 @@ let yslAdatok = [
     },
     {
         nev: 'Yves Saint Laurent MYSLF Le Parfum',
+        fajta: 'Eau de Parfum',
         fej: 'fekete bors',
         sziv: 'narancsfa virág',
         alap: 'pacsuli, borostyán, Bourbon vanília, fa',
@@ -41,6 +46,7 @@ let yslAdatok = [
     },
     {
         nev: 'Yves Saint Laurent LHomme',
+        fajta: 'Eau de Parfum',
         fej: 'keserű narancs',
         sziv: 'vetiverfű',
         alap: 'tölgy',
@@ -49,6 +55,7 @@ let yslAdatok = [
     },
     {
         nev: 'Yves Saint Laurent MYSLF LAbsolu',
+        fajta: 'Eau de Parfum',
         fej: 'bergamott, kardamon, gyömbér',
         sziv: 'keserűnarancs, narancsfa virág',
         alap: 'pacsuli, fa',
@@ -57,6 +64,7 @@ let yslAdatok = [
     },
     {
         nev: 'Yves Saint Laurent Y EDP Intense',
+        fajta: 'Eau de Parfum',
         fej: 'bergamott, boróka, gyömbér',
         sziv: 'levendula, gólyaorr, zsálya',
         alap: 'cédrusfa, pacsuli, vetiverfű',
@@ -65,6 +73,7 @@ let yslAdatok = [
     },
     {
         nev: '	Yves Saint Laurent LHomme Le Parfum',
+        fajta: 'Eau de Parfum',
         fej: 'szicíliai citrom',
         sziv: 'kardamon, bazsalikom, gólyaorr, lila levél',
         alap: 'vetiverfű, cédrusfa, ambroxan, kaszmerán',

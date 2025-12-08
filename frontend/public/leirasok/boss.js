@@ -1,6 +1,7 @@
 let bossAdatok = [
     {
         nev: 'BOSS The Scent Elixir for him Parfum',
+         fajta: 'parfum uraknak',
         fej: 'Pimento csilipaprika',
         sziv: 'lavandin',
         alap: 'szantálfa',
@@ -9,6 +10,7 @@ let bossAdatok = [
     },
     {
         nev: 'BOSS The Scent',
+         fajta: '	parfum uraknak',
         fej: 'gyömbér',
         sziv: 'maninka',
         alap: 'bőr',
@@ -17,6 +19,7 @@ let bossAdatok = [
     },
     {
         nev: 'BOSS Hugo Boss',
+         fajta: 'parfum uraknak',
         fej: '	bőr',
         sziv: 'pacsuli',
         alap: 'cédrusfa',
@@ -25,6 +28,7 @@ let bossAdatok = [
     },
     {
         nev: 'BOSS Bottled Beyond',
+         fajta: 'Eau De Parfum',
         fej: 'gyömbér',
         sziv: 'bőr',
         alap: 'fás tónusok',
@@ -33,6 +37,7 @@ let bossAdatok = [
     },
     {
         nev: 'BOSS Bold Citrus',
+         fajta: 'Eau De Parfum',
         fej: 'citrom, bergamott',
         sziv: 'elemi, geranium Bourbon',
         alap: 'pacsuli, vetiverfű',
@@ -41,6 +46,7 @@ let bossAdatok = [
     },
     {
         nev: 'BOSS Bottled Parufme',
+         fajta: 'Eau De Parfum',
         fej: 'mandarinolaj, rózsabors, tömjén',
         sziv: 'orrisz gyökér, fügefa, bőr',
         alap: 'cédrusolaj, pacsuli, ambrocenid',
@@ -49,6 +55,7 @@ let bossAdatok = [
     },
     {
         nev: 'BOSS Bottled Tonic',
+         fajta: 'Eau De Toilette',
         fej: 'citrom, grapefruit, alma, keserű narancs',
         sziv: 'szegfűszeg, fahéj, gyömbér, gólyaorr',
         alap: 'vetiverfű, fás tónusok',

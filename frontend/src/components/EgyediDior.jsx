@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
-import diorAdatok from '../../public/leirasok/dior';
+import diorAdatok from '../../public/leirasok/dior.js';
 
 
 const EgyediDior = (id) => {
@@ -22,7 +22,7 @@ const EgyediDior = (id) => {
               console.log(diorse);
               console.log(diorAdatok);
   
-              const itemD = diorse.filter(elem => elem._id === params.id);
+                const itemD = diorse.filter(elem => elem._id === params.id);
               console.log(itemD[0]);
               const leirD = diorAdatok.filter(elem => elem.nev.toUpperCase() === itemD[0].nev.toUpperCase() && elem.fajta.toUpperCase() === itemD[0].fajta.toUpperCase())
               console.log(leirD);

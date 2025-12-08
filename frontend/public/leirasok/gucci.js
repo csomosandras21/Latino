@@ -1,6 +1,7 @@
 let gucciAdatok = [
    {
         nev: 'Gucci Guilty Absolute',
+        fajta: 'Eau de Parfum',
         fej: 'bőr',
         sziv: 'ciprus, pacsuli',
         alap: '	vetiverfű, fás tónusok',
@@ -9,6 +10,7 @@ let gucciAdatok = [
     },
    {
         nev: 'Gucci Guilty Pour Homme',
+        fajta: 'Eau de Parfum Kivonat',
         fej: 'afrikai narancsfa, csili paprika, szerecsendió',
         sziv: '	orrisz gyökér, afrikai narancsfa, illatvirág',
         alap: '	ambroxan, benzoin, vanília, pacsuli',
@@ -17,6 +19,7 @@ let gucciAdatok = [
     },
    {
         nev: 'Gucci Guilty Pour Homme',
+        fajta: 'Eau de Parfum',
         fej: 'rózsa, paprika',
         sziv: 'levendula, narancsfa virág, keserűnarancs',
         alap: 'cédrusfa, pacsuli',
@@ -25,6 +28,7 @@ let gucciAdatok = [
     },
    {
         nev: 'Gucci Guilty Pour Homme',
+        fajta: 'Parfum',
         fej: 'lavandin',
         sziv: 'citrusok',
         alap: 'pacsuli',
@@ -33,6 +37,7 @@ let gucciAdatok = [
     },
    {
         nev: 'Gucci Guilty Pour Homme',
+        fajta: 'Eau de Toilet',
         fej: 'citrom, levendula',
         sziv: 'narancsfa virága',
         alap: 'virginiai boróka, pacsuli, vanília',
@@ -41,6 +46,7 @@ let gucciAdatok = [
     },
    {
         nev: 'Gucci Guilty Essence',
+        fajta: 'Eau de Toilet',
         fej: 'koriander',
         sziv: 'narancsfa virága, keserűnarancs, zöld tónusok',
         alap: 'pacsuli, cédrus',
