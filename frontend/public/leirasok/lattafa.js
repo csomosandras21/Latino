@@ -1,12 +1,12 @@
 let lattafaAdatok = [
 {
-        nev: 'Lattafa Pride Ishq Al Shuyukh Gold',
-        fajta: 'Eau De Parfum',
-        fej: 'karamell, sáfrány',
-        sziv: 'tonkabab, bőr',
-        alap: 'borostyán, vanília, pézsma',
-        fajtaja: 'orientális, gourmand',
-        leiras: 'Ezen illat csodája abban rejlik, hogy egyaránt tökéletesen megfelelő nők és férfiak számára. Mindenki megtalálja benne a magáét, mindenkin más illatot hagy. Az unisex Lattafa Pride Ishq Al Shuyukh Gold Eau de Parfum biztosan nem vész el az Ön toalettasztalán, és még a kedvesével is megoszthatja.'
+        nev:'Lattafa Pride Ishq Al Shuyukh Gold',
+        fajta:'Eau De Parfum',
+        fej:'karamell,sáfrány',
+        sziv:'tonkabab,bőr',
+        alap:'borostyán,vanília,pézsma',
+        fajtaja:'orientális,gourmand',
+        leiras:'Ezen illat csodája abban rejlik, hogy egyaránt tökéletesen megfelelő nők és férfiak számára. Mindenki megtalálja benne a magáét, mindenkin más illatot hagy. Az unisex Lattafa Pride Ishq Al Shuyukh Gold Eau de Parfum biztosan nem vész el az Ön toalettasztalán, és még a kedvesével is megoszthatja.'
     },
     {
         nev: 'Lattafa Pride Tharwah Gold',
@@ -18,7 +18,7 @@ let lattafaAdatok = [
         leiras: 'Ébredjen minden reggel életvidáman egy olyan illattal, amely a temperamentumát ünnepli. A férfiak és nők számára egyaránt alkalmas Lattafa Pride Tharwah Gold Eau de Parfum a finom virágos jegyek és a melegség édes szimfóniáját nyújtja, hogy körülölelje Önt. Ez az illat olyan, mint egy ékszer, amely kiemeli az egyediségét és eleganciáját.'
     },
     {
-        nev: '	Lattafa Asad',
+        nev: 'Lattafa Asad',
         fajta: 'Eau De Parfum',
         fej: 'fűszeres tónusok ',
         sziv: 'vanília, borostyán',

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
+import osszesAdatok from '../../public/leirasok/osszes';
 
 const Egyedi= (id) => {
   const params = useParams();
   console.log(params.id);
   let [item, setItem] = useState([]);
+  let [osszesLeir, setOsszesLeir] = useState([]);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -13,8 +15,11 @@ const Egyedi= (id) => {
               const bejovoAdatok = await response.json();
               
               const adatok = bejovoAdatok.parfumes;
+               console.log(osszesAdatok);
   
               const itemD = adatok.filter(elem => elem._id === params.id);
+               const leirO = osszesAdatok.filter(elem => elem.nev.toUpperCase() === itemD[0].nev.toUpperCase() && elem.fajta.toUpperCase() === itemD[0].fajta.toUpperCase())
+              console.log(leirO);
   
               if (response.ok)
               {
@@ -24,6 +29,7 @@ const Egyedi= (id) => {
                   // }
           
                   setItem(itemD[0]);
+                  setOsszesLeir(leirO[0])
                   
               } 
               else console.log(adatok.msg);
@@ -37,7 +43,7 @@ const Egyedi= (id) => {
   return (
   <div className="oldal">
 
-    <h1 className="cim">DIOR</h1>
+    <h1 className="cim">{item.marka}</h1>
 
     <div className="termek-kontener">
 
@@ -73,6 +79,18 @@ const Egyedi= (id) => {
       </div>
 
     </div>
+    <p className='szag'>Illat leírás:</p>
+      <table>
+        <tbody>
+        <tr><td>Fej</td><td>{osszesLeir.fej}</td></tr>
+        <tr><td>Szív</td><td>{osszesLeir.sziv}</td></tr>
+        <tr><td>Alap</td><td>{osszesLeir.alap}</td></tr>
+        <tr><td>Fajtaja</td><td>{osszesLeir.fajtaja}</td></tr>
+        </tbody>
+        </table>
+        <div className='leirasok'>
+          <p>Leírás {osszesLeir.leiras}</p>
+        </div>
   </div>
 )
 
