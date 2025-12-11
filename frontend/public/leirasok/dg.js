@@ -9,7 +9,7 @@ let dolceAdatok = [
         leiras: 'Képzelje el a tengeri szellőt, Capri szigetének aranyló fényét és a helyi természet erejét egy palackban. Ezeket az érzéseket közvetíti a Dolce&Gabbana Light Blue Capri In Love Pour Homme Eau de Parfum. Egyesíti a fűszeres frissességet, a gyümölcsös lédússágot és a mély eleganciát. Ugyanolyan erősen elvarázsolja Önt és környezetét, mint a Földközi-tenger partvidéke.'
     },
     {
-        nev: '	Dolce&Gabbana Light Blue Pour Homme',
+        nev: 'Dolce&Gabbana Light Blue Pour Homme',
         fajta: 'Eau de Parfum',
         fej: 'grapefruit, mandarin narancs',
         sziv: 'tengervíz, boróka',
@@ -37,7 +37,7 @@ let dolceAdatok = [
     },
     {
         nev: 'Dolce&Gabbana Devotion For Men Parfum',
-        fajta: 'Parfum',
+        fajta: 'Parfüm',
         fej: 'levendula',
         sziv: 'kávé, ciprus',
         alap: 'borostyán, tonkabab, vanília, tölgymoha',
@@ -45,7 +45,7 @@ let dolceAdatok = [
         leiras: 'A Dolce&Gabbana Devotion Pour Homme parfüm a férfielegancia lényegét ünnepli, kiegészítve az érzékiség még merészebb jegyeivel. A fougère akkord tiszteleg a szív állandó ereje és az iránti őszinte elkötelezettség előtt, ami igazán számít.'
     },
     {
-        nev: '	Dolce&Gabbana K by Dolce & Gabbana',
+        nev: 'Dolce&Gabbana K by Dolce & Gabbana',
         fajta: 'Eau de Parfum',
         fej: 'boróka, kardamon, vérnarancs, pezsgő citrus',
         sziv: 'gólyaorr, füge nektár, lavandin, pezsgő citrus, zsálya',

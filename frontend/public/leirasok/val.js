@@ -51,7 +51,7 @@ let valAdatok = [
     },
     {
         nev:'Valentino Born In Roma Extradose Uomo',
-        fajta:'Parfum uraknak',
+        fajta:'Parfüm',
         fej:'fűszeres tónusok',
         sziv:'levendula',
         alap:'vanília, borostyán',

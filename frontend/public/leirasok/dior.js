@@ -10,7 +10,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Sauvage Elixir',
-        fajta: 'parfüm kivonat uraknak',
+        fajta: 'Parfüm',
         fej: 'grapefruit, fahéj, szerecsendió, kardamon',
         sziv: 'levendula, benzopyron, vanília',
         alap: 'borostyán, édesgyökér, haiti vetiver, pacsuli',
@@ -18,7 +18,7 @@ let diorAdatok = [
     },
      {
         nev: 'DIOR Sauvage',
-        fajta: 'Utántölthető parfum',
+        fajta: 'Utántölthető Parfüm',
         fej: 'kalabriai bergamott, mandarin',
         sziv: '	virginiai boróka, szantálfa',
         alap: 'absolut vanília',
@@ -36,7 +36,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Fahrenheit Parfum',
-        fajta: 'parfum uraknak',
+        fajta: 'Parfüm',
         fej: 'szicíliai mandarin',
         sziv: 'bőr, ibolya',
         alap: 'Bourbon vanília',
@@ -45,7 +45,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Homme parfum',
-        fajta: 'parfum uraknak',
+        fajta: 'Parfüm',
         fej: 'nőszirom',
         sziv: 'ámbrás jegy',
         alap: '',
@@ -54,7 +54,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Homme Cologne',
-        fajta: 'eau De Cologne',
+        fajta: 'Eau De Cologne',
         fej: 'kalabriai bergamott',
         sziv: 'grapefruit virága',
         alap: '	fehér pézsma',
@@ -63,7 +63,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Higher Energy',
-        fajta: 'eau De Toilette',
+        fajta: 'Eau De Toilette',
         fej: 'grapefruit',
         sziv: 'fekete bors',
         alap: '	vetiverfű',
@@ -72,7 +72,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Higher',
-        fajta: 'eau De Toilette',
+        fajta: 'Eau De Toilette',
         fej: 'bazsalikom, körte',
         sziv: 'kardamon',
         alap: '	virginiai boróka',
@@ -81,7 +81,7 @@ let diorAdatok = [
     },
     {
         nev: 'DIOR Eau Suavage',
-        fajta: 'eau De Toilette',
+        fajta: 'Eau De Toilette',
         fej: 'kalabriai bergamott',
         sziv: 'hedione, levendula',
         alap: '	chypre jegyek',

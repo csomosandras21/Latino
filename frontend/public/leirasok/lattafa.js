@@ -55,7 +55,7 @@ let lattafaAdatok = [
     },
     {
         nev: 'Lattafa Khamrah Qahwa',
-        fajta: 'Eau De Parfum',
+        fajta: 'Eau de Parfum',
         fej: 'fahéj, kardamon, gyömbér',
         sziv: 'praliné, kandírozott narancs, fehér virágok',
         alap: 'kávé, vanília, benzoin, pézsma, tonkabab',

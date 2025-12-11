@@ -1,52 +1,77 @@
+/* A teljes oldal kitöltése */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.page-container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tartalom kitöltse a helyet, footer pedig alul maradjon */
+.content-wrap {
+    flex: 1;
+}
+
+/* Footer stílus */
+.lab-hatter {
+    width: 100%;
+    background: #1e1e1e;
+    color: #fff;
+    padding: 40px;
+    box-sizing: border-box;
+    margin-top: auto; /* <<< EZ TOLJA LE A LEGALJÁRA */
+}
+
+
 .labjegyzet {
-    background-color: black;
-    padding-left: 300px;
-    padding-right: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .labjegyzet h1 {
-    padding-top: 10px;
-    color: white;
-    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
-.kerdesek h3 {
-    padding-top: 10px;
-    color: white;
-    font-size: 25px;
-    font-weight: bolder;
-    padding-top: 15px;
-    padding-bottom: 20px;
+.kerdesek, .fontos {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
 }
 
-.kerdesek h2 {
-    color: white;
-    font-size: 35px;
-    padding-bottom: 15px;
-}
-
-.cimek {
-       transition: none;
+.linkek {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .linkek a {
-    display: inline-block;
+    color: #cfcfcf;
     text-decoration: none;
-    justify-content: space-between;
-    color: white;
-    font-size: 18px;
-    padding-left: 68px;
-    padding-bottom: 15px;
+    font-size: 1rem;
+    transition: 0.2s ease;
 }
 
 .linkek a:hover {
-    font-weight: bolder;
+    color: #ffffff;
+    text-decoration: underline;
 }
 
-.fontos h3{
-    text-align: left;
-    padding-top: 15px;
-    color: white;
-    font-size: 25px;
-}
+/* Mobil nézet */
+@media (max-width: 768px) {
+    .labjegyzet {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
 
+    .kerdesek, .fontos {
+        margin-left: 0;
+    }
+}

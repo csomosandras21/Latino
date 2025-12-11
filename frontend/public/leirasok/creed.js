@@ -1,67 +1,85 @@
-let dolceAdatok = [
-    {
-        nev: 'Dolce&Gabbana Light Blue Capri In Love Pour Homme',
-        fajta: 'Eau de Parfum',
-        fej: 'fekete bors',
-        sziv: 'füge',
-        alap: 'pacsuli',
-        fajtaja: 'fűszeres, fás',
-        leiras: 'Képzelje el a tengeri szellőt, Capri szigetének aranyló fényét és a helyi természet erejét egy palackban. Ezeket az érzéseket közvetíti a Dolce&Gabbana Light Blue Capri In Love Pour Homme Eau de Parfum. Egyesíti a fűszeres frissességet, a gyümölcsös lédússágot és a mély eleganciát. Ugyanolyan erősen elvarázsolja Önt és környezetét, mint a Földközi-tenger partvidéke.'
+let creedAdatok = [
+   {
+        nev:'Creed Aventus',
+        fajta:'Eau de Parfum',
+        fej:'bergamott, feketeribizli, alma, citrom, rózsabors',
+        sziv:'jázmin, pacsuli, ananász',
+        alap:'pézsma, ambroxan, nyír, cédrusfa, tölgymoha',
+        fajtaja:'fás',
+        leiras:'A Creed Aventus Eau de Parfum egy páratlan sokszínűségről tanúskodó klasszikus parfüm. Mesterien ötvözi a kézzel szüretelt citrusfélék tónusait és az ananász vonzerejét dekadens fák füstös jellegével. A dinamikus debütálástól a megszáradásig elragadó illatot ígér, amely merész kifinomultságával és időtlen eleganciájával kelt mély benyomást.'
     },
     {
-        nev: 'Dolce&Gabbana Light Blue Pour Homme',
-        fajta: 'Eau de Parfum',
-        fej: 'grapefruit, mandarin narancs',
-        sziv: 'tengervíz, boróka',
-        alap: '	pézsma, ámbrafa',
-        fajtaja: 'bőrös, tengeries',
-        leiras: 'A Dolce & Gabbana Light Blue Pour Homme Eau Intense egy frissítő, tengeri jellegű illat, amely tökéletes választás a nyári hónapokra. A parfüm nyitánya élénkítő grapefruit és mandarin narancs jegyekkel indít, amelyek azonnal energiával töltik fel a viselőjét. A szívjegyekben a boróka és a sós tengervíz akkordjai dominálnak, amelyek a tengerparti hangulatot idézik. Az alapjegyekben az ámbrafa és a pézsma melegséget és tartósságot kölcsönöznek az illatnak. Ez az illat tökéletes választás azok számára, akik egy friss, mégis karakteres parfümöt keresnek a melegebb napokra.'
+        nev:'Creed Original Vetiver',
+        fajta:'Eau de Parfum',
+        fej:'gyömbér, zöld tónusok, olasz citrom',
+        sziv:'virágos tónusok, haiti vetiver, ciprus',
+        alap:'fehér pézsma, cédrusfa',
+        fajtaja:'aromás, fás',
+        leiras:'Mindenki, aki magán hordja, a frissesség illatát hagyja maga után. Miről van szó? A vetiver újra felfedezett, hagyományos aromájáról, amelyet a Creed Original Vetiver Eau de Parfum rejt magában. Az illat minden elemét tartalmazza ennek a trópusi fűnek, így a nyári illatokra emlékeztető kompozíció jön létre. Frissítő és temperamentumos, akárcsak Ön.'
     },
     {
-        nev: 'Dolce&Gabbana Light Blue Pour Homme',
-        fajta: 'Eau de Toilette',
-        fej: 'szicíliai citrom',
-        sziv: 'rozmaring',
-        alap: 'indonéz pacsulilevél',
-        fajtaja: 'aromás, fás',
-        leiras: 'A Dolce&Gabbana Light Blue Pour Homme Eau de Toilette olyan, mint egy nyári kaland a tengerparton. A citrusos jegyeket aromás és fás akkordokkal ötvözi, amelyek aláhúzzák az Ön férfiasságát, örömét és belső erejét.'
+        nev:'Creed Absolu Aventus',
+        fajta:'Eau de Parfum',
+        fej:'grapefruit, bergamott, gyömbér, citrom, feketeribizli',
+        sziv:'kardamon, fahéj, pacsuli, ananász, rózsabors',
+        alap:'tejszínes akkord, ambroxan, kaszmerán, haiti vetiver, labdanum, pézsma, tölgymoha',
+        fajtaja:'fás',
+        leiras:'A Creed Absolu Aventus Eau de Parfum a klasszikus Aventus merész újragondolása. Az eredeti illatot tiszteletben tartva fedez fel új mélységeket és textúrákat – friss citrusos tónusokkal indul, amelyek fokozatosan fűszeres és kifinomultan füstös tónusokká keverednek. Az eredmény egy olyan illat, amely kirobbanó szabadságérzést kelt – az erő és az elegancia találkozása a belső egyensúllyal.'
     },
     {
-        nev: 'Dolce&Gabbana Devotion For Men',
-        fajta: 'Eau de Parfum',
-        fej: 'citrom',
-        sziv: 'kávé',
-        alap: 'pacsuli',
-        fajtaja: 'fűszeres, fás',
-        leiras: 'Önben van odaadás, karizma és természetes elegancia – és a Dolce&Gabbana Devotion Pour Homme Eau de Parfum mindezeket a tulajdonságokat kiemeli. A mély érzelmekben, a szerelemben és az életörömben gyökerező férfiasságot ünnepli.'
+        nev:'Creed Bois Du Portugal',
+        fajta:'Eau de Parfum',
+        fej:'bergamott, citrom, limett, mandarin, bazsalikom',
+        sziv:'levendula, szegfűbors, szegfűszeg, szerecsendió, koriander',
+        alap:'szantálfa, tölgymoha, pacsuli, bőr',
+        fajtaja:'aromás, chypre, fás',
+        leiras:'Barangoljon az erdős portugál dombok között. A Creed Bois Du Portugal Eau de parfum férfiaknak egy olyan klasszikus termék kifinomult megtestesítője, amellyel sosem tévedhet. A fa gazdag illatát a levendula titokzatos aromája gazdagítja, amely egy csipetnyi pezsgést ad az illatnak és pontosan azt a plusz cseppet adja hozzá, amely biztosítja a rendkívüli élményt minden alkalommal, amikor a bőrhöz ér.'
     },
     {
-        nev: 'Dolce&Gabbana Devotion For Men Parfum',
-        fajta: 'Parfum',
-        fej: 'levendula',
-        sziv: 'kávé, ciprus',
-        alap: 'borostyán, tonkabab, vanília, tölgymoha',
-        fajtaja: 'fás, fougere , pézsmás',
-        leiras: 'A Dolce&Gabbana Devotion Pour Homme parfüm a férfielegancia lényegét ünnepli, kiegészítve az érzékiség még merészebb jegyeivel. A fougère akkord tiszteleg a szív állandó ereje és az iránti őszinte elkötelezettség előtt, ami igazán számít.'
+        nev:'Creed Original Santal',
+        fajta:'Eau de Parfum',
+        fej:'koriander, bergamott, gyömbér, borókabogyó, rozmaring, mandarin',
+        sziv:'egyiptomi geránium, levendula, narancsfa virág, szantálfa',
+        alap:'tonkabab, cédrusfa, pézsma, tölgymoha, pacsuli',
+        fajtaja:'aromás, fougere',
+        leiras:'Érzéki, különleges, magával ragadó a Creed Original Santal Eau de Parfum unisex illata. Az illatkompozíció mesterien kombinálja az indiai szantálfa eszenciáját a nemesen gyönyörű illatukról, szellemi eröjükről és nyugtató hatásukról ismert más tiszta elemekkel.'
     },
     {
-        nev: 'Dolce&Gabbana K by Dolce & Gabbana',
-        fajta: 'Eau de Parfum',
-        fej: 'boróka, kardamon, vérnarancs, pezsgő citrus',
-        sziv: 'gólyaorr, füge nektár, lavandin, pezsgő citrus, zsálya',
-        alap: 'cédrus, nagarmotha, vetiverfű, pacsuli',
-        fajtaja: 'aromás, fűszeres, fás',
-        leiras: 'A modern idők minden férfijában ott rejtőzik a király, és a férfi Dolce & Gabbana K by Dolce & Gabbana Eau de Parfum a kulcs a szívéhez. Ez a mágikus illat azt a férfit testesíti meg, aki önmaga választja meg azt az utat, amelyen elébe megy sorsának. Tökéletesen kiemeli viselője szenvedélyes és magabiztos karakterét.'
+        nev:'Creed Oud Zarian',
+        fajta:'Eau de Parfum',
+        fej:'bergamott, tömjén, gyömbér, fűszer',
+        sziv:'rózsa',
+        alap:'édesgyökér, mirha, oud, pacsuli, szantálfa, tonkabab',
+        fajtaja:'orientális, fűszeres, fás',
+        leiras:'A mesterien megmunkált Creed Oud Zarian Eau de Parfum hódolat a természet legcsodásabb ajándékai előtt, és azoknak szól, akik valami rendkívülire vágynak. A lelkét a páratlan 80 éves Oud Choron oud tölti be, amely a távoli Sylhet erdőkben található Aquilaria fából (sasfa) származik. Ez a kincs felülmúlhatatlan fás mélységgel és aromás intenzitással tölti meg az illatkompozíciót.'
     },
     {
-        nev: 'Dolce&Gabbana K by Dolce & Gabbana',
-        fajta: 'Eau de Toilette',
-        fej: 'citrusok, vérnarancs, borókabogyó',
-        sziv: 'citrusok, zsálya, gólyaorr, levendula',
-        alap: 'cédrusfa, vetiverfű, pacsuli',
-        fajtaja: 'aromás, fűszeres, fás',
-        leiras: 'Most kezdődik a férfiasság új korszaka, Ön pedig az élenjárók közé tartozik. A férfi K by Dolce & Gabbana eau de toilette az Ön bőrén mindenkinek jelzi majd, hogy Ön erős személyiségű férfi és teljességében engedi megnyilvánulni természetes karizmáját.'
-    }
+        nev:'Creed Silver Mountain Water',
+        fajta:'Eau de Parfum',
+        fej:'bergamott, feketeribizli, galbanum, narancs',
+        sziv:'levegő tónusai, tea',
+        alap:'pézsma, szantálfa',
+        fajtaja:'citrusos, fás',
+        leiras:'Hófödte hegycsúcsok, befagyott hegyi patakok és féktelen táj. A Creed Silver Mountain Water férfi Eau de Parfum olyan, mintha kifejezetten a hegyek, a síelés és a természet szerelmeseinek teremtették volna. Aromás kompozíciójának köszönhetően minden egyes napon energiával tölti fel, függetlenül attól, hogy fontos találkozó, hosszú munkanap vagy hegyi túra vár-e önre.'
+    },
+    {
+        nev:'Creed Silver Royal Oud',
+        fajta:'Eau de Parfum',
+        fej:'rózsabors, bergamott, limett, galbanum',
+        sziv:'angelikafű, kardamon, cédrusfa, szegfűszeg',
+        alap:'pézsma, ambroxan, tömjén, guajakfa, oud',
+        fajtaja:'fűszeres, fás',
+        leiras:'Méltóztasson belépni a monumentális királyi palotába, ahol az arany, márvány és értékes fák hihetetlen szépsége tárul a szeme elé. A Creed Royal Oud uniszex Eau de Parfum ihletéséül pont a királyi székhely atmoszférája szolgált, így illatkompozíciója mindenkit megnyer magának, aki a minőséget, a luxust és az egyedülállóságot értékelni tudja.'
+    },
+    {
+        nev:'Creed Virgin Island Water',
+        fajta:'Eau de Parfum',
+        fej:'bergamott, limett, trópusi gyümölcs',
+        sziv:'jázmin, kókusztej, fehér virágok',
+        alap:'tonkabab, fehér pézsma, pacsuli',
+        fajtaja:'citrusos, virágos',
+        leiras:'Frissítő citrusos illatot rejt flakonjában a Creed Virgin Island Water Eau de Parfum unisex illat. A trópusi akkordok elragadó koktélja azonnal a Karib-térségbe repíti, ahol nyugodt az élet, és illatokat hordoz a tengeri szellő - maga az üvegcsébe zárt karibi nyár.'
+    },
 ]
 
-export default dolceAdatok;
+export default creedAdatok;

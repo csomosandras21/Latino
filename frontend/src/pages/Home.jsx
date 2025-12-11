@@ -4,12 +4,16 @@ import lat3 from '../../public/images/Beige Simple Perfume Logo.png'
 import './Home.css'
 import './Parfums.css'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
+import { FilteringContext } from '../App'
 
 const Home = () => {
     let [items, setItems] = useState([]);
+    const { filtering } = useContext(FilteringContext)
+    
+        
     let tomb = [];
-
+    
     useEffect(() => {
         const szerverrolBetolt = async () => {
             const response = await fetch('http://localhost:3500/api/parfumes-frontend');
@@ -27,12 +31,15 @@ const Home = () => {
 
             if (response.ok)
             {
-                console.log(adatok);
+                console.log(filtering);
+                // console.log(adatok);
                 // for (let i = 0; i < adatok.length; i++) {
                 //     tomb.push(<Dior key={i} dio={adatok[i]} />);
                 // }
-        
-                setItems(adatok);
+                const atad = adatok.filter(elem => elem.fajta.includes(filtering))
+                console.log(atad);
+                
+                setItems(atad);
                 
             } 
             else console.log(adatok.msg);
@@ -41,7 +48,7 @@ const Home = () => {
 
         szerverrolBetolt();
         
-    }, []);
+    }, [filtering]);
 
     const atdob = (id) => {
         window.location.href = `/egyedi/${id}`;

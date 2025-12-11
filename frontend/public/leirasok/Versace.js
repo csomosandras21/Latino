@@ -19,7 +19,7 @@ let versaceAdatok = [
     },
     {
         nev:'Versace Eros Energy',
-        fajta:'Eau De Parfume',
+        fajta:'Eau de Parfum',
         fej:'bergamott, vérnarancs, limett, grapefruit, citrom',
         sziv:'rózsabors, feketeribizli, fehér ámbra',
         alap:'citrusos, fás',
@@ -28,7 +28,7 @@ let versaceAdatok = [
     },
     {
         nev:'Versace Dylan Blue Pour Homme',
-        fajta:'Eau de Toilet',
+        fajta:'Eau de Toilette',
         fej:'vízi tónusok, fügefa levél, kalabriai bergamott, grapefruit',
         sziv:'ibolya levelek, pacsuli, papirusz, fekete bors, ambroxan',
         alap:'pézsma, tonkabab, sáfrány, tömjén',
@@ -37,7 +37,7 @@ let versaceAdatok = [
     },
     {
         nev:'Versace Pour Homme',
-        fajta:'Eau de Toilet',
+        fajta:'Eau de Toilette',
         fej:'bergamott, citrom, keserűnarancs, keserű narancs',
         sziv:'jácint, gólyaorr, muskotályzsálya, cédrusfa',
         alap:'borostyán, pézsma, tonkabab, oud',
@@ -46,7 +46,7 @@ let versaceAdatok = [
     },
     {
         nev:'Versace Eau Fraîche',
-        fajta:'Eau de Toilet',
+        fajta:'Eau de Toilette',
         fej:'citrom, fa, karambola',
         sziv:'cédrus, tárkony, zsálya',
         alap:'borostyán, fa, pézsma',
@@ -55,7 +55,7 @@ let versaceAdatok = [
     },
     {
         nev:'Versace The Dreamer',
-        fajta:'Eau de Toilet',
+        fajta:'Eau de Toilette',
         fej:'boróka, tárkony, üröm',
         sziv:'nőszirom, liliom, Ien virága',
         alap:'borostyán, borostyán, dohány virága',

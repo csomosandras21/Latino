@@ -37,7 +37,7 @@ let armaniAdatok = [
     },
     {
         nev:'Armani Acqua di Giò',
-        fajta:'Eau de Toilet',
+        fajta:'Eau de Toilette',
         fej:'narancs, jázmin, citrom, bergamott, limett, keserűnarancs, mandarin virága',
         sziv:'tengeri tónusok, jázmin, őszibarack, rozmaring, frézia, jácint, ciklámen, ibolya, koriander, szerecsendió, rózsa, rezeda',
         alap:'fehér pézsma, cédrus, tölgymoha, pacsuli, borostyán',
@@ -46,7 +46,7 @@ let armaniAdatok = [
     },
     {
         nev:'Armani Acqua di Giò Parfum',
-        fajta:'Parfum',
+        fajta:'Parfüm',
         fej:'tengeri tónusok, zöld mandarin',
         sziv:'mimóza',
         alap:'pacsuli, labdanum',

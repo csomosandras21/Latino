@@ -9,7 +9,7 @@ const Dior = ({ dio }) => {
     }
 
     return (
-    <div className="dior-tartalom-kontener" key={dio._id} onClick={() => atdob(dio._id)}>
+    <div className="dior-tartalom-kontener" key={ dio._id} onClick={() => atdob(dio._id)}>
             <h1>{dio.nev}</h1>
             <p>{dio.fajta}</p>
             <p>{dio.ar}FT</p>

@@ -1,7 +1,7 @@
 let bossAdatok = [
     {
         nev:'BOSS The Scent Elixir for him Parfum',
-        fajta:'parfum uraknak',
+        fajta:'Parfüm',
         fej:'Pimento csilipaprika',
         sziv:'lavandin',
         alap:'szantálfa',
@@ -10,7 +10,7 @@ let bossAdatok = [
     },
     {
         nev:'BOSS The Scent',
-        fajta:'parfum uraknak',
+        fajta:'Parfüm',
         fej:'gyömbér',
         sziv:'maninka',
         alap:'bőr',
@@ -19,7 +19,7 @@ let bossAdatok = [
     },
     {
         nev:'BOSS Hugo Boss',
-        fajta:'parfum uraknak',
+        fajta:'Parfüm',
         fej:'bőr',
         sziv:'pacsuli',
         alap:'cédrusfa',

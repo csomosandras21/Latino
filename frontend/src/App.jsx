@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState } from 'react'
+import { useState, createContext } from 'react'
 import Home from './pages/Home'
 import Accaunt from './pages/Accaunt'
 import Diors from './pages/Diors'
@@ -31,11 +31,14 @@ import EgyediValentino from './components/EgyediValentino';
 import EgyediVersacce from './components/EgyediVersacce';
 import EgyediYsl from './components/EgyediYsl';
 
+export const FilteringContext = createContext();
+
 function App() {
   const [count, setCount] = useState(0)
+  const [filtering, setFiltering] = useState('')
 
   return (
-    <>
+    <FilteringContext.Provider value={{filtering, setFiltering}}>
           
         <BrowserRouter>
             <Navbar />
@@ -72,7 +75,7 @@ function App() {
               </Routes>
             <Footer />                               
         </BrowserRouter>
-    </>
+    </FilteringContext.Provider>
 
   )
 }
