@@ -41,7 +41,7 @@ const Navbar = () => {
     </div>
     {isLoggedIn ?  <>
     <div className="icons" style={{backgroundColor: 'black'}}>
-      <a href=""> <img src={bag} alt="" /> </a>
+      <Link href=""> <img src={bag} alt="" /> <div className='szamok' useState=""></div> </Link>
       <Link to='/accaunt'> <img src={account} alt="" /> </Link>
       <a href=""> <img src={favorite} alt="" /> </a>
       <Link to='/logout'> <img src={logout} alt="" onClick={kilep}/> </Link>
