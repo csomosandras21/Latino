@@ -46,7 +46,7 @@ const EgyediYsl = (id) => {
   return (
      <div className="oldal">
 
-    <h1 className="cim">YSL</h1>
+    <h1 className="cim">Yves Saint Laurent</h1>
 
     <div className="termek-kontener">
 

@@ -18,7 +18,7 @@
   background-color: #fff;
 }
 
-/* Egyes parfümkártyák */
+
 .tartalom-kontener {
   background: #ffffff;
   border: 1px solid #e3e3e3;
@@ -36,7 +36,7 @@
 }
 
 
-/* Név */
+
 .tartalom-kontener h1 {
   font-size: 16px;
   color: #222;
@@ -44,14 +44,14 @@
   font-weight: 600;
 }
 
-/* Fajta (pl. Eau de Toilette) */
+
 .tartalom-kontener p:first-of-type {
   font-size: 13px;
   color: #777;
   margin: 0 0 6px;
 }
 
-/* Ár */
+
 .tartalom-kontener p:nth-of-type(2) {
   font-size: 17px;
   color: #000;
@@ -59,7 +59,7 @@
   margin: 0 0 10px;
 }
 
-/* Kép */
+
 .tartalom-kontener img {
   width: 100%;
   height: 160px;
@@ -69,7 +69,7 @@
   margin-top: 8px;
 }
 
-/* Hoverkor finom nagyítás */
+
 .tartalom-kontener:hover img {
   transform: scale(1.05);
 }

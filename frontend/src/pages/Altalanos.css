@@ -1,0 +1,32 @@
+
+
+.main-resz4 {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.rol {
+    margin-top: 40px;
+    margin-bottom: 5%;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.jegyzet h2 {
+    margin-top: 40px;
+    margin-bottom: 5%;
+    font-size: 30px;
+}
+
+.jegyzet p {
+     font-size: 20px;
+     margin-bottom: 40px;
+     margin-top: 40px;
+     text-align: justify;
+}
+
+.jegyzet h3 {
+    text-align: center;
+    font-size: 22px;
+}

@@ -30,6 +30,12 @@ import EgyediJpg from './components/EgyediJpg';
 import EgyediValentino from './components/EgyediValentino';
 import EgyediVersacce from './components/EgyediVersacce';
 import EgyediYsl from './components/EgyediYsl';
+import Cart from './pages/Cart';
+import Rolunk from './pages/Rolunk';
+import Eredeti from './pages/Eredeti';
+import Adatvedelem from './pages/adatvedelem';
+import Altalanos from './pages/Altalanos';
+import Szemelyes from './pages/Szemelyes';
 
 export const FilteringContext = createContext();
 
@@ -72,6 +78,12 @@ function App() {
                 <Route path='/egyediarmani/:id' element={<EgyediArmani />} />                      
                 <Route path='/lattafas' element={<Lattafas />} />    
                 <Route path='/egyedilattafa/:id' element={<EgyediLattafa />} /> 
+                <Route path='/cart' element={<Cart />} /> 
+                <Route path='/rolunk' element={<Rolunk />} /> 
+                <Route path='/eredeti' element={<Eredeti />} /> 
+                <Route path='/adatvedelem' element={<Adatvedelem />} /> 
+                <Route path='/altalanos' element={<Altalanos />} /> 
+                <Route path='/szemelyes' element={<Szemelyes />} /> 
               </Routes>
             <Footer />                               
         </BrowserRouter>

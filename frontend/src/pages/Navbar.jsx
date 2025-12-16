@@ -11,6 +11,7 @@ const Navbar = () => {
   const { setFiltering} = useContext(FilteringContext)
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [kosarErtek, setKosarErtek] = useState(0);
   const  [filter, setFilter] = useState('');
   console.log(filter);
   
@@ -41,7 +42,9 @@ const Navbar = () => {
     </div>
     {isLoggedIn ?  <>
     <div className="icons" style={{backgroundColor: 'black'}}>
-      <Link href=""> <img src={bag} alt="" /> <div className='szamok' useState=""></div> </Link>
+      <div className='kosarErtek-tarto'>
+      <Link to="/cart"> <img src={bag} alt="" /></Link><span className='kosarErtek'>{kosarErtek}</span>
+      </div>
       <Link to='/accaunt'> <img src={account} alt="" /> </Link>
       <a href=""> <img src={favorite} alt="" /> </a>
       <Link to='/logout'> <img src={logout} alt="" onClick={kilep}/> </Link>
@@ -69,7 +72,7 @@ const Navbar = () => {
     <Link to='/creeds' >CREED</Link>
     <Link to='/dgs' >DOLCE & GABBANA</Link>
     <Link to='/guccis' >GUCCI</Link>
-    <Link to='/burberrys' >BURBBERY</Link>
+    <Link to='/burberrys' >BURBERRY</Link>
     <Link to='/armanis' >ARMANI</Link>
     <Link to='/lattafas' >LATTAFA</Link>
   </nav>

@@ -13,11 +13,11 @@ const Footer = () => {
             <hr />
             <h3>Miért a Latino-t válasszam?</h3> 
             <div className='linkek'>
-                <Link to={'/'}>Rólunk</Link>
-                <Link to={'/'}>Csak eredeti termékek</Link>
-                <Link to={'/'}>Adatvédelmi központ</Link>
-                <Link to={'/'}>Általános Szerződési Feltételek</Link>
-                <Link to={'/'}>Személyes adatok védelme</Link> 
+                <Link to={'/rolunk'}>Rólunk</Link>
+                <Link to={'/eredeti'}>Csak eredeti termékek</Link>
+                <Link to={'/adatvedelem'}>Adatvédelmi központ</Link>
+                <Link to={'/altalanos'}>Általános Szerződési Feltételek</Link>
+                <Link to={'/szemelyes'}>Személyes adatok védelme</Link> 
             </div>
    
             <hr />

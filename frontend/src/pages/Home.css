@@ -167,4 +167,17 @@
         position: static;
     }
 
-    
+    .kosarErtek-tarto {
+      position: relative;
+    }
+
+    .kosarErtek {
+      border-radius: 50%;
+      /* background-color: #fff;
+      color: black; */
+      font-size: 15px;
+      position: absolute;
+      top: 0px;
+      right: -8px;
+      font-weight: bolder;
+    }
