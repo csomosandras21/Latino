@@ -69,6 +69,7 @@
 }
 
 .nev {
+  margin-top: 20px;
     padding-bottom:  auto;
 }
 
@@ -89,13 +90,13 @@
 .termek-ar{
   font-size: 30px;
   font-weight: 700;
-  margin-top: 15px;
+  margin-top: 170px;
   color: #000;
 }
 
 /* Vásárlás gomb */
 .vasarlas-gomb {
-  margin-top: 25px;
+  margin-top: 10px;
   padding: 14px 20px;
   background: #000;
   color: #fff;
@@ -139,4 +140,62 @@
   .termek-ar {
     font-size: 24px;
   }
+}
+
+
+
+
+table {
+    width: 1030px;
+    margin-bottom: 60px;
+    font-weight: bolder;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-left: 105px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #ffffff;
+    color: #333;
+    font-weight: bold;
+}
+
+td {
+    background-color: #e7e7e796;
+    color: #555;
+}
+
+tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+tr:hover td {
+    background-color: #d8d8d8;
+    transition: background-color 0.3s;
+}
+
+table, th, td {
+    border: 1px solid #d4d4d4c9;
+}
+
+.leirasok {
+  padding-left: 110px;
+  padding-right: 350px;
+  font-size: 20px;
+  margin-bottom: 90px;
+}
+
+
+.szag {
+  margin-top: 80px;
+  margin-left: 110px;
+  font-size: 30px;
+  font-weight: bolder;
+  margin-bottom: 12px;
 }

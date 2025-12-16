@@ -1,3 +1,5 @@
+ @import url('../components/Footer.css');
+ 
  * {
       margin: 0;
       padding: 0;
@@ -19,12 +21,12 @@
       width: 100%;
     }
 
-    Link {
+    /* Link {
       text-decoration: none;
-    }
+    } */
 
     .logo {
-      font-size: 34px;
+      font-size: 35px;
       font-weight: bold;
       letter-spacing: 23px; 
       /* background: linear-gradient(to right,
@@ -60,7 +62,7 @@
       background-color: black;
       display: flex;
       justify-content: center;
-      gap: 40px;
+      gap: 55px;
       padding: 10px 0;
       height: 60px;
     }
@@ -151,13 +153,14 @@
         text-decoration: underline;
     }
 
-    a{
+    .navbar a, .logo a{
       text-decoration: none;
       color: white;
+      font-size: 70x;
       font-weight: bold;
     }
 
-     a:hover {
+    .navbar a:hover, .navbar a:hover {
         font-size: 20px;
         text-align: center;
         font-weight: bolder;

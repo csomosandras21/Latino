@@ -1,25 +1,77 @@
+/* A teljes oldal kitöltése */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.page-container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tartalom kitöltse a helyet, footer pedig alul maradjon */
+.content-wrap {
+    flex: 1;
+}
+
+/* Footer stílus */
+.lab-hatter {
+    width: 100%;
+    background: #000000;
+    color: #fff;
+    padding: 40px;
+    box-sizing: border-box;
+    margin-top: auto; /* <<< EZ TOLJA LE A LEGALJÁRA */
+}
+
+
 .labjegyzet {
-    background-color: black;
-    padding-left: 300px;
-    padding-right: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .labjegyzet h1 {
-    padding-top: 10px;
-    color: white;
-    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
-.labjegyzet a {
-    padding-top: 10px;
-    color: white;
-    text-align: center;
+.kerdesek, .fontos {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
 }
 
-.kerdesek h2 {
-    color: white;
+.linkek {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
-.cimek {
-       transition: none;
+.linkek a {
+    color: #cfcfcf;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.2s ease;
+}
+
+.linkek a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Mobil nézet */
+@media (max-width: 768px) {
+    .labjegyzet {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .kerdesek, .fontos {
+        margin-left: 0;
+    }
 }

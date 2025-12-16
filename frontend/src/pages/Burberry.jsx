@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import "./Burberry.css"
 
 const Burberry = ({ bur }) => {
 
@@ -7,7 +8,7 @@ const Burberry = ({ bur }) => {
     }
 
     return (
-    <div className="tartalom-kontener" key={bur._id} onClick={() => atdob(bur._id)}>
+    <div className="burberry-tartalom-kontener" key={bur._id} onClick={() => atdob(bur._id)}>
         <h1>{bur.nev}</h1>
         <p>{bur.fajta}</p>
         <p>{bur.ar}FT</p>

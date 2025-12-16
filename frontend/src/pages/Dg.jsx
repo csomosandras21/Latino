@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import "./Dg.css"
 
 const Dolce = ({ dol }) => {
 
@@ -6,7 +7,7 @@ const atdob = (id) => {
         window.location.href = `/egyedidg/${id}`;
     }
     return (
-    <div className="tartalom-kontener" key={dol._id} onClick={() => atdob(dol._id)}>
+    <div className="dg-tartalom-kontener" key={dol._id} onClick={() => atdob(dol._id)}>
         <h1>{dol.nev}</h1>
         <p>{dol.fajta}</p>
         <p>{dol.ar}FT</p>

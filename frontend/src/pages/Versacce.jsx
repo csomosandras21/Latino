@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import "./Versacce.css"
 
 const Versacce = ({ vers }) => {
 
@@ -7,7 +8,7 @@ const atdob = (id) => {
     }
 
     return (
-    <div className="tartalom-kontener" key={vers._id} onClick={() => atdob(vers._id)}>
+    <div className="versacce-tartalom-kontener" key={vers._id} onClick={() => atdob(vers._id)}>
         <h1>{vers.nev}</h1>
         <p>{vers.fajta}</p>
         <p>{vers.ar}FT</p>

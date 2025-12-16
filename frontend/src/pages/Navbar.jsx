@@ -4,20 +4,26 @@ import favorite from '../../public/images/favorite_24dp_FFF_FILL0_wght400_GRAD0_
 import logout from '../../public/images/logout.png'
 import server from '../../public/images/server.png'
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
+import { FilteringContext } from '../App'
 
 const Navbar = () => {
+  const { setFiltering} = useContext(FilteringContext)
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-
+  const  [filter, setFilter] = useState('');
+  console.log(filter);
+  
+  
   useEffect(() => {
+    setFiltering(filter);
     const leker = localStorage.getItem('isLoggedIn');
     const user = JSON.parse(localStorage.getItem('user'));
     setIsLoggedIn(leker === '1');
     if (user) setIsAdmin(user.admin);
         else setIsAdmin(false);
     
-  }, []);
+  }, [filter]);
 
   function kilep() {
     setIsLoggedIn(false);
@@ -29,13 +35,13 @@ const Navbar = () => {
   return (
     <div>
         <header>
-    <Link to='/'> <div className="logo">LATINO</div></Link>
+    <div className="logo"><Link to='/'> LATINO</Link></div>
     <div className="search-bar">
-      <input type="text" placeholder="Keresés..." />
+      <input type="text" placeholder="Keresés..." onChange={e => setFilter(e.target.value)} />
     </div>
     {isLoggedIn ?  <>
     <div className="icons" style={{backgroundColor: 'black'}}>
-      <a href=""> <img src={bag} alt="" /> </a>
+      <Link href=""> <img src={bag} alt="" /> <div className='szamok' useState=""></div> </Link>
       <Link to='/accaunt'> <img src={account} alt="" /> </Link>
       <a href=""> <img src={favorite} alt="" /> </a>
       <Link to='/logout'> <img src={logout} alt="" onClick={kilep}/> </Link>

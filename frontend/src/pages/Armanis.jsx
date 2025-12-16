@@ -1,14 +1,20 @@
-import { useState, useEffect, useRef } from "react";
 import Armani from "./Armani";
-
+import { useEffect, useState, useContext, useRef } from 'react'
+import { FilteringContext } from '../App'
 
 const Armanis = () => {
-    let [armaniItmes, setArmanisItems] = useState([]);
+    let [armanisItmes, setArmanisItems] = useState([]);
     let tomb = [];
+
+    const { filtering } = useContext(FilteringContext)
+    
+
     const previousArmaniItems = useRef([]);
 
     useEffect(() => {
-        previousArmaniItems.current = armaniItmes;
+        console.log(filtering);
+        
+        previousArmaniItems.current = armanisItmes;
         const szerverrolBetolt = async () => {
             const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();
@@ -22,23 +28,37 @@ const Armanis = () => {
 
             if (response.ok)
             {
+                console.log(filtering);
                 console.log(adatok);
-                for (let i = 0; i < armanis.length; i++) {
-                    tomb.push(<Armani key={i} armani={armanis[i]} />);
+                const atad = armanis.filter(elem => elem.fajta.includes(filtering))
+                console.log(atad);
+                
+                if (atad.length === 0) {
+                    for (let i = 0; i < armanis.length; i++) {
+                        tomb.push(<Armani key={i} armani={armanis[i]} />);
+                    }
+                } else {
+                    for (let i = 0; i < atad.length; i++) {
+                        tomb.push(<Armani key={i} armani={atad[i]} />);
+                    }
+
                 }
                 setArmanisItems(tomb);
+                // console.log(atad);
+                
+                // setArmanisItems(atad);
             } 
-            else console.log(armanis.msg);
+            else console.log(adatok.msg);
 
         }
 
         szerverrolBetolt();
         
-    }, [armaniItmes]);
+    },  [filtering]);
 
     return (
        <div>
-            <div className="main-kontener">{armaniItmes}</div>;
+            <div className="main-kontener">{armanisItmes}</div>;
         </div>
     );
 }

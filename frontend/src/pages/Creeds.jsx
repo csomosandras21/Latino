@@ -1,13 +1,19 @@
-import { useState, useEffect, useRef } from "react";
 import Creed from "./Creed";
+import { useEffect, useState, useContext, useRef } from 'react'
+import { FilteringContext } from '../App'
 
 
 const Creeds = () => {
     let [creedItems, setCreedsItems] = useState([]);
     let tomb = [];
+
+    const { filtering } = useContext(FilteringContext)
+
     const previousCreedItems = useRef([]);
 
     useEffect(() => {
+        console.log(filtering);
+
         previousCreedItems.current = creedItems;
         const szerverrolBetolt = async () => {
             const response = await fetch('http://localhost:3500/api/parfumes-frontend');
@@ -21,9 +27,20 @@ const Creeds = () => {
 
             if (response.ok)
             {
+               console.log(filtering);
                 console.log(adatok);
-                for (let i = 0; i < creeds.length; i++) {
-                    tomb.push(<Creed key={i} creed={creeds[i]} />);
+                const atad = creeds.filter(elem => elem.fajta.includes(filtering))
+                console.log(atad);
+                
+                if (atad.length === 0) {
+                    for (let i = 0; i < creeds.length; i++) {
+                        tomb.push(<Creed key={i} creed={creeds[i]} />);
+                    }
+                } else {
+                    for (let i = 0; i < atad.length; i++) {
+                        tomb.push(<Creed key={i} creed={atad[i]} />);
+                    }
+
                 }
         
                 setCreedsItems(tomb);
@@ -34,7 +51,7 @@ const Creeds = () => {
 
         szerverrolBetolt();
         
-    }, [creedItems]);
+    }, [filtering]);
 
     return (
         <div>

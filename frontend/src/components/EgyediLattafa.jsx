@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
+import lattafaAdatok from '../../public/leirasok/lattafa.js'
 
 const EgyediLattafa = (id) => {
   const params = useParams();
   console.log(params.id);
   let [lattafaItem, setLattafaItem] = useState([]);
+  let [lattafaLeir, setLattafaLeir] = useState([]);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -15,17 +17,23 @@ const EgyediLattafa = (id) => {
               const adatok = bejovoAdatok.parfumes;
               const lattafas = adatok.filter(elem => elem.marka === 'Lattafa')
               console.log(lattafas);
+              console.log(lattafaAdatok);
   
-              const itemD = lattafas.filter(elem => elem._id === params.id);
+              const itemL = lattafas.filter(elem => elem._id === params.id);
+              console.log(itemL[0]);
+              const leirL = lattafaAdatok.filter(elem => elem.nev.toUpperCase() === itemL[0].nev.toUpperCase() && elem.fajta.toUpperCase() === itemL[0].fajta.toUpperCase())
+              console.log(leirL);
+
   
               if (response.ok)
               {
-                  console.log(itemD[0]);
+                  console.log(itemL[0]);
                   // for (let i = 0; i < adatok.length; i++) {
                   //     tomb.push(<Dior key={i} dio={adatok[i]} />);
                   // }
           
-                  setLattafaItem(itemD[0]);
+                  setLattafaItem(itemL[0]);
+                  setLattafaLeir(leirL[0])
                   
               } 
               else console.log(adatok.msg);
@@ -73,7 +81,18 @@ const EgyediLattafa = (id) => {
         <button className="vasarlas-gomb">Kosárba</button>
       </div>
       </div>
-
+</div>
+    <p className='szag'>Illat leírás:</p>
+      <table>
+        <tbody>
+        <tr><td>Fej</td><td>{lattafaLeir.fej}</td></tr>
+        <tr><td>Szív</td><td>{lattafaLeir.sziv}</td></tr>
+        <tr><td>Alap</td><td>{lattafaLeir.alap}</td></tr>
+        <tr><td>Fajtaja</td><td>{lattafaLeir.fajtaja}</td></tr>
+        </tbody>
+        </table>
+        <div className='leirasok'>
+          <p>Leírás {lattafaLeir.leiras}</p>
     </div>
   </div>
 )

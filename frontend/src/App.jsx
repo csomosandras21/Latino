@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState } from 'react'
+import { useState, createContext } from 'react'
 import Home from './pages/Home'
 import Accaunt from './pages/Accaunt'
 import Diors from './pages/Diors'
@@ -18,6 +18,7 @@ import Lattafas from './pages/Lattafas';
 import Register from './pages/Register';
 import Ysls from './pages/Ysls';
 import EgyediDior from './components/EgyediDior';
+import Egyedi from './components/Egyedi'
 import EgyediBoss from './components/EgyediBoss';
 import EgyediArmani from './components/EgyediArmani';
 import EgyediBurberry from './components/EgyediBurberry';
@@ -30,11 +31,14 @@ import EgyediValentino from './components/EgyediValentino';
 import EgyediVersacce from './components/EgyediVersacce';
 import EgyediYsl from './components/EgyediYsl';
 
+export const FilteringContext = createContext();
+
 function App() {
   const [count, setCount] = useState(0)
+  const [filtering, setFiltering] = useState('')
 
   return (
-    <>
+    <FilteringContext.Provider value={{filtering, setFiltering}}>
           
         <BrowserRouter>
             <Navbar />
@@ -54,7 +58,8 @@ function App() {
                 <Route path='/versacces' element={<Versacces />} /> 
                 <Route path='/egyediversacce/:id' element={<EgyediVersacce />} />                  
                 <Route path='/ysls' element={<Ysls />} />      
-                <Route path='/egyediysl/:id' element={<EgyediYsl />} />              
+                <Route path='/egyediysl/:id' element={<EgyediYsl />} />     
+                <Route path='/egyedi/:id' element={<Egyedi />} />         
                 <Route path='/creeds' element={<Creeds />} />
                 <Route path='/egyedicreed/:id' element={<EgyediCreed />} />                      
                 <Route path='/dgs' element={<Dgs  />} />
@@ -70,7 +75,7 @@ function App() {
               </Routes>
             <Footer />                               
         </BrowserRouter>
-    </>
+    </FilteringContext.Provider>
 
   )
 }

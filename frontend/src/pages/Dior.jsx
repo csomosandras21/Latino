@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Parfumok.css'
+import "./Dior.css"
 
 const Dior = ({ dio }) => {
     
@@ -9,7 +9,7 @@ const Dior = ({ dio }) => {
     }
 
     return (
-    <div className="tartalom-kontener" key={dio._id} onClick={() => atdob(dio._id)}>
+    <div className="dior-tartalom-kontener" key={ dio._id} onClick={() => atdob(dio._id)}>
             <h1>{dio.nev}</h1>
             <p>{dio.fajta}</p>
             <p>{dio.ar}FT</p>

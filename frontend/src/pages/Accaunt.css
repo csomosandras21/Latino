@@ -62,6 +62,8 @@
 .ha{
   text-align: center;
   font-weight: 500;
+  text-decoration: none;
+  color: white;
 }
 .ha :hover{
   font-weight: 500;

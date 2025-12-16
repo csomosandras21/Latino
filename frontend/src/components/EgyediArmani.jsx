@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
+import armaniAdatok from '../../public/leirasok/armani.js';
+
 
 const EgyediArmani = (id) => {
   const params = useParams();
   console.log(params.id);
   let [armaniItem, setArmaniItem] = useState([]);
+  let [armaniLeir, setArmaniLeir] = useState([]);
+
+
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -15,8 +20,12 @@ const EgyediArmani = (id) => {
               const adatok = bejovoAdatok.parfumes;
               const armanis = adatok.filter(elem => elem.marka === 'Armani')
               console.log(armanis);
+              console.log(armaniAdatok);
   
               const itemA = armanis.filter(elem => elem._id === params.id);
+              console.log(itemA[0]);
+              const leirA = armaniAdatok.filter(elem => elem.nev.toUpperCase() === itemA[0].nev.toUpperCase() && elem.fajta.toUpperCase() === itemA[0].fajta.toUpperCase())
+              console.log(leirA);
   
               if (response.ok)
               {
@@ -26,6 +35,7 @@ const EgyediArmani = (id) => {
                   // }
           
                   setArmaniItem(itemA[0]);
+                  setArmaniLeir(leirA[0]);
                   
               } 
               else console.log(adatok.msg);
@@ -75,10 +85,23 @@ const EgyediArmani = (id) => {
       </div>
 
     </div>
+    <p className='szag'>Illat leírás:</p>
+      <table>
+        <tbody>
+        <tr><td>Fej</td><td>{armaniLeir.fej}</td></tr>
+        <tr><td>Szív</td><td>{armaniLeir.sziv}</td></tr>
+        <tr><td>Alap</td><td>{armaniLeir.alap}</td></tr>
+        <tr><td>Fajtaja</td><td>{armaniLeir.fajtaja}</td></tr>
+        </tbody>
+        </table>
+        <div className='leirasok'>
+          <p>Leírás {armaniLeir.leiras}</p>
+        </div>
   </div>
 )
     
-  
 }
+
+
 
 export default EgyediArmani

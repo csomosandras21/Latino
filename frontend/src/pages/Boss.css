@@ -1,4 +1,4 @@
-/* .main-kontener {
+.main-kontener {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
@@ -8,7 +8,7 @@
   margin: 0 auto;
   background-color: #fff;
 }
-.Ysl-tartalom-kontener {
+.boss-tartalom-kontener {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
@@ -18,8 +18,8 @@
   background-color: #fff;
 }
 
-
-.Ysl-tartalom-kontener {
+/* Egyes parfümkártyák */
+.boss-tartalom-kontener {
   background: #ffffff;
   border: 1px solid #e3e3e3;
   border-radius: 12px;
@@ -36,29 +36,31 @@
 }
 
 
-
-.Ysl-tartalom-kontener h1 {
+/* Név */
+.boss-tartalom-kontener h1 {
   font-size: 16px;
   color: #222;
   margin: 10px 0 6px;
   font-weight: 600;
 }
 
-.Ysl-tartalom-kontener p:first-of-type {
+/* Fajta (pl. Eau de Toilette) */
+.boss-tartalom-kontener p:first-of-type {
   font-size: 13px;
   color: #777;
   margin: 0 0 6px;
 }
 
-
-.Ysl-tartalom-kontener p:nth-of-type(2) {
+/* Ár */
+.boss-tartalom-kontener p:nth-of-type(2) {
   font-size: 17px;
   color: #000;
   font-weight: 700;
   margin: 0 0 10px;
 }
 
-.Ysl-tartalom-kontener img {
+/* Kép */
+.boss-tartalom-kontener img {
   width: 100%;
   height: 160px;
   object-fit: contain;
@@ -67,14 +69,14 @@
   margin-top: 8px;
 }
 
-
-.Ysl-tartalom-kontener:hover img {
+/* Hoverkor finom nagyítás */
+.boss-tartalom-kontener:hover img {
   transform: scale(1.05);
 }
 
-.Ysl-tartalom-kontener:hover h1 {
+.boss-tartalom-kontener:hover h1 {
   text-decoration: underline;
 }
 
 
- */
+

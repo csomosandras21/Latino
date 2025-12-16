@@ -1,6 +1,7 @@
 let diorAdatok = [
     {
         nev: 'DIOR Sauvage',
+        fajta: 'Eau De Parfum',
         fej: 'bergamott',
         sziv: 'vanília',
         alap: '',
@@ -9,6 +10,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Sauvage Elixir',
+        fajta: 'Parfüm',
         fej: 'grapefruit, fahéj, szerecsendió, kardamon',
         sziv: 'levendula, benzopyron, vanília',
         alap: 'borostyán, édesgyökér, haiti vetiver, pacsuli',
@@ -16,6 +18,7 @@ let diorAdatok = [
     },
      {
         nev: 'DIOR Sauvage',
+        fajta: 'Utántölthető Parfüm',
         fej: 'kalabriai bergamott, mandarin',
         sziv: '	virginiai boróka, szantálfa',
         alap: 'absolut vanília',
@@ -24,6 +27,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Homme',
+        fajta: 'Eau De Toilette',
         fej: 'cédrus',
         sziv: '	pacsuli',
         alap: '	vetiverfű',
@@ -32,6 +36,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Fahrenheit Parfum',
+        fajta: 'Parfüm',
         fej: 'szicíliai mandarin',
         sziv: 'bőr, ibolya',
         alap: 'Bourbon vanília',
@@ -40,6 +45,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Homme parfum',
+        fajta: 'Parfüm',
         fej: 'nőszirom',
         sziv: 'ámbrás jegy',
         alap: '',
@@ -48,6 +54,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Homme Cologne',
+        fajta: 'Eau De Cologne',
         fej: 'kalabriai bergamott',
         sziv: 'grapefruit virága',
         alap: '	fehér pézsma',
@@ -56,6 +63,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Higher Energy',
+        fajta: 'Eau De Toilette',
         fej: 'grapefruit',
         sziv: 'fekete bors',
         alap: '	vetiverfű',
@@ -64,6 +72,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Higher',
+        fajta: 'Eau De Toilette',
         fej: 'bazsalikom, körte',
         sziv: 'kardamon',
         alap: '	virginiai boróka',
@@ -71,7 +80,8 @@ let diorAdatok = [
         leiras: 'Ez a meglepő aromás, fás illat a modern városi ember számára készült, aki a jelen pillanatban él, mégis az örök férfiasságot testesíti meg.Hűvös és energikus, körte, citrus és bazsalikom jegyekkel, fűszeres szívjeggyel és pézsmás alapjeggyel.Légies érzetet és sima energiát sugározva a Higher a kortárs, városi illatok pulzusa. A gyümölcsös akkord ragyogása és folyékonysága összeolvad a fűszerek energiájával és rezgéseivel.'
     },
     {
-        nev: 'DIOR Eau Sauvage',
+        nev: 'DIOR Eau Suavage',
+        fajta: 'Eau De Toilette',
         fej: 'kalabriai bergamott',
         sziv: 'hedione, levendula',
         alap: '	chypre jegyek',

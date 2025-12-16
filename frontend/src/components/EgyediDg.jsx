@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
+import dolceAdatok from '../../public/leirasok/dg.js'
+
 
 const EgyediDg = (id) => {
   const params = useParams();
   console.log(params.id);
   let [dgItem, setDgItem] = useState([]);
+  let [dolceLeir, setDgLeir] = useState([]);
+
+
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -15,9 +20,14 @@ const EgyediDg = (id) => {
               const adatok = bejovoAdatok.parfumes;
               const dgs = adatok.filter(elem => elem.marka === 'Dolce & Gabbana')
               console.log(dgs);
+              console.log(dolceAdatok);
   
               const itemD = dgs.filter(elem => elem._id === params.id);
-  
+              console.log(itemD[0]);
+              const leirD = dolceAdatok.filter(elem => elem.nev.toUpperCase() === itemD[0].nev.toUpperCase() && elem.fajta.toUpperCase() === itemD[0].fajta.toUpperCase())
+              console.log(leirD);
+
+
               if (response.ok)
               {
                   console.log(itemD[0]);
@@ -26,6 +36,7 @@ const EgyediDg = (id) => {
                   // }
           
                   setDgItem(itemD[0]);
+                  setDgLeir(leirD[0]);
                   
               } 
               else console.log(adatok.msg);
@@ -75,8 +86,24 @@ const EgyediDg = (id) => {
       </div>
 
     </div>
+    <p className='szag'>Illat leírás:</p>
+      <table>
+        <tbody>
+        <tr><td>Fej</td><td>{dolceLeir.fej}</td></tr>
+        <tr><td>Szív</td><td>{dolceLeir.sziv}</td></tr>
+        <tr><td>Alap</td><td>{dolceLeir.alap}</td></tr>
+        <tr><td>Fajtaja</td><td>{dolceLeir.fajtaja}</td></tr>
+        </tbody>
+        </table>
+        <div className='leirasok'>
+          <p>Leírás {dolceLeir.leiras}</p>
+        </div>
   </div>
 )
+
+
 }
+
+
 
 export default EgyediDg
