@@ -25,7 +25,7 @@ const Footer = () => {
         <div className='fontos'>
             <h3>Fontos tudni valók</h3>
             <div className='linkek'>
-                <Link to={'/'}>Pénzvisszafizetési garancia</Link>
+                <Link to={'/penz'}>Pénzvisszafizetési garancia</Link>
                 <Link to={'/'}>Szállítás és fizetés</Link>
                 <Link to={'/'}>Hogyan vásároljunk?</Link>
                 <Link to={'/'}>Kapcsolat</Link>

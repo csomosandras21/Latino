@@ -84,6 +84,7 @@ function App() {
                 <Route path='/adatvedelem' element={<Adatvedelem />} /> 
                 <Route path='/altalanos' element={<Altalanos />} /> 
                 <Route path='/szemelyes' element={<Szemelyes />} /> 
+                <Route path='/penz' element={<Penz />} /> 
               </Routes>
             <Footer />                               
         </BrowserRouter>

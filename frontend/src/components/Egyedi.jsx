@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
 import osszesAdatok from '../../public/leirasok/osszes';
+import { CartContext } from '../context/CartContext';
 
 const Egyedi= (id) => {
+    const {setKosar} = useContext(CartContext);
   const params = useParams();
   console.log(params.id);
   let [item, setItem] = useState([]);
@@ -39,6 +41,24 @@ const Egyedi= (id) => {
           szerverrolBetolt();
           
       }, []);
+
+    function kosarba(elemke) {
+        console.log(elemke);
+        let kosarka = JSON.parse(localStorage.getItem('kosar'))
+        
+        const ujElem = {
+            elem: elemke,
+            darabszam: 1
+        }
+
+        kosarka.push(ujElem);
+        
+        localStorage.removeItem('kosar')
+
+        localStorage.setItem('kosar', JSON.stringify(kosarka));
+              
+        setKosar(kosarka ? kosarka : []);   
+    }
   
   return (
   <div className="oldal">
@@ -74,7 +94,7 @@ const Egyedi= (id) => {
       <option value="2">2</option>
       <option value="3">3</option>
     </select>
-        <button className="vasarlas-gomb">Kosárba</button>
+        <button className="vasarlas-gomb" onClick={() => kosarba(item)}>Kosárba</button>
       </div>
       </div>
 
