@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
 import diorAdatok from '../../public/leirasok/dior.js';
+import { CartContext } from '../context/CartContext.jsx';
 
 
 const EgyediDior = (id) => {
@@ -10,7 +11,7 @@ const EgyediDior = (id) => {
   let [diorItem, setDiorItem] = useState([]);
   let [diorLeir, setDiorLeir] = useState([]);
 
-  
+  const {kosar, kosarSzamlalo,  setKosar, setKosarSzamlalo} = useContext(CartContext);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -45,6 +46,27 @@ const EgyediDior = (id) => {
           szerverrolBetolt();
           
       }, []);
+
+      const kosarbaTesz = () => {
+        const darab = document.getElementsByClassName('darab');
+        console.log(darab[0].value);
+        
+        let szam = kosarSzamlalo + Number(darab[0].value);
+        localStorage.setItem('kosarszamlalo', szam);
+        let cartKosar = JSON.parse(localStorage.getItem('kosar'));
+        console.log(typeof cartKosar);
+        
+        if (cartKosar) {
+          if (!cartKosar.includes(diorItem._id)) cartKosar.push(diorItem._id);
+          localStorage.setItem('kosar', JSON.stringify(cartKosar)); 
+        } else {
+          let kosarka = [];
+          kosarka.push(diorItem._id);
+          localStorage.setItem('kosar', JSON.stringify(kosarka)); 
+        }
+
+        setKosarSzamlalo(szam);
+      }
   
   return (
   <div className="oldal">
@@ -80,7 +102,7 @@ const EgyediDior = (id) => {
       <option value="2">2</option>
       <option value="3">3</option>
     </select>
-        <button className="vasarlas-gomb">Kosárba</button>
+        <button className="vasarlas-gomb" onClick={kosarbaTesz}>Kosárba</button>
       </div>
       </div>
     </div>

@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
 import bossAdatok from '../../public/leirasok/boss.js';
+import { CartContext } from '../context/CartContext.jsx';
 
 const EgyediBoss = (id) => {
   const params = useParams();
   console.log(params.id);
   let [bossItem, setBossItem] = useState([]);
   let [bossLeir, setBossLeir] = useState([]);
+
+  const {kosar, kosarSzamlalo, setKosar, setKosarSzamlalo} = useContext(CartContext);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -43,6 +46,17 @@ const EgyediBoss = (id) => {
           szerverrolBetolt();
           
       }, []);
+
+      
+
+      const kosarbaTesz = () => {
+        const darab = document.getElementsByClassName('darab');
+        console.log(darab[0].value);
+
+        let szam = kosarSzamlalo + Number(darab[0].value);
+        localStorage.setItem('kosarszamlalo', szam);
+        setKosarSzamlalo(szam);
+      }
   
   return (
      <div className="oldal">
@@ -78,7 +92,7 @@ const EgyediBoss = (id) => {
       <option value="2">2</option>
       <option value="3">3</option>
     </select>
-        <button className="vasarlas-gomb">Kosárba</button>
+        <button className="vasarlas-gomb" onClick={kosarbaTesz}>Kosárba</button>
       </div>
       </div>
 

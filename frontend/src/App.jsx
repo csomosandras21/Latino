@@ -36,6 +36,7 @@ import Eredeti from './pages/Eredeti';
 import Adatvedelem from './pages/adatvedelem';
 import Altalanos from './pages/Altalanos';
 import Szemelyes from './pages/Szemelyes';
+import Penz from './pages/Penz';
 
 export const FilteringContext = createContext();
 

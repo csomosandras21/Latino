@@ -6,13 +6,16 @@ import server from '../../public/images/server.png'
 import { Link } from 'react-router-dom'
 import { useEffect, useState, useContext } from 'react'
 import { FilteringContext } from '../App'
+import { CartContext } from '../context/CartContext'
 
 const Navbar = () => {
   const { setFiltering} = useContext(FilteringContext)
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [kosarErtek, setKosarErtek] = useState(0);
+  // const [kosarErtek, setKosarErtek] = useState(0);
   const  [filter, setFilter] = useState('');
+    const {kosar, kosarSzamlalo,  setKosar, setKosarSzamlalo} = useContext(CartContext);
+  
   console.log(filter);
   
   
@@ -43,7 +46,7 @@ const Navbar = () => {
     {isLoggedIn ?  <>
     <div className="icons" style={{backgroundColor: 'black'}}>
       <div className='kosarErtek-tarto'>
-      <Link to="/cart"> <img src={bag} alt="" /></Link><span className='kosarErtek'>{kosarErtek}</span>
+      <Link to="/cart"> <img src={bag} alt="" /></Link><span className='kosarErtek'>{kosarSzamlalo}</span>
       </div>
       <Link to='/accaunt'> <img src={account} alt="" /> </Link>
       <a href=""> <img src={favorite} alt="" /> </a>
