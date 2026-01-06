@@ -3,7 +3,7 @@ import { CartContext } from '../context/CartContext'
 
 const Cart = () => {
   const [items, setItems] = useState([]);
-  const { kosar, setKosar } = useContext(CartContext);
+  const { kosar, darabszam } = useContext(CartContext);
   
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -19,7 +19,7 @@ const Cart = () => {
                 let tomb = [];
                   for (let i = 0; i < kosar.length; i++) {
                     const atad = adatok.filter(elem => elem._id === kosar[i])
-                    tomb.push(atad[0]);
+                    tomb.push({ parfum: atad[0], darab: darabszam[i]});
                   }
                   console.log(tomb);
 
@@ -33,13 +33,13 @@ const Cart = () => {
   
           szerverrolBetolt();
           
-      }, [kosar]);
+      }, [kosar, darabszam]);
 
   return (
     <div>
         {items.map((item, index) => {
           return(
-            <h1 key={index}>{item.nev}</h1>
+            <h1 key={ index }>{ item.parfum.nev } és {item.darab} darab</h1>
           )
         })}    
     </div>
