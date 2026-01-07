@@ -10,7 +10,7 @@ const EgyediBoss = (id) => {
   let [bossItem, setBossItem] = useState([]);
   let [bossLeir, setBossLeir] = useState([]);
 
-  const {kosar, kosarSzamlalo, setKosar, setKosarSzamlalo} = useContext(CartContext);
+ const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setDarabszam} = useContext(CartContext);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -49,13 +49,40 @@ const EgyediBoss = (id) => {
 
       
 
-      const kosarbaTesz = () => {
+       const kosarbaTesz = () => {
         const darab = document.getElementsByClassName('darab');
         console.log(darab[0].value);
-
+        
+        
         let szam = kosarSzamlalo + Number(darab[0].value);
-        localStorage.setItem('kosarszamlalo', szam);
-        setKosarSzamlalo(szam);
+        let cartKosar = JSON.parse(localStorage.getItem('kosar'));
+        let cartDarabszam = JSON.parse(localStorage.getItem('darabszam'));
+        
+        if (cartKosar) {
+          if (!cartKosar.includes(bossItem._id)) {
+            cartKosar.push(bossItem._id);
+            setKosar(cartKosar);
+            cartDarabszam.push(Number(darab[0].value));
+            setDarabszam(cartDarabszam);
+            localStorage.setItem('kosar', JSON.stringify(cartKosar));
+            localStorage.setItem('darabszam', JSON.stringify(cartDarabszam));
+            setKosarSzamlalo(szam);
+            localStorage.setItem('kosarszamlalo', szam);
+          } else {
+            window.alert('Ez az illatszer már szerepel a kosárban!');
+          }
+        } else {
+            let kosarka = [];
+            let darabka = [];
+          kosarka.push(bossItem._id);
+          setKosar(kosarka);
+          darabka.push(Number(darab[0].value));
+          setDarabszam(darabka);
+            localStorage.setItem('kosar', JSON.stringify(kosarka)); 
+            localStorage.setItem('darabszam', JSON.stringify(darabka)); 
+            setKosarSzamlalo(szam);
+            localStorage.setItem('kosarszamlalo', szam);
+          }
       }
   
   return (

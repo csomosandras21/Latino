@@ -10,7 +10,7 @@ const EgyediLattafa = (id) => {
   let [lattafaItem, setLattafaItem] = useState([]);
   let [lattafaLeir, setLattafaLeir] = useState([]);
 
-    const {kosar, kosarSzamlalo,  setKosar, setKosarSzamlalo} = useContext(CartContext);
+  const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setDarabszam} = useContext(CartContext);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -45,7 +45,7 @@ const EgyediLattafa = (id) => {
   
           szerverrolBetolt();
 
-                const kosarbaTesz = () => {
+      const kosarbaTesz = () => {
         const darab = document.getElementsByClassName('darab');
         console.log(darab[0].value);
         
@@ -55,6 +55,41 @@ const EgyediLattafa = (id) => {
       }
           
       }, []);
+      const kosarbaTesz = () => {
+        const darab = document.getElementsByClassName('darab');
+        console.log(darab[0].value);
+        
+        
+        let szam = kosarSzamlalo + Number(darab[0].value);
+        let cartKosar = JSON.parse(localStorage.getItem('kosar'));
+        let cartDarabszam = JSON.parse(localStorage.getItem('darabszam'));
+        
+        if (cartKosar) {
+          if (!cartKosar.includes(lattafaItem._id)) {
+            cartKosar.push(lattafaItem._id);
+            setKosar(cartKosar);
+            cartDarabszam.push(Number(darab[0].value));
+            setDarabszam(cartDarabszam);
+            localStorage.setItem('kosar', JSON.stringify(cartKosar));
+            localStorage.setItem('darabszam', JSON.stringify(cartDarabszam));
+            setKosarSzamlalo(szam);
+            localStorage.setItem('kosarszamlalo', szam);
+          } else {
+            window.alert('Ez az illatszer már szerepel a kosárban!');
+          }
+        } else {
+            let kosarka = [];
+            let darabka = [];
+          kosarka.push(lattafaItem._id);
+          setKosar(kosarka);
+          darabka.push(Number(darab[0].value));
+          setDarabszam(darabka);
+            localStorage.setItem('kosar', JSON.stringify(kosarka)); 
+            localStorage.setItem('darabszam', JSON.stringify(darabka)); 
+            setKosarSzamlalo(szam);
+            localStorage.setItem('kosarszamlalo', szam);
+          }
+      }
   
   return (
      <div className="oldal">

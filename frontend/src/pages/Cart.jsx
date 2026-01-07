@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../context/CartContext'
+import "./Cart.css"
 
 const Cart = () => {
   const [items, setItems] = useState([]);
@@ -35,11 +36,29 @@ const Cart = () => {
           
       }, [kosar, darabszam]);
 
+  const kivenni = (elem) => {
+    console.log(elem);
+    
+   let tomb = items.filter(item => item.parfum._id !== elem.parfum._id)
+  //  localStorage.setItem('kosar', JSON.stringify(tomb));
+   console.log(tomb);
+   
+    setItems(tomb); 
+  }
+
   return (
     <div>
         {items.map((item, index) => {
           return(
-            <h1 key={ index }>{ item.parfum.nev } és {item.darab} darab</h1>
+              <div key={index} className='kosar-kontener'>
+                <h1 key={ index }>   </h1>
+                <button onClick={() => kivenni(item)}>kivenni</button>
+                <p>{ item.parfum.nev }</p>
+                <p> {item.parfum.ar}FT</p>
+                <p>{item.darab} db</p>
+                <img src={item.parfum.kep} />
+
+              </div>
           )
         })}    
     </div>

@@ -11,8 +11,8 @@ const EgyediDior = (id) => {
   let [diorItem, setDiorItem] = useState([]);
   let [diorLeir, setDiorLeir] = useState([]);
 
-  const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setDarabszam} = useContext(CartContext);
-
+   const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setDarabszam} = useContext(CartContext); 
+   
   useEffect(() => {
           const szerverrolBetolt = async () => {
               const response = await fetch('http://localhost:3500/api/parfumes-frontend');
@@ -47,7 +47,7 @@ const EgyediDior = (id) => {
           
       }, []);
 
-      const kosarbaTesz = () => {
+     const kosarbaTesz = () => {
         const darab = document.getElementsByClassName('darab');
         console.log(darab[0].value);
         
@@ -82,7 +82,7 @@ const EgyediDior = (id) => {
             localStorage.setItem('kosarszamlalo', szam);
           }
       }
-  
+
   return (
   <div className="oldal">
 
