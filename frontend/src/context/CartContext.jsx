@@ -12,9 +12,14 @@ const CartProvider = (props) => {
         let kosar1 = JSON.parse(localStorage.getItem('kosar'));
         if (kosar1) setKosar(kosar1);
         let darabszam1 = JSON.parse(localStorage.getItem('darabszam'));
-        if (darabszam1) setDarabszam(darabszam1);
-        let kosarSzamlalo1 = +localStorage.getItem('kosarszamlalo');
-        if (kosarSzamlalo1) setKosarSzamlalo(kosarSzamlalo1);
+        if (darabszam1) {
+            let osszeg = 0;
+            for (let i = 0; i < darabszam1.length; i++) {
+                osszeg += darabszam1[i];
+            }
+            setDarabszam(darabszam1);
+            setKosarSzamlalo(osszeg);
+        }
     }, [])
 
     return (

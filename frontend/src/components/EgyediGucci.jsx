@@ -24,7 +24,7 @@ const EgyediGucci = (id) => {
   
               const itemG = guccis.filter(elem => elem._id === params.id);
               console.log(itemG[0]);
-              const leirG = Adatok.filter(elem => elem.nev.toUpperCase() === itemG[0].nev.toUpperCase() && elem.fajta.toUpperCase() === itemG[0].fajta.toUpperCase())
+              const leirG = gucciAdatok.filter(elem => elem.nev.toUpperCase() === itemG[0].nev.toUpperCase() && elem.fajta.toUpperCase() === itemG[0].fajta.toUpperCase())
               console.log(leirG);
   
               if (response.ok)

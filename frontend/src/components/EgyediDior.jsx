@@ -17,6 +17,8 @@ const EgyediDior = (id) => {
           const szerverrolBetolt = async () => {
               const response = await fetch('http://localhost:3500/api/parfumes-frontend');
               const bejovoAdatok = await response.json();
+              console.log(kosarSzamlalo);
+              
               
               const adatok = bejovoAdatok.parfumes;
               const diorse = adatok.filter(elem => elem.marka === 'Dior')

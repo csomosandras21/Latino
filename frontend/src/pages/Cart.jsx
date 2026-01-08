@@ -4,7 +4,7 @@ import "./Cart.css"
 
 const Cart = () => {
   const [items, setItems] = useState([]);
-  const { kosar, darabszam } = useContext(CartContext);
+  const { kosar, setKosarSzamlalo, darabszam } = useContext(CartContext);
   
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -19,7 +19,10 @@ const Cart = () => {
               {
                 let tomb = [];
                   for (let i = 0; i < kosar.length; i++) {
+                    console.log(kosar[i]);
                     const atad = adatok.filter(elem => elem._id === kosar[i])
+                    console.log(atad);
+                    
                     tomb.push({ parfum: atad[0], darab: darabszam[i]});
                   }
                   console.log(tomb);
@@ -38,11 +41,35 @@ const Cart = () => {
 
   const kivenni = (elem) => {
     console.log(elem);
+    console.log(items);
     
-   let tomb = items.filter(item => item.parfum._id !== elem.parfum._id)
-  //  localStorage.setItem('kosar', JSON.stringify(tomb));
-   console.log(tomb);
+    let tomb = [];
+    let parfumTomb = [];
+    let darabTomb = [];
+    let osszeg = 0;
+    for (let i = 0; i < items.length; i++) {
+      if (!(items[i].parfum._id === elem.parfum._id)) {
+        parfumTomb.push(elem.parfum._id);
+        darabTomb.push(darabszam[i]);
+
+        osszeg += Number(darabszam[i]);
+        tomb.push({parfum: items[i].parfum, darab: darabszam[i]});
+      }
+      
+    }
+    console.log(tomb);
+    
+  //  let tomb = items.filter(item => item.parfum._id !== elem.parfum._id)
+  //  let idTomb = []
+  //  tomb.forEach(elem => {
+  //       idTomb.push(elem.parfum._id);
+  //  });
+  //  console.log(idTomb);
    
+   localStorage.setItem('kosar', JSON.stringify(parfumTomb));
+   localStorage.setItem('darabszam', JSON.stringify(darabTomb));
+   localStorage.setItem('kosarszamlalo', osszeg);
+    setKosarSzamlalo(osszeg);
     setItems(tomb); 
   }
 
