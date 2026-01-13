@@ -1,7 +1,7 @@
 let osszesAdatok = [
     {
         nev:'Armani Emporio Stronger With You Intensely',
-        fajta:'Eau De Parfum',
+        fajta:'Eau de Parfum',
         fej:'rózsabors, boróka',
         sziv:'levendula, fahéj, zsálya',
         alap:'vanília, tonkabab, gesztenyés máz',
@@ -37,7 +37,7 @@ let osszesAdatok = [
     },
     {
         nev:'Armani Acqua di Giò',
-        fajta:'Eau de Toilet',
+        fajta:'Eau de Toilette',
         fej:'narancs, jázmin, citrom, bergamott, limett, keserűnarancs, mandarin virága',
         sziv:'tengeri tónusok, jázmin, őszibarack, rozmaring, frézia, jácint, ciklámen, ibolya, koriander, szerecsendió, rózsa, rezeda',
         alap:'fehér pézsma, cédrus, tölgymoha, pacsuli, borostyán',
@@ -46,7 +46,7 @@ let osszesAdatok = [
     },
     {
         nev:'Armani Acqua di Giò Parfum',
-        fajta:'Parfum',
+        fajta:'Parfüm',
         fej:'tengeri tónusok, zöld mandarin',
         sziv:'mimóza',
         alap:'pacsuli, labdanum',
@@ -82,7 +82,7 @@ let osszesAdatok = [
     },
     {
         nev:'BOSS The Scent Elixir for him Parfum',
-        fajta:'parfum uraknak',
+        fajta:'Parfüm',
         fej:'Pimento csilipaprika',
         sziv:'lavandin',
         alap:'szantálfa',
@@ -91,7 +91,7 @@ let osszesAdatok = [
     },
     {
         nev:'BOSS The Scent',
-        fajta:'parfum uraknak',
+        fajta:'Parfüm',
         fej:'gyömbér',
         sziv:'maninka',
         alap:'bőr',
@@ -100,7 +100,7 @@ let osszesAdatok = [
     },
     {
         nev:'BOSS Hugo Boss',
-        fajta:'parfum uraknak',
+        fajta:'Parfüm',
         fej:'bőr',
         sziv:'pacsuli',
         alap:'cédrusfa',
@@ -109,7 +109,7 @@ let osszesAdatok = [
     },
     {
         nev:'BOSS Bottled Beyond',
-        fajta:'Eau De Parfum',
+        fajta:'Eau de Parfum',
         fej:'gyömbér',
         sziv:'bőr',
         alap:'fás,tónusok',
@@ -118,7 +118,7 @@ let osszesAdatok = [
     },
     {
         nev:'BOSS Bold Citrus',
-         fajta:'Eau De Parfum',
+         fajta:'Eau de Parfum',
         fej:'citrom, bergamott',
         sziv:'elemi, geranium Bourbon',
         alap:'pacsuli, vetiverfű',
@@ -127,7 +127,7 @@ let osszesAdatok = [
     },
     {
         nev:'BOSS Bottled Absolut',
-        fajta:'Eau De Parfum',
+        fajta:'Eau de Parfum',
         fej:'citrom, bergamott',
         sziv:'elemi, geranium Bourbon',
         alap:'pacsuli, vetiverfű',
@@ -135,8 +135,8 @@ let osszesAdatok = [
         leiras:'Szikrázó, merész, erőt adó – üdvözölje a nyarat egy olyan illattal, amely energiával és kifinomultsággal tölt fel. A frissesség merész kifejezésének megtestesítője, a BOSS Bottled Bold Citrus Eau de Parfum a magabiztosság és kifinomult stílus jellemezte BOSS férfi lényét ragadja meg.'
     },
     {
-        nev:'BOSS Bottled Parufme',
-         fajta:'Eau De Parfum',
+        nev:'BOSS Bottled Parfume',
+         fajta:'Eau de Parfum',
         fej:'mandarinolaj, rózsabors, tömjén',
         sziv:'orrisz gyökér, fügefa, bőr',
         alap:'cédrusolaj, pacsuli, ambrocenid',
@@ -145,7 +145,7 @@ let osszesAdatok = [
     },
     {
         nev:'BOSS Bottled Tonic',
-         fajta:'Eau De Toilette',
+         fajta:'Eau de Toilette',
         fej:'citrom, grapefruit, alma, keserű narancs',
         sziv:'szegfűszeg, fahéj, gyömbér, gólyaorr',
         alap:'vetiverfű, fás tónusok',
@@ -154,7 +154,7 @@ let osszesAdatok = [
     },
     {
         nev:'Burberry Hero Parfum Intense',
-        fajta:'parfüm',
+        fajta:'Parfüm',
         fej:'fekete bors',
         sziv:'cédrus',
         alap:'bőr',
@@ -163,7 +163,7 @@ let osszesAdatok = [
     },
     {
         nev:'Burberry Hero',
-        fajta:'parfüm',
+        fajta:'Parfüm',
         fej:'bergamott, citrom, kardamon',
         sziv:'levendula, fekete bors, boróka, szerecsendió',
         alap:'cédrusfa',
@@ -172,7 +172,7 @@ let osszesAdatok = [
     },
     {
         nev:'Burberry Hero Eau de Parfum',
-        fajta:'Eau De Parfum',
+        fajta:'Eau de Parfum',
         fej:'fenyő, tüske',
         sziv:'benzoin, tömjén, fekete bors, boróka',
         alap:'cédrusfa',
@@ -298,7 +298,7 @@ let osszesAdatok = [
     },
     {
         nev: 'Dolce&Gabbana Devotion For Men Parfum',
-        fajta: 'Parfum',
+        fajta: 'Parfüm',
         fej: 'levendula',
         sziv: 'kávé, ciprus',
         alap: 'borostyán, tonkabab, vanília, tölgymoha',
@@ -324,7 +324,7 @@ let osszesAdatok = [
         leiras: 'Most kezdődik a férfiasság új korszaka, Ön pedig az élenjárók közé tartozik. A férfi K by Dolce & Gabbana eau de toilette az Ön bőrén mindenkinek jelzi majd, hogy Ön erős személyiségű férfi és teljességében engedi megnyilvánulni természetes karizmáját.'
     },{
         nev: 'DIOR Sauvage',
-        fajta: 'Eau De Parfum',
+        fajta: 'Eau de Parfum',
         fej: 'bergamott',
         sziv: 'vanília',
         alap: '',
@@ -333,7 +333,7 @@ let osszesAdatok = [
     },
     {
         nev: 'Dior Sauvage Elixir',
-        fajta: 'parfüm kivonat uraknak',
+        fajta: 'Parfüm',
         fej: 'grapefruit, fahéj, szerecsendió, kardamon',
         sziv: 'levendula, benzopyron, vanília',
         alap: 'borostyán, édesgyökér, haiti vetiver, pacsuli',
@@ -341,7 +341,7 @@ let osszesAdatok = [
     },
      {
         nev: 'DIOR Sauvage',
-        fajta: 'Utántölthető parfum',
+        fajta: 'Utántölthető Parfüm',
         fej: 'kalabriai bergamott, mandarin',
         sziv: '	virginiai boróka, szantálfa',
         alap: 'absolut vanília',
@@ -350,7 +350,7 @@ let osszesAdatok = [
     },
     {
         nev: 'Dior Homme',
-        fajta: 'Eau De Toilette',
+        fajta: 'Eau de Toilette',
         fej: 'cédrus',
         sziv: '	pacsuli',
         alap: '	vetiverfű',
@@ -359,7 +359,7 @@ let osszesAdatok = [
     },
     {
         nev: 'Dior Fahrenheit Parfum',
-        fajta: 'parfum uraknak',
+        fajta: 'Parfüm',
         fej: 'szicíliai mandarin',
         sziv: 'bőr, ibolya',
         alap: 'Bourbon vanília',
@@ -377,7 +377,7 @@ let osszesAdatok = [
     },
     {
         nev: 'Dior Homme Cologne',
-        fajta: 'eau De Cologne',
+        fajta: 'Eau de Cologne',
         fej: 'kalabriai bergamott',
         sziv: 'grapefruit virága',
         alap: '	fehér pézsma',
@@ -386,7 +386,7 @@ let osszesAdatok = [
     },
     {
         nev: 'Dior Higher Energy',
-        fajta: 'eau De Toilette',
+        fajta: 'Eau de Toilette',
         fej: 'grapefruit',
         sziv: 'fekete bors',
         alap: '	vetiverfű',
@@ -395,7 +395,7 @@ let osszesAdatok = [
     },
     {
         nev: 'Dior Higher',
-        fajta: 'eau De Toilette',
+        fajta: 'Eau de Toilette',
         fej: 'bazsalikom, körte',
         sziv: 'kardamon',
         alap: '	virginiai boróka',
@@ -404,7 +404,7 @@ let osszesAdatok = [
     },
     {
         nev: 'DIOR Eau Suavage',
-        fajta: 'eau De Toilette',
+        fajta: 'Eau de Toilette',
         fej: 'kalabriai bergamott',
         sziv: 'hedione, levendula',
         alap: '	chypre jegyek',
@@ -438,8 +438,8 @@ let osszesAdatok = [
         leiras: 'Bontakoztassa ki személyisége excentrikus és merész oldalát! A férfi Gucci Guilty Pour Homme eau de parfum érzéki illata arra készteti Önt, hogy teljes szabadságot adjon formabontó és némiképp titokzatos énjének. Soha nem látott intenzitással mutathatja meg a világnak, hogy mennyire férfias.'
     },
    {
-        nev: 'Guilty Pour Homme',
-        fajta: 'Parfum',
+        nev: 'Gucci Guilty Pour Homme',
+        fajta: 'Parfüm',
         fej: 'lavandin',
         sziv: 'citrusok',
         alap: 'pacsuli',
@@ -457,7 +457,7 @@ let osszesAdatok = [
     },
    {
         nev: 'Gucci Guilty Essence',
-        fajta: 'Eau de Toilet',
+        fajta: 'Eau de Toilette',
         fej: 'koriander',
         sziv: 'narancsfa virága, keserűnarancs, zöld tónusok',
         alap: 'pacsuli, cédrus',
@@ -536,7 +536,7 @@ let osszesAdatok = [
         leiras:'Üdvözöljük az Édenkertben, ahol valamennyi kísértés gyökere megtalálható. A Jean Paul Gaultier Le Beau Flower Edition Eau de Parfum meghívja Önt a tiltott élvezetekre. Az illat minden egyes gyümölcsös, virágos és fás jegyével Önt egy olyan világ mélységeibe húzza be, ahol a vágy virágzik. Bele fog esni a bűvöletébe?'
     },{
         nev:'Lattafa Pride Ishq Al Shuyukh Gold',
-        fajta:'Eau De Parfum',
+        fajta:'Eau de Parfum',
         fej:'karamell,sáfrány',
         sziv:'tonkabab,bőr',
         alap:'borostyán,vanília,pézsma',
@@ -545,7 +545,7 @@ let osszesAdatok = [
     },
     {
         nev: 'Lattafa Pride Tharwah Gold',
-        fajta: 'Eau De Parfum',
+        fajta: 'Eau de Parfum',
         fej: 'levendula, bergamott',
         sziv: 'narancsfa virág, jázmin',
         alap: 'vanília, vetiverfű, borostyán',
@@ -658,7 +658,7 @@ let osszesAdatok = [
     },
     {
         nev:'Valentino Born In Roma Extradose Uomo',
-        fajta:'Parfum uraknak',
+        fajta:'Parfüm',
         fej:'fűszeres tónusok',
         sziv:'levendula',
         alap:'vanília, borostyán',
@@ -687,7 +687,7 @@ let osszesAdatok = [
         
     },{
         nev:'Versace Eros',
-        fajta:'Eau De Parfum',
+        fajta:'Eau de Parfum',
         fej:'menta,citrom',
         sziv:'zöldalma,gólyaorr',
         alap:'borostyán,absolutvanília,tonkabab',
@@ -696,7 +696,7 @@ let osszesAdatok = [
     },
     {
         nev:'Versace Eros',
-        fajta:'Eau De Toilette',
+        fajta:'Eau de Toilette',
         fej:'menta,olasz citrom,zöldalma',
         sziv:'tonkabab,gólyaorr,ambroxan',
         alap:'vanília,vetiverfű,cédrus,tölgymoha',
@@ -705,7 +705,7 @@ let osszesAdatok = [
     },
     {
         nev:'Versace Eros Energy',
-        fajta:'Eau De Parfume',
+        fajta:'Eau de Parfume',
         fej:'bergamott, vérnarancs, limett, grapefruit, citrom',
         sziv:'rózsabors, feketeribizli, fehér ámbra',
         alap:'citrusos, fás',
@@ -714,7 +714,7 @@ let osszesAdatok = [
     },
     {
         nev:'Versace Dylan Blue Pour Homme',
-        fajta:'Eau de Toilet',
+        fajta:'Eau de Toilette',
         fej:'vízi tónusok, fügefa levél, kalabriai bergamott, grapefruit',
         sziv:'ibolya levelek, pacsuli, papirusz, fekete bors, ambroxan',
         alap:'pézsma, tonkabab, sáfrány, tömjén',
@@ -723,7 +723,7 @@ let osszesAdatok = [
     },
     {
         nev:'Versace Pour Homme',
-        fajta:'Eau de Toilet',
+        fajta:'Eau de Toilette',
         fej:'bergamott, citrom, keserűnarancs, keserű narancs',
         sziv:'jácint, gólyaorr, muskotályzsálya, cédrusfa',
         alap:'borostyán, pézsma, tonkabab, oud',
@@ -732,7 +732,7 @@ let osszesAdatok = [
     },
     {
         nev:'Versace Eau Fraîche',
-        fajta:'Eau de Toilet',
+        fajta:'Eau de Toilette',
         fej:'citrom, fa, karambola',
         sziv:'cédrus, tárkony, zsálya',
         alap:'borostyán, fa, pézsma',
@@ -741,7 +741,7 @@ let osszesAdatok = [
     },
     {
         nev:'Versace The Dreamer',
-        fajta:'Eau de Toilet',
+        fajta:'Eau de Toilette',
         fej:'boróka, tárkony, üröm',
         sziv:'nőszirom, liliom, Ien virága',
         alap:'borostyán, borostyán, dohány virága',
