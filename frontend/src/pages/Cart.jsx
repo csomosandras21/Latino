@@ -65,6 +65,7 @@ const Cart = () => {
   //       idTomb.push(elem.parfum._id);
   //  });
   //  console.log(idTomb);
+   //fasz
    
    localStorage.setItem('kosar', JSON.stringify(parfumTomb));
    localStorage.setItem('darabszam', JSON.stringify(darabTomb));
