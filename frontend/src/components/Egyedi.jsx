@@ -42,23 +42,60 @@ const Egyedi= (id) => {
           
       }, []);
 
-    function kosarba(elemke) {
-        console.log(elemke);
-        let kosarka = JSON.parse(localStorage.getItem('kosar'))
+    // function kosarba(elemke) {
+    //     console.log(elemke);
+    //     let kosarka = JSON.parse(localStorage.getItem('kosar'))
         
-        const ujElem = {
-            elem: elemke,
-            darabszam: 1
-        }
+    //     const ujElem = {
+    //         elem: elemke,
+    //         darabszam: 1
+    //     }
 
-        kosarka.push(ujElem);
+    //     kosarka.push(ujElem);
         
-        localStorage.removeItem('kosar')
+    //     localStorage.removeItem('kosar')
 
-        localStorage.setItem('kosar', JSON.stringify(kosarka));
+    //     localStorage.setItem('kosar', JSON.stringify(kosarka));
               
-        setKosar(kosarka ? kosarka : []);   
-    }
+    //     setKosar(kosarka ? kosarka : []);   
+    // }
+
+    const kosarbaTesz = () => {
+        const darab = document.getElementsByClassName('darab');
+        console.log(darab[0].value);
+        
+        
+        let szam = kosarSzamlalo + Number(darab[0].value);
+        let cartKosar = JSON.parse(localStorage.getItem('kosar'));
+        let cartDarabszam = JSON.parse(localStorage.getItem('darabszam'));
+        
+        if (cartKosar) {
+          if (!cartKosar.includes(jpgItem._id)) {
+            cartKosar.push(jpgItem._id);
+            setKosar(cartKosar);
+            cartDarabszam.push(Number(darab[0].value));
+            setDarabszam(cartDarabszam);
+            localStorage.setItem('kosar', JSON.stringify(cartKosar));
+            localStorage.setItem('darabszam', JSON.stringify(cartDarabszam));
+            setKosarSzamlalo(szam);
+            localStorage.setItem('kosarszamlalo', szam);
+          } else {
+            window.alert('Ez az illatszer már szerepel a kosárban!');
+          }
+        } else {
+            let kosarka = [];
+            let darabka = [];
+          kosarka.push(jpgItem._id);
+          setKosar(kosarka);
+          darabka.push(Number(darab[0].value));
+          setDarabszam(darabka);
+            localStorage.setItem('kosar', JSON.stringify(kosarka)); 
+            localStorage.setItem('darabszam', JSON.stringify(darabka)); 
+            setKosarSzamlalo(szam);
+            localStorage.setItem('kosarszamlalo', szam);
+          }
+      }
+  
   
   return (
   <div className="oldal">
@@ -94,7 +131,7 @@ const Egyedi= (id) => {
       <option value="2">2</option>
       <option value="3">3</option>
     </select>
-        <button className="vasarlas-gomb" onClick={() => kosarba(item)}>Kosárba</button>
+        <button className="vasarlas-gomb" onClick={kosarbaTesz}>Kosárba</button>
       </div>
       </div>
 
