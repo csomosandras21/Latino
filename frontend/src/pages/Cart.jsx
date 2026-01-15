@@ -7,6 +7,7 @@ import Stripe from 'stripe';
 const Cart = () => {
   const [items, setItems] = useState([]);
   const { kosar, setKosarSzamlalo, darabszam } = useContext(CartContext);
+
   
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -57,6 +58,8 @@ const Cart = () => {
       });
 
       const data = await res.json();
+      console.log(data);
+      
 
       if (data.url) {
         window.location.href = data.url;

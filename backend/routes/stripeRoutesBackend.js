@@ -6,9 +6,11 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 router.post("/create-checkout-session", async (req, res) => {
     try {
-        const { name, price } = req.body;
+        const { nev, ar } = req.body.items[0].parfum;
+        console.log(req.body.items[0].parfum);
+        
 
-        if (!name || !price) {
+        if (!nev || !ar) {
             return res.status(400).json({ error: "Hiányzó adatok" });
         }
 
@@ -20,9 +22,9 @@ router.post("/create-checkout-session", async (req, res) => {
                     price_data: {
                         currency: "huf",
                         product_data: {
-                            name: name
+                            nev: nev
                         },
-                        unit_amount: price * 100
+                        unit_amount: ar * 100
                     },
                     quantity: 1
                 }
@@ -31,7 +33,7 @@ router.post("/create-checkout-session", async (req, res) => {
             cancel_url: "http://localhost:5173/cart"
         });
 
-        res.status(200).json({ url: session.url });
+        res.status(200).json({ url: session.success_url });
 
     } catch (error) {
         console.error("Stripe hiba:", error.message);
