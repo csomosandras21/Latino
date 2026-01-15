@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../context/CartContext'
 import "./Cart.css"
+import { Link } from 'react-router-dom';
+import Stripe from 'stripe';
 
 const Cart = () => {
   const [items, setItems] = useState([]);
@@ -38,6 +40,36 @@ const Cart = () => {
           szerverrolBetolt();
           
       }, [kosar, darabszam]);
+
+
+      const handleCheckout = async () => {
+    if (items.length === 0) { // Itt 'items' kell, mert nálad az a state neve
+      alert("Üres a kosarad!");
+      return;
+    }
+
+    try {
+      // Itt hívjuk meg a BACKEND-edet (ezt meg kell írnod a szerver oldalon!)
+      const res = await fetch("http://localhost:3500/api/stripe/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items: items }) // A te items state-edet küldjük
+      });
+
+      const data = await res.json();
+
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        console.error("Hiba: Nem érkezett URL a szervertől.");
+        localStorage.removeItem('kosar');
+        localStorage.removeItem('darabszam');
+        localStorage.removeItem('kosarszamlalo');
+      }
+    } catch (error) {
+      console.error("Hálózati hiba:", error);
+    }
+  };
 
   const kivenni = (elem) => {
     console.log(elem);
@@ -88,7 +120,11 @@ const Cart = () => {
 
               </div>
           )
-        })}    
+        })}
+        <div className='gombok'>
+          <button> <Link to='/'>vissza a főoldara</Link> </button>
+          <button onClick={handleCheckout}>Tovább a fizetéshez</button>
+          </div>    
     </div>
   )
 }
