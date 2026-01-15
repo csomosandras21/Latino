@@ -45,7 +45,7 @@ let diorAdatok = [
     },
     {
         nev: 'Dior Homme parfum',
-        fajta: 'Parfüm',
+        fajta: 'Parfum uraknak',
         fej: 'nőszirom',
         sziv: 'ámbrás jegy',
         alap: '',

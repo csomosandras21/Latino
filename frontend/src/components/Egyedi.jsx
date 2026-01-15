@@ -5,11 +5,12 @@ import osszesAdatok from '../../public/leirasok/osszes';
 import { CartContext } from '../context/CartContext';
 
 const Egyedi= (id) => {
-    const {setKosar} = useContext(CartContext);
   const params = useParams();
   console.log(params.id);
   let [item, setItem] = useState([]);
   let [osszesLeir, setOsszesLeir] = useState([]);
+
+   const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setDarabszam} = useContext(CartContext);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -70,8 +71,8 @@ const Egyedi= (id) => {
         let cartDarabszam = JSON.parse(localStorage.getItem('darabszam'));
         
         if (cartKosar) {
-          if (!cartKosar.includes(jpgItem._id)) {
-            cartKosar.push(jpgItem._id);
+          if (!cartKosar.includes(item._id)) {
+            cartKosar.push(item._id);
             setKosar(cartKosar);
             cartDarabszam.push(Number(darab[0].value));
             setDarabszam(cartDarabszam);
@@ -85,7 +86,7 @@ const Egyedi= (id) => {
         } else {
             let kosarka = [];
             let darabka = [];
-          kosarka.push(jpgItem._id);
+          kosarka.push(item._id);
           setKosar(kosarka);
           darabka.push(Number(darab[0].value));
           setDarabszam(darabka);
