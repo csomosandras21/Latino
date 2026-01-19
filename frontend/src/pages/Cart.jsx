@@ -63,9 +63,7 @@ const Cart = () => {
             window.location.href = data.url;
           } else {
             console.error("Hiba: Nem érkezett URL a szervertől.");
-            localStorage.removeItem('kosar');
-            localStorage.removeItem('darabszam');
-            localStorage.removeItem('kosarszamlalo');
+            
           }
         } catch (error) {
           console.error("Hálózati hiba:", error);

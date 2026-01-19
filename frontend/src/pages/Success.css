@@ -1,0 +1,61 @@
+.status-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fcfcfc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.status-card {
+  background: white;
+  padding: 50px 40px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  max-width: 450px;
+  border: 1px solid #f0f0f0;
+}
+
+.icon-wrapper {
+  margin-bottom: 25px;
+}
+
+.check-mark {
+  font-size: 60px;
+  color: #28a745; /* Sötétebb zöld a pipának */
+  font-weight: bold;
+}
+
+.status-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.status-message {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.status-button {
+  border: none;
+  padding: 12px 25px;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.success-bg {
+  background-color: #28a745; /* A képen látható zöld gomb */
+}
+
+.status-button:hover {
+  background-color: #218838;
+}
