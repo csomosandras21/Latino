@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Kedvencek.css';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 
 const Kedvencek = () => {
   const [kedvencTermekek, setKedvencTermekek] = useState([]);
-
+  const { setKedvencSzamlalo } = useContext(CartContext);
+  
   useEffect(() => {
     const betoltes = async () => {
       // 1. Megszerezzük az ID-kat a localStorage-ból
@@ -28,6 +31,7 @@ const Kedvencek = () => {
     const ujLista = kedvencTermekek.filter(p => p._id !== id);
     setKedvencTermekek(ujLista);
     const ujIdLista = ujLista.map(p => p._id);
+    setKedvencSzamlalo(ujIdLista.length);
     localStorage.setItem('kedvencek', JSON.stringify(ujIdLista));
   };
 

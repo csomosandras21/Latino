@@ -21,6 +21,8 @@ const CartProvider = (props) => {
             setDarabszam(darabszam1);
             setKosarSzamlalo(osszeg);
         }
+        let kedvencek = JSON.parse(localStorage.getItem('kedvencek'));
+        setKedvencSzamlalo(kedvencek.length);
     }, [])
 
     return (

@@ -15,9 +15,9 @@ const Navbar = () => {
   const [filter, setFilter] = useState('');
   
   // Kedvencek számláló állapota
-  const [kedvencSzamlalo, setKedvencSzamlalo] = useState(0);
+  const [kedvencekSzamlalo, setKedvencekSzamlalo] = useState(0);
  
-  const { kosar, kosarSzamlalo, setKosar, setKosarSzamlalo } = useContext(CartContext);
+  const { kosar, kosarSzamlalo, setKosar, setKosarSzamlalo, kedvencSzamlalo } = useContext(CartContext);
 
   useEffect(() => {
     setFiltering(filter);
@@ -31,7 +31,7 @@ const Navbar = () => {
     // KEDVENCEK SZÁMÁNAK FRISSÍTÉSE
     // Megszámoljuk a localStorage-ban lévő elemeket
     const mentettKedvencek = JSON.parse(localStorage.getItem('kedvencek')) || [];
-    setKedvencSzamlalo(mentettKedvencek.length);
+    setKedvencekSzamlalo(mentettKedvencek.length);
 
   }, [filter]); // Itt figyelheted a globális változásokat is, ha szükséges
 

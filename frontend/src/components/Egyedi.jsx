@@ -12,28 +12,7 @@ const Egyedi= (id) => {
   let [item, setItem] = useState([]);
   let [osszesLeir, setOsszesLeir] = useState([]);
 
-   const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setDarabszam} = useContext(CartContext);
-
-
-   const kedvencbeTesz = () => {
-    let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
-
-    if (kedvencekListaja) {
-      // Ellenőrizzük, hogy benne van-e már
-      if (!kedvencekListaja.includes(item._id)) {
-        kedvencekListaja.push(item._id);
-        localStorage.setItem('kedvencek', JSON.stringify(kedvencekListaja));
-      } else {
-        console.log('Ez már a kedvencek között van.');
-      }
-    } else {
-      // Ha még üres a kedvencek lista
-      let ujKedvencLista = [];
-      ujKedvencLista.push(item._id);
-      localStorage.setItem('kedvencek', JSON.stringify(ujKedvencLista));
-    }
-    // A Link komponens, amit a JSX-ben írtál, automatikusan átvisz majd a /kedvencek oldalra.
-  };
+   const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setKedvencSzamlalo, setDarabszam} = useContext(CartContext);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -83,6 +62,28 @@ const Egyedi= (id) => {
               
     //     setKosar(kosarka ? kosarka : []);   
     // }
+    
+    const kedvencbeTesz = () => {
+    let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
+
+    if (kedvencekListaja) {
+      // Ellenőrizzük, hogy benne van-e már
+      if (!kedvencekListaja.includes(item._id)) {
+        kedvencekListaja.push(item._id);
+        setKedvencSzamlalo(kedvencekListaja.length);
+        localStorage.setItem('kedvencek', JSON.stringify(kedvencekListaja));
+      } else {
+        window.alert('Ez már a kedvencek között van.');
+      }
+    } else {
+      // Ha még üres a kedvencek lista
+      let ujKedvencLista = [];
+      ujKedvencLista.push(item._id);
+      setKedvencSzamlalo(ujKedvencLista.length);
+      localStorage.setItem('kedvencek', JSON.stringify(ujKedvencLista));
+    }
+    // A Link komponens, amit a JSX-ben írtál, automatikusan átvisz majd a /kedvencek oldalra.
+  };
 
     const kosarbaTesz = () => {
         const darab = document.getElementsByClassName('darab');
