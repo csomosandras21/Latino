@@ -7,6 +7,7 @@ const CartProvider = (props) => {
     const [kosar, setKosar] = useState([]);
     const [darabszam, setDarabszam] = useState([]);
     const [kosarSzamlalo, setKosarSzamlalo] = useState(0);
+    const [kedvencSzamlalo, setKedvencSzamlalo] = useState(0);
 
     useEffect(() => {
         let kosar1 = JSON.parse(localStorage.getItem('kosar'));
@@ -23,7 +24,7 @@ const CartProvider = (props) => {
     }, [])
 
     return (
-        <CartContext.Provider value={{ kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setDarabszam }}>
+        <CartContext.Provider value={{ kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, kedvencSzamlalo, setKedvencSzamlalo, darabszam, setDarabszam }}>
             {props.children}
         </CartContext.Provider>
     )

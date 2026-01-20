@@ -199,3 +199,8 @@ table, th, td {
   font-weight: bolder;
   margin-bottom: 12px;
 }
+
+.kedvenc img {
+    width: 30px;
+    height: 30px;
+}

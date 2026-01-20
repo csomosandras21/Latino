@@ -6,12 +6,14 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 router.post("/create-checkout-session", async (req, res) => {
     try {
-        // A frontendről mostantól várjuk az 'isInternational' változót (true vagy false)
-        const { items, isInternational } = req.body;
+        const { items } = req.body;
 
         if (!items || items.length === 0) {
             return res.status(400).json({ error: "Hiányzó adatok" });
         }
+
+        const totalPrice = items.reduce((sum, elem) => sum + (parseFloat(elem.parfum.ar) * elem.darab), 0);
+        const FREE_SHIPPING_THRESHOLD = 70000; 
 
         const line_items = items.map(elem => ({
             price_data: {
@@ -25,33 +27,53 @@ router.post("/create-checkout-session", async (req, res) => {
             quantity: elem.darab
         }));
 
-        // DINAMIKUS SZÁLLÍTÁS VÁLASZTÁS
-        // Ha a vásárló külföldit választott, csak a külföldi ID-kat küldjük be
         let shippingOptions = [];
         
-        if (isInternational) {
+        if (totalPrice >= FREE_SHIPPING_THRESHOLD) {
             shippingOptions = [
-                { shipping_rate: 'shr_1SrHTy8OQQ62ZqRHS9IIWGuU' }, // Külföldi standard
-                { shipping_rate: 'shr_1SrHUL8OQQ62ZqRHOJfguKKu' }  // Külföldi expressz
+                {
+                    shipping_rate_data: {
+                        type: 'fixed_amount',
+                        fixed_amount: { amount: 0, currency: 'huf' },
+                        display_name: 'Belföldi normál (Ingyenes 70.000 Ft felett)',
+                    }
+                },
+                {
+                    shipping_rate_data: {
+                        type: 'fixed_amount',
+                        fixed_amount: { amount: 0, currency: 'huf' },
+                        display_name: 'Belföldi expressz (Ingyenes 70.000 Ft felett)',
+                    }
+                }
             ];
         } else {
             shippingOptions = [
-                { shipping_rate: 'shr_1SrHO98OQQ62ZqRHutxhLymV' }, // Belföldi standard
-                { shipping_rate: 'shr_1SrHRV8OQQ62ZqRHEjsCbjbw' }  // Belföldi expressz
+                { shipping_rate: 'shr_1SrHO98OQQ62ZqRHutxhLymV' }, 
+                { shipping_rate: 'shr_1SrHRV8OQQ62ZqRHEjsCbjbw' }  
             ];
         }
 
         const session = await stripe.checkout.sessions.create({
             mode: "payment",
+            allow_promotion_codes: true,
             payment_method_types: ["card"], 
             line_items: line_items,
             
+            // --- EZ AZ ÚJ RÉSZ A NÉVHEZ ÉS CÍMHEZ ---
+            billing_address_collection: "required", 
+            custom_text: {
+                shipping_address: { message: "Kérjük, pontosan adja meg a szállítási adatokat." },
+            },
+            // A kártyatulajdonos nevét a Dashboardon is be tudod állítani, 
+            // de a kód szintjén a billing_address_collection: "required" 
+            // már kényszeríti a név és cím megadását.
+            // ---------------------------------------
+
             shipping_address_collection: {
-                // Itt marad az összes ország, hogy ki tudják választani a címet
-                allowed_countries: ['HU', 'AT', 'BE', 'DE', 'FR', 'RO', 'SK'], 
+                allowed_countries: ['HU'], 
             },
             
-            shipping_options: shippingOptions, // Csak a kiválasztott kettő kerül bele
+            shipping_options: shippingOptions,
 
             success_url: "http://localhost:5173/success",
             cancel_url: "http://localhost:5173/cancel",

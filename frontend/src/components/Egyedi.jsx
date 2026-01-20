@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
+import favorite from '../../public/images/kedvenckep.png'
 import osszesAdatok from '../../public/leirasok/osszes';
 import { CartContext } from '../context/CartContext';
+import { Link } from 'react-router-dom'
 
 const Egyedi= (id) => {
   const params = useParams();
@@ -11,6 +13,27 @@ const Egyedi= (id) => {
   let [osszesLeir, setOsszesLeir] = useState([]);
 
    const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setDarabszam} = useContext(CartContext);
+
+
+   const kedvencbeTesz = () => {
+    let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
+
+    if (kedvencekListaja) {
+      // Ellenőrizzük, hogy benne van-e már
+      if (!kedvencekListaja.includes(item._id)) {
+        kedvencekListaja.push(item._id);
+        localStorage.setItem('kedvencek', JSON.stringify(kedvencekListaja));
+      } else {
+        console.log('Ez már a kedvencek között van.');
+      }
+    } else {
+      // Ha még üres a kedvencek lista
+      let ujKedvencLista = [];
+      ujKedvencLista.push(item._id);
+      localStorage.setItem('kedvencek', JSON.stringify(ujKedvencLista));
+    }
+    // A Link komponens, amit a JSX-ben írtál, automatikusan átvisz majd a /kedvencek oldalra.
+  };
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -96,7 +119,7 @@ const Egyedi= (id) => {
             localStorage.setItem('kosarszamlalo', szam);
           }
       }
-  
+
   
   return (
   <div className="oldal">
@@ -120,6 +143,10 @@ const Egyedi= (id) => {
         <div className='fajta'>
           <p className="termek-fajta">{item.fajta}</p>
         </div>
+
+         <div className='kedvenc'>
+            <Link> <img src={favorite} onClick={kedvencbeTesz}/></Link>
+          </div>
         
         <div className='ar'>
         <p>100ml</p>
