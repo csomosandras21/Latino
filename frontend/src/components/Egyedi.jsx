@@ -44,30 +44,12 @@ const Egyedi= (id) => {
           szerverrolBetolt();
           
       }, []);
-
-    // function kosarba(elemke) {
-    //     console.log(elemke);
-    //     let kosarka = JSON.parse(localStorage.getItem('kosar'))
-        
-    //     const ujElem = {
-    //         elem: elemke,
-    //         darabszam: 1
-    //     }
-
-    //     kosarka.push(ujElem);
-        
-    //     localStorage.removeItem('kosar')
-
-    //     localStorage.setItem('kosar', JSON.stringify(kosarka));
-              
-    //     setKosar(kosarka ? kosarka : []);   
-    // }
+      //
     
     const kedvencbeTesz = () => {
     let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
 
     if (kedvencekListaja) {
-      // Ellenőrizzük, hogy benne van-e már
       if (!kedvencekListaja.includes(item._id)) {
         kedvencekListaja.push(item._id);
         setKedvencSzamlalo(kedvencekListaja.length);
@@ -76,15 +58,14 @@ const Egyedi= (id) => {
         window.alert('Ez már a kedvencek között van.');
       }
     } else {
-      // Ha még üres a kedvencek lista
       let ujKedvencLista = [];
       ujKedvencLista.push(item._id);
       setKedvencSzamlalo(ujKedvencLista.length);
       localStorage.setItem('kedvencek', JSON.stringify(ujKedvencLista));
     }
-    // A Link komponens, amit a JSX-ben írtál, automatikusan átvisz majd a /kedvencek oldalra.
-  };
 
+  };
+//
     const kosarbaTesz = () => {
         const darab = document.getElementsByClassName('darab');
         console.log(darab[0].value);
@@ -144,11 +125,11 @@ const Egyedi= (id) => {
         <div className='fajta'>
           <p className="termek-fajta">{item.fajta}</p>
         </div>
-
+//
          <div className='kedvenc'>
             <Link> <img src={favorite} onClick={kedvencbeTesz}/></Link>
           </div>
-        
+        //
         <div className='ar'>
         <p>100ml</p>
         <p className="termek-ar">{item.ar} FT</p>
