@@ -12,7 +12,7 @@ const EgyediBoss = (id) => {
   let [bossItem, setBossItem] = useState([]);
   let [bossLeir, setBossLeir] = useState([]);
 
- const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setDarabszam} = useContext(CartContext);
+ const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo,setKedvencSzamlalo, darabszam, setDarabszam} = useContext(CartContext);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -48,6 +48,26 @@ const EgyediBoss = (id) => {
           szerverrolBetolt();
           
       }, []);
+
+      const kedvencbeTesz = () => {
+    let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
+
+    if (kedvencekListaja) {
+      if (!kedvencekListaja.includes(bossItem._id)) {
+        kedvencekListaja.push(bossItem._id);
+        setKedvencSzamlalo(kedvencekListaja.length);
+        localStorage.setItem('kedvencek', JSON.stringify(kedvencekListaja));
+      } else {
+        window.alert('Ez már a kedvencek között van.');
+      }
+    } else {
+      let ujKedvencLista = [];
+      ujKedvencLista.push(bossItem._id);
+      setKedvencSzamlalo(ujKedvencLista.length);
+      localStorage.setItem('kedvencek', JSON.stringify(ujKedvencLista));
+    }
+
+  };
 
       
 
@@ -111,9 +131,11 @@ const EgyediBoss = (id) => {
 
         </div>
 
-        <div className='kedvenc'>
-        <Link to="/kedvencek"> <img src={favorite} alt="" /></Link>
-        </div>
+         <div className='kedvenc'>
+            <Link> <img src={favorite} onClick={kedvencbeTesz}/></Link>
+          </div>
+
+ 
         
         <div className='ar'>
         <p>100ml</p>

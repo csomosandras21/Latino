@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
 import favorite from '../../public/images/kedvenckep.png'
@@ -12,7 +12,7 @@ const EgyediJpg = (id) => {
   let [jpgItem, setJpgItem] = useState([]);
   let [jpgLeir, setJpgLeir] = useState([]);
 
-  const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setDarabszam} = useContext(CartContext);
+   const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setKedvencSzamlalo, setDarabszam} = useContext(CartContext);
 
   useEffect(() => {
           const szerverrolBetolt = async () => {
@@ -47,6 +47,26 @@ const EgyediJpg = (id) => {
           szerverrolBetolt();
           
       }, []);
+
+          const kedvencbeTesz = () => {
+    let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
+
+    if (kedvencekListaja) {
+      if (!kedvencekListaja.includes(jpgItem._id)) {
+        kedvencekListaja.push(jpgItem._id);
+        setKedvencSzamlalo(kedvencekListaja.length);
+        localStorage.setItem('kedvencek', JSON.stringify(kedvencekListaja));
+      } else {
+        window.alert('Ez már a kedvencek között van.');
+      }
+    } else {
+      let ujKedvencLista = [];
+      ujKedvencLista.push(jpgItem._id);
+      setKedvencSzamlalo(ujKedvencLista.length);
+      localStorage.setItem('kedvencek', JSON.stringify(ujKedvencLista));
+    }
+
+  };
 
         const kosarbaTesz = () => {
         const darab = document.getElementsByClassName('darab');
@@ -107,9 +127,9 @@ const EgyediJpg = (id) => {
           <p className="termek-fajta">{jpgItem.fajta}</p>
         </div>
 
-                <div className='kedvenc'>
-         <Link to="/kedvencek"> <img src={favorite} alt="" /></Link>
-        </div>
+                     <div className='kedvenc'>
+                        <Link> <img src={favorite} onClick={kedvencbeTesz}/></Link>
+                      </div>
         
         <div className='ar'>
         <p>100ml</p>

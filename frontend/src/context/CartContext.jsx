@@ -22,7 +22,7 @@ const CartProvider = (props) => {
             setKosarSzamlalo(osszeg);
         }
         let kedvencek = JSON.parse(localStorage.getItem('kedvencek'));
-        setKedvencSzamlalo(kedvencek.length);
+        kedvencek ? setKedvencSzamlalo(kedvencek.length) : setKedvencSzamlalo(0);
     }, [])
 
     return (
