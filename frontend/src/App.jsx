@@ -41,6 +41,9 @@ import Szallitas from './pages/Szallitas';
 import Success from './pages/Success';
 import Cancel from './pages/Cancel';
 import Kedvencek from './pages/Kedvencek';
+import Vasarlas from './pages/Vasarlas';
+import Kapcsolat from './pages/Kapcsolat';
+import Gyik from './pages/Gyik';
 
 export const FilteringContext = createContext();
 
@@ -94,6 +97,9 @@ function App() {
                 <Route path='/success' element={<Success />} /> 
                 <Route path='/cancel' element={<Cancel />} /> 
                 <Route path='/kedvencek' element={<Kedvencek />}/> 
+                <Route path='/vasarlas' element={<Vasarlas />}/>
+                <Route path='/kapcsolat' element={<Kapcsolat />}/>
+                <Route path='/gyik' element={<Gyik />}/>
 
               </Routes>
             <Footer />                               

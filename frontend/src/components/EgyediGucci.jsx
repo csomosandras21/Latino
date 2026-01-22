@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
 import favorite from '../../public/images/kedvenckep.png'
+import teljessziv from '../../public/images/teljessziv.png'
 import gucciAdatok from '../../public/leirasok/gucci.js'
 import { CartContext } from '../context/CartContext.jsx';
 import { Link } from 'react-router-dom'
@@ -11,6 +12,7 @@ const EgyediGucci = (id) => {
   console.log(params.id);
   let [gucciItem, setGucciItem] = useState([]);
   let [gucciLeir, setGucciLeir] = useState([]);
+   let [kedvenc, setKedvenc] = useState(0);
 
        const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setKedvencSzamlalo, setDarabszam} = useContext(CartContext);
   useEffect(() => {
@@ -31,12 +33,15 @@ const EgyediGucci = (id) => {
               if (response.ok)
               {
                   console.log(itemG[0]);
-                  // for (let i = 0; i < adatok.length; i++) {
-                  //     tomb.push(<Dior key={i} dio={adatok[i]} />);
-                  // }
           
                   setGucciItem(itemG[0]);
                   setGucciLeir(leirG[0]);
+
+                  let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
+
+                  if (kedvencekListaja) {
+                    if (kedvencekListaja.includes(itemD[0]._id)) setKedvenc(1);
+                  }
                   
               } 
               else console.log(adatok.msg);
@@ -56,17 +61,34 @@ const EgyediGucci = (id) => {
         kedvencekListaja.push(gucciItem._id);
         setKedvencSzamlalo(kedvencekListaja.length);
         localStorage.setItem('kedvencek', JSON.stringify(kedvencekListaja));
+        setKedvenc(1)
       } else {
         window.alert('Ez már a kedvencek között van.');
+        setKedvenc(1)
       }
     } else {
       let ujKedvencLista = [];
       ujKedvencLista.push(gucciItem._id);
       setKedvencSzamlalo(ujKedvencLista.length);
       localStorage.setItem('kedvencek', JSON.stringify(ujKedvencLista));
+      setKedvenc(1)
     }
 
   };
+
+      const kedvencbolKivesz = () => {
+          let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
+
+          let tomb = kedvencekListaja.filter(elem => elem !== gucciItem._id);
+          
+          localStorage.setItem('kedvencek', JSON.stringify(tomb));
+          setKedvenc(0);
+          setKedvencSzamlalo(tomb.length)
+
+          console.log(gucciItem._id);
+          console.log(tomb);
+          
+    }
 
 
             const kosarbaTesz = () => {
@@ -128,8 +150,13 @@ const EgyediGucci = (id) => {
           <p className="termek-fajta">{gucciItem.fajta}</p>
         </div>
 
-           <div className='kedvenc'>
+         <div className='kedvenc'>
+          {
+            kedvenc ? 
+            <Link> <img src={teljessziv} onClick={kedvencbolKivesz}/></Link>
+            :
             <Link> <img src={favorite} onClick={kedvencbeTesz}/></Link>
+          }
           </div>
         
         <div className='ar'>

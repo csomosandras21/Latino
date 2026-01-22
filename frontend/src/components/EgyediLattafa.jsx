@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
 import favorite from '../../public/images/kedvenckep.png'
+import teljessziv from '../../public/images/teljessziv.png'
 import lattafaAdatok from '../../public/leirasok/lattafa.js'
 import { CartContext } from '../context/CartContext.jsx';
 import { Link } from 'react-router-dom'
@@ -11,6 +12,7 @@ const EgyediLattafa = (id) => {
   console.log(params.id);
   let [lattafaItem, setLattafaItem] = useState([]);
   let [lattafaLeir, setLattafaLeir] = useState([]);
+    let [kedvenc, setKedvenc] = useState(0);
 
    const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setKedvencSzamlalo, setDarabszam} = useContext(CartContext);
 
@@ -33,12 +35,15 @@ const EgyediLattafa = (id) => {
               if (response.ok)
               {
                   console.log(itemL[0]);
-                  // for (let i = 0; i < adatok.length; i++) {
-                  //     tomb.push(<Dior key={i} dio={adatok[i]} />);
-                  // }
           
                   setLattafaItem(itemL[0]);
                   setLattafaLeir(leirL[0])
+
+                    let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
+
+                  if (kedvencekListaja) {
+                    if (kedvencekListaja.includes(itemD[0]._id)) setKedvenc(1);
+                  }
                   
               } 
               else console.log(adatok.msg);
@@ -46,15 +51,6 @@ const EgyediLattafa = (id) => {
           }
   
           szerverrolBetolt();
-
-      const kosarbaTesz = () => {
-        const darab = document.getElementsByClassName('darab');
-        console.log(darab[0].value);
-        
-        let szam = kosarSzamlalo + Number(darab[0].value);
-        localStorage.setItem('kosarszamlalo', szam); 
-        setKosarSzamlalo(szam);
-      }
           
       }, []);
 
@@ -66,17 +62,34 @@ const EgyediLattafa = (id) => {
         kedvencekListaja.push(lattafaItem._id);
         setKedvencSzamlalo(kedvencekListaja.length);
         localStorage.setItem('kedvencek', JSON.stringify(kedvencekListaja));
+         setKedvenc(1)
       } else {
         window.alert('Ez már a kedvencek között van.');
+         setKedvenc(1)
       }
     } else {
       let ujKedvencLista = [];
       ujKedvencLista.push(lattafaItem._id);
       setKedvencSzamlalo(ujKedvencLista.length);
       localStorage.setItem('kedvencek', JSON.stringify(ujKedvencLista));
+       setKedvenc(1)
     }
 
   };
+
+      const kedvencbolKivesz = () => {
+          let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
+
+          let tomb = kedvencekListaja.filter(elem => elem !== lattafaItem._id);
+          
+          localStorage.setItem('kedvencek', JSON.stringify(tomb));
+          setKedvenc(0);
+          setKedvencSzamlalo(tomb.length)
+
+          console.log(lattafaItem._id);
+          console.log(tomb);
+          
+    }
 
       const kosarbaTesz = () => {
         const darab = document.getElementsByClassName('darab');
@@ -137,9 +150,13 @@ const EgyediLattafa = (id) => {
           <p className="termek-fajta">{lattafaItem.fajta}</p>
         </div>
         
-
-        <div className='kedvenc'>
+         <div className='kedvenc'>
+          {
+            kedvenc ? 
+            <Link> <img src={teljessziv} onClick={kedvencbolKivesz}/></Link>
+            :
             <Link> <img src={favorite} onClick={kedvencbeTesz}/></Link>
+          }
           </div>
         
         <div className='ar'>

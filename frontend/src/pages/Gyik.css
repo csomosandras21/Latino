@@ -1,4 +1,4 @@
- .main-resz7 {
+ .main-resz10 {
   max-width: 900px;
   margin: 80px auto;
   padding: 40px 30px;
@@ -12,7 +12,7 @@
   position: relative;
 }
 
-.main-resz7::before {
+.main-resz10::before {
   position: absolute;
   left: 0;
   top: 0;
@@ -22,14 +22,14 @@
   border-radius: 12px 0 0 12px;
 }
 
-.main-resz7 h1 {
+.main-resz10 h1 {
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 12px;
   letter-spacing: 0.5px;
 }
 
-.main-resz7 h1::after {
+.main-resz10 h1::after {
   display: inline-block;
   margin-left: 12px;
   font-size: 12px;
@@ -41,7 +41,7 @@
   vertical-align: middle;
 }
 
-.main-resz7 p {
+.main-resz10 p {
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 18px;
@@ -49,7 +49,7 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.main-resz7 p:hover {
+.main-resz10 p:hover {
   transform: translateX(6px);
   opacity: 0.9;
 }
@@ -67,16 +67,16 @@
 
 
 @media (max-width: 768px) {
-  .main-resz7 {
+  .main-resz10 {
     margin: 40px 16px;
     padding: 30px 20px;
   }
 
-  .main-resz7 h1 {
+  .main-resz10 h1 {
     font-size: 26px;
   }
 
-  .main-resz7 h1::after {
+  .main-resz10 h1::after {
     display: block;
     margin: 10px 0 0;
   }

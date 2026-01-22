@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
 import favorite from '../../public/images/kedvenckep.png'
+import teljessziv from '../../public/images/teljessziv.png'
 import osszesAdatok from '../../public/leirasok/osszes';
 import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom'
@@ -9,8 +10,11 @@ import { Link } from 'react-router-dom'
 const Egyedi= (id) => {
   const params = useParams();
   console.log(params.id);
-  let [item, setItem] = useState([]);
+  let [item, setItem] = useState({});
   let [osszesLeir, setOsszesLeir] = useState([]);
+  //
+  let [kedvenc, setKedvenc] = useState(0);
+  //
 
    const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setKedvencSzamlalo, setDarabszam} = useContext(CartContext);
 
@@ -29,13 +33,16 @@ const Egyedi= (id) => {
               if (response.ok)
               {
                   console.log(itemD[0]);
-                  // for (let i = 0; i < adatok.length; i++) {
-                  //     tomb.push(<Dior key={i} dio={adatok[i]} />);
-                  // }
-          
+                  
                   setItem(itemD[0]);
                   setOsszesLeir(leirO[0])
-                  
+                  //
+                  let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
+
+                  if (kedvencekListaja) {
+                    if (kedvencekListaja.includes(itemD[0]._id)) setKedvenc(1);
+                  }
+                  //
               } 
               else console.log(adatok.msg);
   
@@ -44,28 +51,7 @@ const Egyedi= (id) => {
           szerverrolBetolt();
           
       }, []);
-
-
-    // function kosarba(elemke) {
-    //     console.log(elemke);
-    //     let kosarka = JSON.parse(localStorage.getItem('kosar'))
-        
-    //     const ujElem = {
-    //         elem: elemke,
-    //         darabszam: 1
-    //     }
-
-    //     kosarka.push(ujElem);
-        
-    //     localStorage.removeItem('kosar')
-
-    //     localStorage.setItem('kosar', JSON.stringify(kosarka));
-              
-    //     setKosar(kosarka ? kosarka : []);   
-    // }
-
-
-    
+       
     const kedvencbeTesz = () => {
     let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
 
@@ -74,19 +60,36 @@ const Egyedi= (id) => {
         kedvencekListaja.push(item._id);
         setKedvencSzamlalo(kedvencekListaja.length);
         localStorage.setItem('kedvencek', JSON.stringify(kedvencekListaja));
+        setKedvenc(1)
       } else {
         window.alert('Ez már a kedvencek között van.');
+        setKedvenc(1)
       }
     } else {
       let ujKedvencLista = [];
       ujKedvencLista.push(item._id);
       setKedvencSzamlalo(ujKedvencLista.length);
       localStorage.setItem('kedvencek', JSON.stringify(ujKedvencLista));
+      setKedvenc(1)
     }
-
-
-
   };
+  //
+    const kedvencbolKivesz = () => {
+          let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
+
+          let tomb = kedvencekListaja.filter(elem => elem !== item._id);
+          
+          localStorage.setItem('kedvencek', JSON.stringify(tomb));
+          setKedvenc(0);
+          setKedvencSzamlalo(tomb.length)
+
+          console.log(item._id);
+          console.log(tomb);
+          
+    }
+    //
+
+
     const kosarbaTesz = () => {
         const darab = document.getElementsByClassName('darab');
         console.log(darab[0].value);
@@ -128,6 +131,7 @@ const Egyedi= (id) => {
             localStorage.setItem('kosarszamlalo', szam);
           }
       }
+    }
 
   return (
   <div className="oldal">
@@ -151,11 +155,16 @@ const Egyedi= (id) => {
         <div className='fajta'>
           <p className="termek-fajta">{item.fajta}</p>
         </div>
-
+//
          <div className='kedvenc'>
+          {
+            kedvenc ? 
+            <Link> <img src={teljessziv} onClick={kedvencbolKivesz}/></Link>
+            :
             <Link> <img src={favorite} onClick={kedvencbeTesz}/></Link>
+          }
           </div>
-        
+  //      
         <div className='ar'>
         <p>100ml</p>
         <p className="termek-ar">{item.ar} FT</p>
@@ -186,8 +195,6 @@ const Egyedi= (id) => {
         </div>
   </div>
 )
+} 
 
-    }
-}
-
-export default Egyedi
+export default Egyedi;

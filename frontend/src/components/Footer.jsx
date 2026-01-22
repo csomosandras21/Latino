@@ -27,10 +27,9 @@ const Footer = () => {
             <div className='linkek'>
                 <Link to={'/penz'}>Pénzvisszafizetési garancia</Link>
                 <Link to={'/szallitas'}>Szállítás és fizetés</Link>
-                <Link to={'/'}>Hogyan vásároljunk?</Link>
-                <Link to={'/'}>Kapcsolat</Link>
-                <Link to={'/'}>GYIK</Link>
-                <Link to={'/'}>Termékértékelés</Link> 
+                <Link to={'/vasarlas'}>Hogyan vásároljunk?</Link>
+                <Link to={'/kapcsolat'}>Kapcsolat</Link>
+                <Link to={'/gyik'}>GYIK</Link>
             </div>
             </div>
     </div>

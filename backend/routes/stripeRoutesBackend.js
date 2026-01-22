@@ -58,7 +58,7 @@ router.post("/create-checkout-session", async (req, res) => {
             allow_promotion_codes: true,
             payment_method_types: ["card"], 
             line_items: line_items,
-            
+
             // --- EZ AZ ÚJ RÉSZ A NÉVHEZ ÉS CÍMHEZ ---
             billing_address_collection: "required", 
             custom_text: {

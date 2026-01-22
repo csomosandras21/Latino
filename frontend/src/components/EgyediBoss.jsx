@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
 import favorite from '../../public/images/kedvenckep.png'
+import teljessziv from '../../public/images/teljessziv.png'
 import bossAdatok from '../../public/leirasok/boss.js';
 import { CartContext } from '../context/CartContext.jsx';
 import { Link } from 'react-router-dom'
@@ -11,6 +12,8 @@ const EgyediBoss = (id) => {
   console.log(params.id);
   let [bossItem, setBossItem] = useState([]);
   let [bossLeir, setBossLeir] = useState([]);
+   let [kedvenc, setKedvenc] = useState(0);
+
 
  const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo,setKedvencSzamlalo, darabszam, setDarabszam} = useContext(CartContext);
 
@@ -39,6 +42,11 @@ const EgyediBoss = (id) => {
           
                   setBossItem(itemD[0]);
                   setBossLeir(leirA[0])
+                  let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
+
+                  if (kedvencekListaja) {
+                    if (kedvencekListaja.includes(itemD[0]._id)) setKedvenc(1);
+                  }
                   
               } 
               else console.log(adatok.msg);
@@ -57,17 +65,33 @@ const EgyediBoss = (id) => {
         kedvencekListaja.push(bossItem._id);
         setKedvencSzamlalo(kedvencekListaja.length);
         localStorage.setItem('kedvencek', JSON.stringify(kedvencekListaja));
+        setKedvenc(1)
       } else {
         window.alert('Ez már a kedvencek között van.');
+        setKedvenc(1)
       }
     } else {
       let ujKedvencLista = [];
       ujKedvencLista.push(bossItem._id);
       setKedvencSzamlalo(ujKedvencLista.length);
       localStorage.setItem('kedvencek', JSON.stringify(ujKedvencLista));
+      setKedvenc(1)
     }
 
   };
+  const kedvencbolKivesz = () => {
+          let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
+
+          let tomb = kedvencekListaja.filter(elem => elem !== bossItem._id);
+          
+          localStorage.setItem('kedvencek', JSON.stringify(tomb));
+          setKedvenc(0);
+          setKedvencSzamlalo(tomb.length)
+
+          console.log(bossItem._id);
+          console.log(tomb);
+          
+    }
 
       
 
@@ -131,8 +155,13 @@ const EgyediBoss = (id) => {
 
         </div>
 
-         <div className='kedvenc'>
+       <div className='kedvenc'>
+          {
+            kedvenc ? 
+            <Link> <img src={teljessziv} onClick={kedvencbolKivesz}/></Link>
+            :
             <Link> <img src={favorite} onClick={kedvencbeTesz}/></Link>
+          }
           </div>
 
  
