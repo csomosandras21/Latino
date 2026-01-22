@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
+import favorite from '../../public/images/kedvenckep.png'
 import bossAdatok from '../../public/leirasok/boss.js';
 import { CartContext } from '../context/CartContext.jsx';
+import { Link } from 'react-router-dom'
 
 const EgyediBoss = (id) => {
   const params = useParams();
@@ -106,6 +108,11 @@ const EgyediBoss = (id) => {
 
         <div className='fajta'>
           <p className="termek-fajta">{bossItem.fajta}</p>
+
+        </div>
+
+        <div className='kedvenc'>
+        <Link to="/kedvencek"> <img src={favorite} alt="" /></Link>
         </div>
         
         <div className='ar'>

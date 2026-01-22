@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import './Egyedi.css';
+import favorite from '../../public/images/kedvenckep.png'
 import yslAdatok from '../../public/leirasok/ysl';
 import { CartContext } from '../context/CartContext.jsx';
+import { Link } from 'react-router-dom'
 
 const EgyediYsl = (id) => {
   const params = useParams();
@@ -105,6 +107,10 @@ const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setDarabszam
           <p className="termek-fajta">{yslItem.fajta}</p>
         </div>
         
+        <div className='kedvenc'>
+         <Link to="/kedvencek"> <img src={favorite} alt=""  /></Link>
+        </div>
+
         <div className='ar'>
         <p>100ml</p>
         <p className="termek-ar">{yslItem.ar} FT</p>

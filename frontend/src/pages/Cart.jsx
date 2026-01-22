@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../context/CartContext'
 import "./Cart.css"
+import { Link } from 'react-router-dom';
 
-const Cart = () => {
+const Cart =() => {
   const [items, setItems] = useState([]);
   const { kosar, setKosarSzamlalo, darabszam } = useContext(CartContext);
   
@@ -28,8 +29,6 @@ const Cart = () => {
                   console.log(tomb);
 
                   setItems(tomb);
-                  
-                  
               } 
               else console.log(adatok.msg);
   
@@ -38,6 +37,34 @@ const Cart = () => {
           szerverrolBetolt();
           
       }, [kosar, darabszam]);
+
+
+      const handleCheckout = async () => {
+        if (items.length === 0) { 
+          alert("Üres a kosarad!");
+          return;
+        }
+
+        try {
+          const res = await fetch("http://localhost:3500/api/stripe/create-checkout-session", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ items: items }) 
+          });
+
+          const data = await res.json();
+          console.log(data);
+          
+
+          if (data.url) {
+            window.location.href = data.url;
+          } else {
+            console.error("Hiba: Nem érkezett URL a szervertől.");
+          }
+        } catch (error) {
+          console.error("Hálózati hiba:", error);
+        }
+      };
 
   const kivenni = (elem) => {
     console.log(elem);
@@ -55,24 +82,19 @@ const Cart = () => {
         osszeg += Number(darabszam[i]);
         tomb.push({parfum: items[i].parfum, darab: darabszam[i]});
       }
-      
     }
-    console.log(tomb);
     
-  //  let tomb = items.filter(item => item.parfum._id !== elem.parfum._id)
-  //  let idTomb = []
-  //  tomb.forEach(elem => {
-  //       idTomb.push(elem.parfum._id);
-  //  });
-  //  console.log(idTomb);
-   //fasz
-   
    localStorage.setItem('kosar', JSON.stringify(parfumTomb));
    localStorage.setItem('darabszam', JSON.stringify(darabTomb));
    localStorage.setItem('kosarszamlalo', osszeg);
     setKosarSzamlalo(osszeg);
     setItems(tomb); 
   }
+
+  // SZÁMÍTÁSI LOGIKA: Itt számoljuk össze az árakat a darabszám alapján
+  const vegosszeg = items.reduce((total, item) => {
+    return total + (Number(item.parfum.ar) * Number(item.darab));
+  }, 0);
 
   return (
     <div>
@@ -84,13 +106,21 @@ const Cart = () => {
                 <p>{ item.parfum.nev }</p>
                 <p> {item.parfum.ar}FT</p>
                 <p>{item.darab} db</p>
-                <img src={item.parfum.kep} />
-
+                <img src={item.parfum.kep} alt={item.parfum.nev} />
               </div>
           )
-        })}    
+        })
+        }
+
+        <div className='teljesOsszeg'>
+        </div>
+        <div className='gombok'>
+          <button> <Link to='/'>Vissza a főoldara</Link> </button>
+          <p><strong>Fizetendő végösszeg: {vegosszeg} Ft</strong></p>
+          <button onClick={handleCheckout}> <Link>Tovább a fizetéshez</Link> </button>
+          </div>    
     </div>
   )
 }
 
-export default Cart
+export default Cart;

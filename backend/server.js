@@ -91,3 +91,5 @@ app.use('/armanis-frontend', require('./routes/armaniRoutesFrontend.js'));
 app.use('/lattafas-frontend', require('./routes/lattafasRoutesFrontend.js'));
 
 // app.use('/users-backend', require('./routes/userRoutesBackend.js'));
+
+app.use('/api/stripe', require('./routes/stripeRoutesBackend.js'));

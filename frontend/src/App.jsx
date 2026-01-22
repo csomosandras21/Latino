@@ -38,6 +38,9 @@ import Altalanos from './pages/Altalanos';
 import Szemelyes from './pages/Szemelyes';
 import Penz from './pages/Penz';
 import Szallitas from './pages/Szallitas';
+import Success from './pages/Success';
+import Cancel from './pages/Cancel';
+import Kedvencek from './pages/Kedvencek';
 
 export const FilteringContext = createContext();
 
@@ -88,6 +91,10 @@ function App() {
                 <Route path='/szemelyes' element={<Szemelyes />} /> 
                 <Route path='/penz' element={<Penz />} /> 
                 <Route path='/szallitas' element={<Szallitas />} /> 
+                <Route path='/success' element={<Success />} /> 
+                <Route path='/cancel' element={<Cancel />} /> 
+                <Route path='/kedvencek' element={<Kedvencek />}/> 
+
               </Routes>
             <Footer />                               
         </BrowserRouter>
