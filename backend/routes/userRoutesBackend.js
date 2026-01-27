@@ -1,3 +1,5 @@
+const app =  require('../server.js');
+
 const express = require('express');
 const{
     getAllUsersBackend,
