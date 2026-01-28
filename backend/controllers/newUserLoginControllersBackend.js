@@ -15,13 +15,13 @@ exports.postNewUserLoginBackend = async (req, res) => {
         // Ellenőrzés: van-e ilyen email az adatbázisban
         const existingUser = await User.findOne({ email });
         if (!existingUser) {
-            return res.status(400).json({ success: false, msg: 'Nincs ilyen email!' });
+            return res.status(401).json({ success: false, msg: 'Nincs ilyen email!' });
         }
 
         // Jelszó ellenőrzése
         const isMatch = await bcrypt.compare(password, existingUser.jelszo);
         if (!isMatch) {
-            return res.status(400).json({ success: false, msg: 'Helytelen jelszó!' });
+            return res.status(403).json({ success: false, msg: 'Helytelen jelszó!' });
         }
 
         // Minden ok → sikeres belépés

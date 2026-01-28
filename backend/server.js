@@ -95,4 +95,4 @@ app.use('/lattafas-frontend', require('./routes/lattafasRoutesFrontend.js'));
 app.use('/api/stripe', require('./routes/stripeRoutesBackend.js'));
 
 
-module.export = app;
+module.exports = app;

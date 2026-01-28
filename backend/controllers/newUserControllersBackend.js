@@ -19,7 +19,7 @@ exports.postNewUserBackend = async (req, res) => {
         // Ellenőrzés: van-e már ilyen email az adatbázisban
         const existingUser = await User.findOne({ email });
         if (existingUser) {
-            res.statusCode = 400;
+            res.statusCode = 403;
             return res.json({ msg: 'Ez az e-mail cím már regisztrálva van!' });
         }
 

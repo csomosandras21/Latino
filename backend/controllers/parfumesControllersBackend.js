@@ -4,6 +4,7 @@ const { markak, kedvezmenyek } = require('../public/js/adatok');
 exports.getAllParfumesBackend = async (req, res) => {
     try {
         const parfumes = await Parfume.find({});
+        
         res.statusCode = 200;
         return res.render('parfumes.ejs', { parfumes, markak, kedvezmenyek });
     } catch (error) {
