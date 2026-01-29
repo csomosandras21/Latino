@@ -181,3 +181,26 @@
       right: -8px;
       font-weight: bolder;
     }
+
+@media screen and (max-width: 750px) {
+  .header {
+    background-color: green !important;
+    width: 750px;
+  }
+  
+  .navbar {
+    background-color: green !important;
+    width: 750px;
+    font-size: 8px;
+
+  }
+
+
+  .navbar a {
+       color: black;
+  }
+
+  .navbar button:hover {
+    color: pink;
+  }
+}    
