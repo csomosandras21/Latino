@@ -17,7 +17,14 @@ const userSchema = new mongoose.Schema(
         admin: {
             type: Boolean,
             default: false
-        }
+        },
+        kedveltParfum: [
+            {
+              type: mongoose.Schema.Types.ObjectId,
+            ref: 'parfume'  
+            }
+            
+        ]
     },
     {
         timestamps: true,

@@ -183,24 +183,97 @@
     }
 
 @media screen and (max-width: 750px) {
-  .header {
-    background-color: green !important;
-    width: 750px;
+  header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
   }
-  
+
+  .logo {
+    font-size: 24px;
+    letter-spacing: 10px;
+  }
+
+  .search-bar input {
+    width: 100%;
+    max-width: 100%;
+    height: 40px;
+  }
+
+  .icons {
+    gap: 20px;
+    font-size: 24px;
+  }
+
   .navbar {
-    background-color: green !important;
-    width: 750px;
-    font-size: 8px;
+    flex-wrap: wrap;
+    gap: 15px;
+    height: auto;
+    padding: 10px;
+  }
 
+  .navbar button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .product-grid {
+    gap: 40px;
+    padding: 20px 10px;
+  }
+
+  .product {
+    width: 120px;
+  }
+
+  .product img {
+    width: 90px;
+    height: 180px;
+  }
+
+  .product-name {
+    font-size: 18px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+
+  .brand-icons {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .brand-icons img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .tovabbi {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .navbar a, .logo a {
+    font-size: 16px;
+  }
+
+  .navbar a:hover {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .kosarErtek-tarto {
+    position: relative;
+  }
+
+  .kosarErtek {
+    font-size: 12px;
+    top: -4px;
+    right: -6px;
   }
 
 
-  .navbar a {
-       color: black;
-  }
-
-  .navbar button:hover {
-    color: pink;
-  }
 }    
