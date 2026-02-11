@@ -5,9 +5,14 @@ import { CartContext } from '../context/CartContext';
 
 const Kedvencek = () => {
   const [kedvencTermekek, setKedvencTermekek] = useState([]);
+  let [user, setUser] = useState({});//
   const { setKedvencSzamlalo } = useContext(CartContext);
   
   useEffect(() => {
+    const userL = JSON.parse(localStorage.getItem('user'))//
+          console.log(userL);//
+          
+          setUser(userL);//
     const betoltes = async () => {
       // 1. Megszerezzük az ID-kat a localStorage-ból
       const mentettIdk = JSON.parse(localStorage.getItem('kedvencek')) || [];
@@ -30,12 +35,21 @@ const Kedvencek = () => {
     betoltes();
   }, []);
 
-  const eltavolit = (id) => {
+  const eltavolit = async (id) => {
     const ujLista = kedvencTermekek.filter(p => p._id !== id);
     setKedvencTermekek(ujLista);
     const ujIdLista = ujLista.map(p => p._id);
     setKedvencSzamlalo(ujIdLista.length);
     localStorage.setItem('kedvencek', JSON.stringify(ujIdLista));
+
+    const response = await fetch(`http://localhost:3500/api/users-frontend/${user._id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-Type': 'application/json'
+      },
+      body: JSON.stringify({kedvencek: ujIdLista})
+    });
+    
   };
 
   return (

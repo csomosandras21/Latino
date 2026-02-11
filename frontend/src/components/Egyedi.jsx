@@ -54,11 +54,13 @@ const Egyedi= (id) => {
       }, []);
        
     const kedvencbeTesz = async () => {//
-    let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
+      let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
+      let backendbe = []; // Csaba
 
     if (kedvencekListaja) {
       if (!kedvencekListaja.includes(item._id)) {
         kedvencekListaja.push(item._id);
+        backendbe = kedvencekListaja; // Csaba
         setKedvencSzamlalo(kedvencekListaja.length);
         localStorage.setItem('kedvencek', JSON.stringify(kedvencekListaja));
         setKedvenc(1)
@@ -69,6 +71,7 @@ const Egyedi= (id) => {
     } else {
       let ujKedvencLista = [];
       ujKedvencLista.push(item._id);
+      backendbe = ujKedvencLista; // Csaba
       setKedvencSzamlalo(ujKedvencLista.length);
       localStorage.setItem('kedvencek', JSON.stringify(ujKedvencLista));
       setKedvenc(1)
@@ -79,7 +82,7 @@ const Egyedi= (id) => {
       headers: {
         'content-Type': 'application/json'
       },
-      body: JSON.stringify({kedvencek: kedvencekListaja})
+     body: JSON.stringify({ kedvencek: backendbe }) // Csaba
     }); //
   };
   
@@ -100,7 +103,7 @@ const Egyedi= (id) => {
       headers: {
         'content-Type': 'application/json'
       },
-      body: JSON.stringify({kedvencek: kedvencekListaja})
+      body: JSON.stringify({kedvencek: tomb}) // Csaba
     }); //
           
     }
