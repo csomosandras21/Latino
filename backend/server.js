@@ -55,6 +55,7 @@ app.use('/api/szures-parfume', require('./routes/szuresParfumesBackend'));
 
 
 app.use('/api/users-backend', require('./routes/userRoutesBackend.js'));
+app.use('/api/users-frontend', require('./routes/userRoutesFrontend.js'));
 app.use('/api/new-user', require('./routes/newUserRoutesBackend.js'));
 app.use('/api/new-user-login', require('./routes/newUserLoginRoutesBackend.js'));
 

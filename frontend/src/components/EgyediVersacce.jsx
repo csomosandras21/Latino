@@ -7,17 +7,21 @@ import versAdatok from '../../public/leirasok/versace.js';
 import { CartContext } from '../context/CartContext.jsx';
 import { Link } from 'react-router-dom'
 
-
 const EgyediVersacce = (id) => {
   const params = useParams();
   console.log(params.id);
   let [versItem, setVersItem] = useState([]);
+  let [user, setUser] = useState({});
   let [versLeir, setVersLeir] = useState([]);
-   let [kedvenc, setKedvenc] = useState(0);
+  let [kedvenc, setKedvenc] = useState(0);
 
    const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setKedvencSzamlalo, setDarabszam} = useContext(CartContext);
 
   useEffect(() => {
+     const userL = JSON.parse(localStorage.getItem('user'))
+          console.log(userL);
+          
+          setUser(userL);
           const szerverrolBetolt = async () => {
               const response = await fetch('http://localhost:3500/api/parfumes-frontend');
               const bejovoAdatok = await response.json();
@@ -57,7 +61,7 @@ const EgyediVersacce = (id) => {
           
       }, []);
 
-       const kedvencbeTesz = () => {
+       const kedvencbeTesz = async () => {
     let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
 
     if (kedvencekListaja) {
@@ -77,10 +81,17 @@ const EgyediVersacce = (id) => {
       localStorage.setItem('kedvencek', JSON.stringify(ujKedvencLista));
       setKedvenc(1)
     }
+     const response = await fetch(`http://localhost:3500/api/users-frontend/${user._id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-Type': 'application/json'
+      },
+      body: JSON.stringify({kedvencek: kedvencekListaja})
+    });
 
   };
 
-  const kedvencbolKivesz = () => {
+  const kedvencbolKivesz = async() => {
           let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
 
           let tomb = kedvencekListaja.filter(elem => elem !== versItem._id);
@@ -91,6 +102,14 @@ const EgyediVersacce = (id) => {
 
           console.log(versItem._id);
           console.log(tomb);
+
+          const response = await fetch(`http://localhost:3500/api/users-frontend/${user._id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-Type': 'application/json'
+      },
+      body: JSON.stringify({kedvencek: kedvencekListaja})
+    }); //
           
     }
 

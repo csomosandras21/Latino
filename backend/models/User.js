@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema(
         kedveltParfum: [
             {
               type: mongoose.Schema.Types.ObjectId,
-            ref: 'parfume'  
+                ref: 'parfume'  
             }
             
         ]

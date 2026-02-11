@@ -11,12 +11,18 @@ const EgyediArmani = (id) => {
   const params = useParams();
   console.log(params.id);
   let [armaniItem, setArmaniItem] = useState([]);
+  let [user, setUser] = useState({});
   let [armaniLeir, setArmaniLeir] = useState([]);
     let [kedvenc, setKedvenc] = useState(0);
 
  const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setKedvencSzamlalo, setDarabszam} = useContext(CartContext);
 
   useEffect(() => {
+
+    const userL = JSON.parse(localStorage.getItem('user'))
+          console.log(userL)
+           setUser(userL);
+
           const szerverrolBetolt = async () => {
               const response = await fetch('http://localhost:3500/api/parfumes-frontend');
               const bejovoAdatok = await response.json();
@@ -56,7 +62,7 @@ const EgyediArmani = (id) => {
           
       }, []);
 
-      const kedvencbeTesz = () => {
+      const kedvencbeTesz = async () => {
         let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
 
         if (kedvencekListaja) {
@@ -77,8 +83,17 @@ const EgyediArmani = (id) => {
           setKedvenc(1)
         }
 
+        
+        const response = await fetch(`http://localhost:3500/api/users-frontend/${user._id}`, {
+          method: 'PATCH',
+          headers: {
+            'content-Type': 'application/json'
+          },
+          body: JSON.stringify({kedvencek: kedvencekListaja})
+        });
+        
       };
-      const kedvencbolKivesz = () => {
+      const kedvencbolKivesz = async() => {
           let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
 
           let tomb = kedvencekListaja.filter(elem => elem !== armaniItem._id);
@@ -90,6 +105,13 @@ const EgyediArmani = (id) => {
           console.log(armaniItem._id);
           console.log(tomb);
           
+          const response = await fetch(`http://localhost:3500/api/users-frontend/${user._id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-Type': 'application/json'
+      },
+      body: JSON.stringify({kedvencek: kedvencekListaja})
+    }); //
     }
 
        const kosarbaTesz = () => {

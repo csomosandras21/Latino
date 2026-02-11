@@ -24,8 +24,11 @@ const Login = () => {
         // sikeres válasz
         const data = await response.json();
         if (data.success) {
+          console.log(data);
+          
           localStorage.setItem('isLoggedIn', 1);          
           localStorage.setItem('user', JSON.stringify(data.existingUser));          
+          localStorage.setItem('kedvencek', JSON.stringify(data.existingUser.kedveltParfum));          
           window.location.href = '/home';
         } else {
           setError('Helytelen email vagy jelszó!');

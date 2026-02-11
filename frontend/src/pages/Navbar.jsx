@@ -39,6 +39,7 @@ const Navbar = () => {
     setIsLoggedIn(false);
     localStorage.setItem('isLoggedIn', 0);
     localStorage.removeItem('user');
+    localStorage.removeItem('kedvencek');
     window.location.href = '/home';
   }
 

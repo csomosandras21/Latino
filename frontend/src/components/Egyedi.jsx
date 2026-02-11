@@ -11,14 +11,17 @@ const Egyedi= (id) => {
   const params = useParams();
   console.log(params.id);
   let [item, setItem] = useState({});
+  let [user, setUser] = useState({});//
   let [osszesLeir, setOsszesLeir] = useState([]);
-  //
   let [kedvenc, setKedvenc] = useState(0);
-  //
 
    const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setKedvencSzamlalo, setDarabszam} = useContext(CartContext);
 
   useEffect(() => {
+          const userL = JSON.parse(localStorage.getItem('user'))//
+          console.log(userL);//
+          
+          setUser(userL);//
           const szerverrolBetolt = async () => {
               const response = await fetch('http://localhost:3500/api/parfumes-frontend');
               const bejovoAdatok = await response.json();
@@ -36,13 +39,11 @@ const Egyedi= (id) => {
                   
                   setItem(itemD[0]);
                   setOsszesLeir(leirO[0])
-                  //
                   let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
-
                   if (kedvencekListaja) {
                     if (kedvencekListaja.includes(itemD[0]._id)) setKedvenc(1);
                   }
-                  //
+                  
               } 
               else console.log(adatok.msg);
   
@@ -52,7 +53,7 @@ const Egyedi= (id) => {
           
       }, []);
        
-    const kedvencbeTesz = () => {
+    const kedvencbeTesz = async () => {//
     let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
 
     if (kedvencekListaja) {
@@ -72,9 +73,17 @@ const Egyedi= (id) => {
       localStorage.setItem('kedvencek', JSON.stringify(ujKedvencLista));
       setKedvenc(1)
     }
+
+   const response = await fetch(`http://localhost:3500/api/users-frontend/${user._id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-Type': 'application/json'
+      },
+      body: JSON.stringify({kedvencek: kedvencekListaja})
+    }); //
   };
-  //
-    const kedvencbolKivesz = () => {
+  
+    const kedvencbolKivesz = async() => {
           let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
 
           let tomb = kedvencekListaja.filter(elem => elem !== item._id);
@@ -85,9 +94,17 @@ const Egyedi= (id) => {
 
           console.log(item._id);
           console.log(tomb);
+
+          const response = await fetch(`http://localhost:3500/api/users-frontend/${user._id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-Type': 'application/json'
+      },
+      body: JSON.stringify({kedvencek: kedvencekListaja})
+    }); //
           
     }
-    //
+    
 
 
     const kosarbaTesz = () => {
@@ -155,7 +172,6 @@ const Egyedi= (id) => {
         <div className='fajta'>
           <p className="termek-fajta">{item.fajta}</p>
         </div>
-//
          <div className='kedvenc'>
           {
             kedvenc ? 
@@ -163,8 +179,7 @@ const Egyedi= (id) => {
             :
             <Link> <img src={favorite} onClick={kedvencbeTesz}/></Link>
           }
-          </div>
-  //      
+          </div>     
         <div className='ar'>
         <p>100ml</p>
         <p className="termek-ar">{item.ar} FT</p>

@@ -13,7 +13,7 @@ exports.postNewUserLoginBackend = async (req, res) => {
         console.log({ email, password });
 
         // Ellenőrzés: van-e ilyen email az adatbázisban
-        const existingUser = await User.findOne({ email });
+        const existingUser = await User.findOne({ email }).populate('kedveltParfum');
         if (!existingUser) {
             return res.status(401).json({ success: false, msg: 'Nincs ilyen email!' });
         }

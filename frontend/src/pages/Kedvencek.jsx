@@ -11,6 +11,7 @@ const Kedvencek = () => {
     const betoltes = async () => {
       // 1. Megszerezzük az ID-kat a localStorage-ból
       const mentettIdk = JSON.parse(localStorage.getItem('kedvencek')) || [];
+      console.log(mentettIdk);
       
       if (mentettIdk.length > 0) {
         // 2. Lekérjük az összes terméket a szerverről (mint az Egyedi oldalon)
@@ -20,6 +21,8 @@ const Kedvencek = () => {
 
         // 3. Csak azokat tartjuk meg, amiknek az ID-ja benne van a kedvencekben
         const szurtKedvencek = mindenParfum.filter(p => mentettIdk.includes(p._id));
+        
+        // setKedvencTermekek(mentettIdk);
         setKedvencTermekek(szurtKedvencek);
       }
     };

@@ -11,12 +11,17 @@ const EgyediValentino = (id) => {
   const params = useParams();
   console.log(params.id);
   let [valentinoItem, setValentinoItem] = useState([]);
+    let [user, setUser] = useState({});
   let [valentinoLeir, setValentinoLeir] = useState([]);
     let [kedvenc, setKedvenc] = useState(0);
 
    const {kosar, setKosar, kosarSzamlalo, setKosarSzamlalo, darabszam, setKedvencSzamlalo, setDarabszam} = useContext(CartContext);
 
   useEffect(() => {
+              const userL = JSON.parse(localStorage.getItem('user'))
+          console.log(userL);
+          
+          setUser(userL);
           const szerverrolBetolt = async () => {
               const response = await fetch('http://localhost:3500/api/parfumes-frontend');
               const bejovoAdatok = await response.json();
@@ -56,7 +61,7 @@ const EgyediValentino = (id) => {
           
       }, []);
       
-    const kedvencbeTesz = () => {
+    const kedvencbeTesz = async() => {
     let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
 
     if (kedvencekListaja) {
@@ -77,9 +82,17 @@ const EgyediValentino = (id) => {
       setKedvenc(1)
     }
 
+       const response = await fetch(`http://localhost:3500/api/users-frontend/${user._id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-Type': 'application/json'
+      },
+      body: JSON.stringify({kedvencek: kedvencekListaja})
+    });
+
   };
 
-  const kedvencbolKivesz = () => {
+  const kedvencbolKivesz = async() => {
           let kedvencekListaja = JSON.parse(localStorage.getItem('kedvencek'));
 
           let tomb = kedvencekListaja.filter(elem => elem !== valentinoItem._id);
@@ -90,6 +103,14 @@ const EgyediValentino = (id) => {
 
           console.log(item._id);
           console.log(tomb);
+          
+          const response = await fetch(`http://localhost:3500/api/users-frontend/${user._id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-Type': 'application/json'
+      },
+      body: JSON.stringify({kedvencek: kedvencekListaja})
+    }); //
           
     }
 
