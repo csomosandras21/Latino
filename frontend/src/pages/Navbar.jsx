@@ -40,6 +40,11 @@ const Navbar = () => {
     localStorage.setItem('isLoggedIn', 0);
     localStorage.removeItem('user');
     localStorage.removeItem('kedvencek');
+    localStorage.removeItem('kosar');
+    localStorage.removeItem('darabszam');
+    localStorage.setItem('kosarszamlalo', 0);
+    setKedvencekSzamlalo(0);
+    setKosarSzamlalo(0);
     window.location.href = '/home';
   }
 

@@ -150,6 +150,19 @@ const Egyedi= (id) => {
             setKosarSzamlalo(szam);
             localStorage.setItem('kosarszamlalo', szam);
           }
+      } else {
+         let kosarka = [];
+            let darabka = [];
+
+          kosarka.push(jpgItem._id);
+          kosarka.push(item._id);
+          setKosar(kosarka);
+          darabka.push(Number(darab[0].value));
+          setDarabszam(darabka);
+            localStorage.setItem('kosar', JSON.stringify(kosarka)); 
+            localStorage.setItem('darabszam', JSON.stringify(darabka)); 
+            setKosarSzamlalo(szam);
+            localStorage.setItem('kosarszamlalo', szam);
       }
     }
 

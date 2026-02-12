@@ -63,15 +63,4 @@ html, body, #root {
     text-decoration: underline;
 }
 
-/* Mobil nézet */
-@media (max-width: 768px) {
-    .labjegyzet {
-        flex-direction: column;
-        text-align: center;
-        gap: 25px;
-    }
 
-    .kerdesek, .fontos {
-        margin-left: 0;
-    }
-}

@@ -39,7 +39,7 @@
 
     .search-bar input {
       padding: 8px;
-      width: 960px;
+      width: 70vh;
       height: 45px;
       border: none;
       border-radius: 5px;
@@ -62,7 +62,7 @@
       background-color: black;
       display: flex;
       justify-content: center;
-      gap: 55px;
+      gap: 4vh;
       padding: 10px 0;
       height: 60px;
     }
@@ -182,98 +182,50 @@
       font-weight: bolder;
     }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1250px) { 
+  .search-bar input {
+    width: 60vh;
+  }
+.navbar {
+  gap: 2vh;
+  }
+}
+
+@media screen and (max-width: 1050px) {
   header {
     flex-direction: column;
-    gap: 15px;
+    gap: 1.5vh;
     text-align: center;
-  }
-
-  .logo {
-    font-size: 24px;
-    letter-spacing: 10px;
   }
 
   .search-bar input {
-    width: 100%;
-    max-width: 100%;
+    width: 50vh;
     height: 40px;
+  }
+    
+  .icons {
+    gap: 10vh;
+    font-size: 24px;
+  }
+    
+
+  .navbar {
+    gap: 1vh;
+    font-size: 12px;
+  }
+
+}    
+
+@media screen and (max-width: 750px) {
+  .navbar {
+    display: none;
   }
 
   .icons {
-    gap: 20px;
-    font-size: 24px;
+    gap: 6vh;
   }
 
-  .navbar {
-    flex-wrap: wrap;
-    gap: 15px;
-    height: auto;
-    padding: 10px;
+  .search-bar input {
+    width: 35vh;
   }
-
-  .navbar button {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-
-  .product-grid {
-    gap: 40px;
-    padding: 20px 10px;
-  }
-
-  .product {
-    width: 120px;
-  }
-
-  .product img {
-    width: 90px;
-    height: 180px;
-  }
-
-  .product-name {
-    font-size: 18px;
-  }
-
-  .price {
-    font-size: 16px;
-  }
-
-  .brand-icons {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .brand-icons img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .tovabbi {
-    width: 100%;
-    font-size: 16px;
-  }
-
-  .navbar a, .logo a {
-    font-size: 16px;
-  }
-
-  .navbar a:hover {
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .kosarErtek-tarto {
-    position: relative;
-  }
-
-  .kosarErtek {
-    font-size: 12px;
-    top: -4px;
-    right: -6px;
-  }
-
-
-}    
+}

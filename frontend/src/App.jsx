@@ -50,6 +50,7 @@ export const FilteringContext = createContext();
 function App() {
   const [count, setCount] = useState(0)
   const [filtering, setFiltering] = useState('')
+  const excludedRoutes = ['/kedvencek', '/cart'];
 
   return (
     <FilteringContext.Provider value={{filtering, setFiltering}}>
@@ -96,13 +97,14 @@ function App() {
                 <Route path='/szallitas' element={<Szallitas />} /> 
                 <Route path='/success' element={<Success />} /> 
                 <Route path='/cancel' element={<Cancel />} /> 
-                <Route path='/kedvencek' element={<Kedvencek />}/> 
                 <Route path='/vasarlas' element={<Vasarlas />}/>
                 <Route path='/kapcsolat' element={<Kapcsolat />}/>
                 <Route path='/gyik' element={<Gyik />}/>
-
+                <Route path='/kedvencek' element={<Kedvencek />}/> 
               </Routes>
-            <Footer />                               
+                      {!excludedRoutes.includes(location.pathname) && <Footer />}
+
+            {/* <Footer />                                */}
         </BrowserRouter>
     </FilteringContext.Provider>
 

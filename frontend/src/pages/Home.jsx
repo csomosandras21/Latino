@@ -4,6 +4,7 @@
 import './Home.css'
 import './Parfums.css'
 
+
 import { useEffect, useState, useContext } from 'react'
 import { FilteringContext } from '../App'
 
@@ -72,5 +73,7 @@ const Home = () => {
         </div>
     );
 }
+
+
 
 export default Home;

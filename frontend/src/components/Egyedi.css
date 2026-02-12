@@ -1,6 +1,9 @@
 /* Google FONT importálása */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+* {
+  /* border: 1px solid black; */
+}
 
 /* DIOR cím a lap tetején */
 .cim {
@@ -18,11 +21,11 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: 60px; /* Notino-ban kisebb hézag */
+  gap: 60px; 
   max-width: 100%;
   margin-left:95px ;
   padding: 10px;
-  flex-wrap: wrap; /* mobilbarát */
+  flex-wrap: wrap;
 }
 
 /* BAL oldali kép */
@@ -126,25 +129,6 @@
   border: #000 solid 2px;
 }
 
-/* Mobilra optimalizálás */
-@media (max-width: 768px) {
-  .termek-kontener {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .termek-adatok, .termek-kep {
-    width: 100%;
-  }
-
-  .termek-ar {
-    font-size: 24px;
-  }
-}
-
-
-
-
 table {
     width: 1030px;
     margin-bottom: 60px;
@@ -203,4 +187,25 @@ table, th, td {
 .kedvenc img {
     width: 30px;
     height: 30px;
+}
+
+@media screen and (max-width: 1250px) { 
+  .termek-ar {
+    margin-top: 0px;
+  }
+
+  .ar {
+    padding-top: 0px;
+    padding-right: 0px;
+    
+  }
+
+}
+
+@media screen and (max-width: 990px) {
+
+}
+
+@media screen and (max-width: 750px) {
+
 }
