@@ -3,7 +3,7 @@ import account from '../../public/images/account_circle_24dp_FFF_FILL0_wght400_G
 import favorite from '../../public/images/favorite_24dp_FFF_FILL0_wght400_GRAD0_opsz24.png'
 import logout from '../../public/images/logout.png'
 import server from '../../public/images/server.png'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useState, useContext } from 'react'
 import { FilteringContext } from '../App'
 import { CartContext } from '../context/CartContext'
@@ -13,11 +13,14 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [filter, setFilter] = useState('');
+  const location = useLocation();
   
   // Kedvencek számláló állapota
   const [kedvencekSzamlalo, setKedvencekSzamlalo] = useState(0);
  
   const { kosar, kosarSzamlalo, setKosar, setKosarSzamlalo, kedvencSzamlalo } = useContext(CartContext);
+
+ 
 
   useEffect(() => {
     setFiltering(filter);

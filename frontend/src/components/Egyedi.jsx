@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 const Egyedi= (id) => {
   const params = useParams();
   console.log(params.id);
-  let [item, setItem] = useState({});
+  let [item, setItem] = useState([]);
   let [user, setUser] = useState({});//
   let [osszesLeir, setOsszesLeir] = useState([]);
   let [kedvenc, setKedvenc] = useState(0);
@@ -121,8 +121,8 @@ const Egyedi= (id) => {
         
         if (cartKosar) {
 
-          if (!cartKosar.includes(jpgItem._id)) {
-            cartKosar.push(jpgItem._id);
+          // if (!cartKosar.includes(item._id)) {
+          //   cartKosar.push(item._id);
 
           if (!cartKosar.includes(item._id)) {
             cartKosar.push(item._id);
@@ -136,25 +136,25 @@ const Egyedi= (id) => {
           } else {
             window.alert('Ez az illatszer már szerepel a kosárban!');
           }
-        } else {
-            let kosarka = [];
-            let darabka = [];
+        // } else {
+        //     let kosarka = [];
+        //     let darabka = [];
 
-          kosarka.push(jpgItem._id);
-          kosarka.push(item._id);
-          setKosar(kosarka);
-          darabka.push(Number(darab[0].value));
-          setDarabszam(darabka);
-            localStorage.setItem('kosar', JSON.stringify(kosarka)); 
-            localStorage.setItem('darabszam', JSON.stringify(darabka)); 
-            setKosarSzamlalo(szam);
-            localStorage.setItem('kosarszamlalo', szam);
-          }
+        //   // kosarka.push(jpgItem._id);
+        //   kosarka.push(item._id);
+        //   setKosar(kosarka);
+        //   darabka.push(Number(darab[0].value));
+        //   setDarabszam(darabka);
+        //     localStorage.setItem('kosar', JSON.stringify(kosarka)); 
+        //     localStorage.setItem('darabszam', JSON.stringify(darabka)); 
+        //     setKosarSzamlalo(szam);
+        //     localStorage.setItem('kosarszamlalo', szam);
+        //   }
       } else {
          let kosarka = [];
             let darabka = [];
 
-          kosarka.push(jpgItem._id);
+          // kosarka.push(jpgItem._id);
           kosarka.push(item._id);
           setKosar(kosarka);
           darabka.push(Number(darab[0].value));
