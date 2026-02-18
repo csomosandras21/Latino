@@ -108,7 +108,7 @@ const Register = () => {
                     )}
                 </button>
 
-                <button type="text-box">Regisztráció</button>
+                <button type="text-box" id='belepesgomb2'>Regisztráció</button>
             </form>
         </div>
     );

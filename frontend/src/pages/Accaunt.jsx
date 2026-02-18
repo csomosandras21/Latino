@@ -76,12 +76,12 @@ const Login = () => {
           )}
         </button>
 
-        <button type="submit">Belépés</button>
+        <button type="submit" id='belepesgomb'>Belépés</button>
 
         {error && <p style={{ color: 'red' }}>{error}</p>}
 
         <div>
-          <a className="ha" href="/register">
+          <a className="ha" href="/register" id='regi'>
             <p>Ha még nem regisztrált</p>
           </a>
         </div>

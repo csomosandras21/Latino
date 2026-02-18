@@ -77,7 +77,7 @@ const Navbar = () => {
             <Link to='/logout'> <img src={logout} alt="" onClick={kilep} /> </Link>
           </div>
         </> : <>
-          <Link to='/accaunt'> <img src={account} alt="" /> </Link>
+          <Link to='/accaunt' id='belep-gomb'> <img src={account} alt="" /> </Link>
         </>}
 
         {isAdmin ?
