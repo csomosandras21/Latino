@@ -56,7 +56,7 @@ const Kedvencek = () => {
     <div className="kedvencek-oldal">
       <h1>Kedvenc illataim</h1>
       {kedvencTermekek.length === 0 ? (
-        <p>Még nincsenek kedvenceid.</p>
+        <p className='kiiras'>Még nincsenek kedvenc illatok.</p>
       ) : (
         <div className="kedvencek-lista">
           {kedvencTermekek.map(termek => (

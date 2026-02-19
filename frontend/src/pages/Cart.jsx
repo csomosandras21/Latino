@@ -98,20 +98,24 @@ const Cart =() => {
 
   return (
     <div>
-        {items.map((item, index) => {
-          return(
-              <div key={index} className='kosar-kontener'>
-                <h1 key={ index }>   </h1>
-                <button onClick={() => kivenni(item)}>kivenni</button>
-                <p>{ item.parfum.nev }</p>
-                <p> {item.parfum.ar}FT</p>
-                <p>{item.darab} db</p>
-                <img src={item.parfum.kep} alt={item.parfum.nev} />
-              </div>
-          )
-        })
+        {items.length === 0 ?
+            <div className='szoveg'>
+              <p>Nincs még semmi a kosárban!</p>
+            </div>
+           : 
+            items.map((item, index) => {
+        return(
+            <div key={index} className='kosar-kontener'>
+              {/* <h1 key={ index }>   </h1> */}
+              <img src={item.parfum.kep} alt={item.parfum.nev} />
+              <p>{ item.parfum.nev }</p>
+              <p> {item.parfum.ar}FT</p>
+              <p>{item.darab} db</p>
+              <button onClick={() => kivenni(item)}>kivenni</button>
+            </div>
+          )})
         }
-
+        
         <div className='teljesOsszeg'>
         </div>
         <div className='gombok'>

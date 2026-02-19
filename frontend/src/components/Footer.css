@@ -64,3 +64,46 @@ html, body, #root {
 }
 
 
+@media screen and (max-width: 1250px) { 
+  .labjegyzet {
+    width: 100%;
+  }
+
+  .kerdesek {
+    max-width: 100%;
+  }
+  
+.linkek {
+  gap: 1vh;
+  }
+}
+
+@media screen and (max-width: 1050px) { 
+  .labjegyzet {
+    width: 100%;
+  }
+
+  .kerdesek {
+    max-width: 100%;
+  }
+
+.linkek {
+  gap: 1vh;
+  }
+}
+
+@media screen and (max-width: 750px) { 
+  .labjegyzet {
+    width: 100%;
+  }
+
+  .kerdesek {
+    max-width: 100%;
+    font-size: 10px;
+  }
+
+.linkek {
+  gap: 1vh;
+  font-size: 10px;
+  }
+}

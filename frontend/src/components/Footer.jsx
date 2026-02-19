@@ -8,6 +8,14 @@ const Footer = () => {
         return null;
     } else if (location.pathname === '/Kedvencek') {
         return null;
+     } else if (location.pathname === '/accaunt') {
+        return null;
+     }else if (location.pathname === '/register') {
+        return null;
+     }else if (location.pathname === '/success') {
+        return null;
+     }else if (location.pathname === '/cancel') {
+        return null;
      }
 
     return (
