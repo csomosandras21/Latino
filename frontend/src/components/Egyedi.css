@@ -23,7 +23,7 @@
   justify-content: center;
   gap: 60px; 
   /* max-width: 100%; */
-  margin-left:95px ;
+  margin-left:95px;
   padding: 10px;
   flex-wrap: wrap;
 }
@@ -301,9 +301,11 @@ table, th, td {
 
 }
 
-@media screen and (max-width: 700PX) {
+@media screen and (max-width: 700px) {
  .termek-ar {
     margin-top: 0px;
+    margin-right: 0px;
+    padding-right: 0px;
   }
 
   .ar {
@@ -313,10 +315,17 @@ table, th, td {
     
   }
 
-  .termek-kep  {
-    width: 60%;
+  .termek-adatok {
+    margin-left: -95px;
+    padding-left: 5px;
+    width: 100vw;
+  }
+
+  .termek-kep  { 
+    width: 100%;
     padding: 0;
-    margin-right: 15%;
+    margin: auto;
+    /* justify-items: center; */
   }
 
 
@@ -324,14 +333,63 @@ table, th, td {
     font-size: 185%;
   }
 
-  .termek-ar  {
-    margin-right: 10%;
-  } 
-
   .leirasok {
     width: 100%;
     margin: 0;
     padding: 0 15px 15px 15px;
   }
 
+  .termek-kontener {
+    margin-left: 0px;
+  }
+
+  .termek-nev {
+    margin-left: 95px;
+  }
+
+  .termek-adatok p{
+    margin-left: 95px;
+  }
+
+  .kedvenc img {
+    margin-left: 95px;
+  }
+  table {
+    width: 60%;
+    margin-bottom: 60px;
+    font-weight: bolder;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-left: 7%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px 40px;
+    text-align: center;
+}
+
+th {
+    background-color: #ffffff;
+    color: #333;
+    font-weight: bold;
+}
+
+td {
+    background-color: #e7e7e796;
+    color: #555;
+}
+
+tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+tr:hover td {
+    background-color: #d8d8d8;
+    transition: background-color 0.3s;
+}
+
+table, th, td {
+    border: 1px solid #d4d4d4c9;
+}
 }
