@@ -54,7 +54,7 @@ let bossAdatok = [
         leiras:'Szikrázó, merész, erőt adó – üdvözölje a nyarat egy olyan illattal, amely energiával és kifinomultsággal tölt fel. A frissesség merész kifejezésének megtestesítője, a BOSS Bottled Bold Citrus Eau de Parfum a magabiztosság és kifinomult stílus jellemezte BOSS férfi lényét ragadja meg.'
     },
     {
-        nev:'BOSS Bottled Parufme',
+        nev:'BOSS Bottled Parfume',
          fajta:'Eau De Parfum',
         fej:'mandarinolaj, rózsabors, tömjén',
         sziv:'orrisz gyökér, fügefa, bőr',

@@ -1,9 +1,9 @@
 /* A teljes oldal kitöltése */
-html, body, #root {
+/* html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-}
+} */
 .page-container {
     min-height: 100%;
     display: flex;
@@ -17,7 +17,7 @@ html, body, #root {
 
 /* Footer stílus */
 .lab-hatter {
-    width: 100%;
+    /* width: 100%; */
     background: #000000;
     color: #fff;
     padding: 40px;
@@ -95,6 +95,7 @@ html, body, #root {
 @media screen and (max-width: 750px) { 
   .labjegyzet {
     width: 100%;
+    flex-direction: column;
   }
 
   .kerdesek {
@@ -105,5 +106,14 @@ html, body, #root {
 .linkek {
   gap: 1vh;
   font-size: 10px;
+  }
+
+  .labjegyzet h1 {
+    font-size: 15px;
+  }
+
+  .termek-kontener {
+    margin-right: 0px;
+    padding-right: 0px;
   }
 }

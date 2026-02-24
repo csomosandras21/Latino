@@ -136,7 +136,7 @@ let osszesAdatok = [
     },
     {
         nev:'BOSS Bottled Parfume',
-         fajta:'Eau de Parfum',
+        fajta:'Eau de Parfum',
         fej:'mandarinolaj, rózsabors, tömjén',
         sziv:'orrisz gyökér, fügefa, bőr',
         alap:'cédrusolaj, pacsuli, ambrocenid',

@@ -27,8 +27,8 @@ let gucciAdatok = [
         leiras: 'Bontakoztassa ki személyisége excentrikus és merész oldalát! A férfi Gucci Guilty Pour Homme eau de parfum érzéki illata arra készteti Önt, hogy teljes szabadságot adjon formabontó és némiképp titokzatos énjének. Soha nem látott intenzitással mutathatja meg a világnak, hogy mennyire férfias.'
     },
    {
-        nev: 'Guilty Pour Homme',
-        fajta: 'Parfum',
+        nev: 'Gucci Guilty Pour Homme',
+        fajta: 'Parfüm',
         fej: 'lavandin',
         sziv: 'citrusok',
         alap: 'pacsuli',
@@ -37,7 +37,7 @@ let gucciAdatok = [
     },
    {
         nev: 'Gucci Guilty Pour Homme',
-        fajta: 'Eau de Toilet',
+        fajta: 'Eau de Toilette',
         fej: 'citrom, levendula',
         sziv: 'narancsfa virága',
         alap: 'virginiai boróka, pacsuli, vanília',
@@ -46,7 +46,7 @@ let gucciAdatok = [
     },
    {
         nev: 'Gucci Guilty Essence',
-        fajta: 'Eau de Toilet',
+        fajta: 'Eau de Toilette',
         fej: 'koriander',
         sziv: 'narancsfa virága, keserűnarancs, zöld tónusok',
         alap: 'pacsuli, cédrus',
