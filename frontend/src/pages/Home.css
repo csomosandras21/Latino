@@ -225,6 +225,10 @@
     gap: 6vh;
   }
 
+  .logo a {
+    margin-left: 25px;
+  }
+
   .search-bar input {
     width: 35vh;
   }

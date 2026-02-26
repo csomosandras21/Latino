@@ -72,3 +72,40 @@
     color: white;
     font-weight: bold;
 }
+
+@media screen and (max-width: 750px) {
+    .kosar-kontener img {
+        width: 15%;
+        height: 30%;
+
+    }
+
+    .kosar-kontener p {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .kosar-kontener button {
+        font-size: 12px;
+        
+        display: grid;
+        
+        
+    }
+
+    .kosar-kontener {
+        /* display: inline; */
+        flex-direction: column;
+        border: none;
+    }
+
+    .gombok button {
+        font-size: 10px;
+    }
+
+    .gombok p {
+        font-size: 15px;
+        margin-left: 6px;
+        margin-right: 10px;
+    }
+}

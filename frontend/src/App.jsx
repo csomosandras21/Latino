@@ -44,6 +44,7 @@ import Kedvencek from './pages/Kedvencek';
 import Vasarlas from './pages/Vasarlas';
 import Kapcsolat from './pages/Kapcsolat';
 import Gyik from './pages/Gyik';
+import Parfumosbubi from './pages/Parfumosbubi';
 
 export const FilteringContext = createContext();
 
@@ -101,6 +102,8 @@ function App() {
                 <Route path='/kapcsolat' element={<Kapcsolat />}/>
                 <Route path='/gyik' element={<Gyik />}/>
                 <Route path='/kedvencek' element={<Kedvencek />}/> 
+                <Route path='/parfumbubi' element={<Parfumosbubi />}/> 
+
               </Routes>
                       {!excludedRoutes.includes(location.pathname) && <Footer />}
 

@@ -72,3 +72,30 @@
     padding-top: 4%;
     font-size: larger;
 }
+
+@media screen and (max-width: 750px) {
+    .kedvenc-kartya img {
+        width: 15%;
+        height: 35%;
+        margin-left: 36%;
+    }
+
+    .kedvenc-kartya h3{
+        display: block;
+        font-size: 15px;
+    }
+
+    .kedvenc-kartya {
+        gap: 5px;
+        display: inline;
+        text-align: center;
+        border: none;
+    }
+
+    .kedvenc-kartya button {
+        margin-left: 34%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+}

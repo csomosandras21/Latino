@@ -16,6 +16,7 @@ const Home = () => {
     let tomb = [];
     
     useEffect(() => {
+        console.log("Ablak: ", window.innerWidth);
         const szerverrolBetolt = async () => {
             const response = await fetch('http://localhost:3500/api/parfumes-frontend');
             const bejovoAdatok = await response.json();

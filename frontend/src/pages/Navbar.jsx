@@ -3,6 +3,7 @@ import account from '../../public/images/account_circle_24dp_FFF_FILL0_wght400_G
 import favorite from '../../public/images/favorite_24dp_FFF_FILL0_wght400_GRAD0_opsz24.png'
 import logout from '../../public/images/logout.png'
 import server from '../../public/images/server.png'
+import filteres from '../../public/images/filter.png'
 import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useState, useContext } from 'react'
 import { FilteringContext } from '../App'
@@ -13,6 +14,7 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [filter, setFilter] = useState('');
+  const [szelesseg, setSzelesseg] = useState(0);
   const location = useLocation();
   
   // Kedvencek számláló állapota
@@ -20,9 +22,26 @@ const Navbar = () => {
  
   const { kosar, kosarSzamlalo, setKosar, setKosarSzamlalo, kedvencSzamlalo } = useContext(CartContext);
 
- 
+  useEffect(() => {
+    const updateWindowDimensions = () => {
+      const newHeight = window.innerHeight;
+      setSzelesseg(newHeight);
+      console.log("updating height");
+    };
+
+    window.addEventListener("resize", updateWindowDimensions);
+
+    return () => window.removeEventListener("resize", updateWindowDimensions) 
+
+  }, []);
+
+//   useEffect(() => {
+//     let sz  = window.innerWidth
+//    setSzelesseg(sz);
+//  }, [window.innerWidth]);
 
   useEffect(() => {
+    
     setFiltering(filter);
     const leker = localStorage.getItem('isLoggedIn');
     const user = JSON.parse(localStorage.getItem('user'));
@@ -67,6 +86,12 @@ const Navbar = () => {
             </div>
             
             <Link to='/accaunt'> <img src={account} alt="" /> </Link>
+          {szelesseg < 750
+            ? 
+            <Link to='/parfumbubi'> <img src={filteres} alt="" /> </Link>
+           : 
+           <></> 
+          }
             
             {/* KEDVENCEK IKON ÉS SZÁMLÁLÓ */}
             <div className='kosarErtek-tarto'>
