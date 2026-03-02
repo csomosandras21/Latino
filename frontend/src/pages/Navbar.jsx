@@ -14,7 +14,7 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [filter, setFilter] = useState('');
-  const [szelesseg, setSzelesseg] = useState(0);
+  const [szelesseg, setSzelesseg] = useState(800);
   const location = useLocation();
   
   // Kedvencek számláló állapota
@@ -33,7 +33,7 @@ const Navbar = () => {
 
     return () => window.removeEventListener("resize", updateWindowDimensions) 
 
-  }, []);
+  }, [window.innerHeight]);
 
 //   useEffect(() => {
 //     let sz  = window.innerWidth
@@ -84,8 +84,13 @@ const Navbar = () => {
               <Link to="/cart"> <img src={bag} alt="" /></Link>
               <span className='kosarErtek'>{kosarSzamlalo}</span>
             </div>
-            
-            <Link to='/accaunt'> <img src={account} alt="" /> </Link>
+            {
+              isLoggedIn 
+              ?
+              <></>
+              :
+              <Link to='/accaunt'> <img src={account} alt="" /> </Link>
+            }
           {szelesseg < 750
             ? 
             <Link to='/parfumbubi'> <img src={filteres} alt="" /> </Link>
