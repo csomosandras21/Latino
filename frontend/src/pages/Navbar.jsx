@@ -14,18 +14,19 @@ const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [filter, setFilter] = useState('');
-  const [szelesseg, setSzelesseg] = useState(800);
+  const [szelesseg, setSzelesseg] = useState(460);
   const location = useLocation();
   
   // Kedvencek számláló állapota
   const [kedvencekSzamlalo, setKedvencekSzamlalo] = useState(0);
  
   const { kosar, kosarSzamlalo, setKosar, setKosarSzamlalo, kedvencSzamlalo } = useContext(CartContext);
-
+  
   useEffect(() => {
     const updateWindowDimensions = () => {
       const newHeight = window.innerHeight;
       setSzelesseg(newHeight);
+      console.log(newHeight);
       console.log("updating height");
     };
 
@@ -41,6 +42,7 @@ const Navbar = () => {
 //  }, [window.innerWidth]);
 
   useEffect(() => {
+    console.log("Hull a hó!");
     
     setFiltering(filter);
     const leker = localStorage.getItem('isLoggedIn');

@@ -8,6 +8,7 @@ const CartProvider = (props) => {
     const [darabszam, setDarabszam] = useState([]);
     const [kosarSzamlalo, setKosarSzamlalo] = useState(0);
     const [kedvencSzamlalo, setKedvencSzamlalo] = useState(0);
+    const [szelesseg, setSzelesseg] = useState(0);
 
     useEffect(() => {
         let kosar1 = JSON.parse(localStorage.getItem('kosar'));
@@ -23,6 +24,8 @@ const CartProvider = (props) => {
         }
         let kedvencek = JSON.parse(localStorage.getItem('kedvencek'));
         kedvencek ? setKedvencSzamlalo(kedvencek.length) : setKedvencSzamlalo(0);
+        console.log(window.innerWidth);
+        setSzelesseg(window.innerWidth);
     }, [])
 
     return (
