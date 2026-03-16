@@ -5,7 +5,7 @@ import logout from '../../public/images/logout.png'
 import server from '../../public/images/server.png'
 import filteres from '../../public/images/filter.png'
 import { Link, useLocation } from 'react-router-dom'
-import { useEffect, useState, useContext } from 'react'
+import { useEffect, useState, useContext, useRef } from 'react'
 import { FilteringContext } from '../App'
 import { CartContext } from '../context/CartContext'
 
@@ -16,6 +16,7 @@ const Navbar = () => {
   const [filter, setFilter] = useState('');
   const [szelesseg, setSzelesseg] = useState(460);
   const location = useLocation();
+  const valtozas = useRef(0);
   
   // Kedvencek számláló állapota
   const [kedvencekSzamlalo, setKedvencekSzamlalo] = useState(0);
@@ -27,6 +28,7 @@ const Navbar = () => {
       const newHeight = window.innerHeight;
       setSzelesseg(newHeight);
       console.log(newHeight);
+      valtozas.current = newHeight;
       console.log("updating height");
     };
 
@@ -93,7 +95,7 @@ const Navbar = () => {
               :
               <Link to='/accaunt'> <img src={account} alt="" /> </Link>
             }
-          {szelesseg < 750
+          {szelesseg < 750 && szelesseg === valtozas.current 
             ? 
             <Link to='/parfumbubi'> <img src={filteres} alt="" /> </Link>
            : 
